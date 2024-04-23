@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "docker run -p 8080:8080 hackathon-2024",
     "build": "ng build",
-    "gcp-build": "npm install && npm run build",
+    "gcp-build": "docker build -t hackathon-2024 .",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
