@@ -1,11 +1,1 @@
 runtime: nodejs18
-
-precompiled_app:
-  source: .
-  # Build the application before deployment
-  build_command: npm run gcp-build
-
-# Use npm run start instead of directly calling ng serve
-# (adjust based on your deployment setup)
-health_check:
-  command: npm run start
