@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "serve dist/hacks-website",
+    "start": "ng serve",
     "build": "ng build",
-    "gcp-build": "npm install && npm install --global serve && npm run build",
+    "gcp-build": "npm install && npm run build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
