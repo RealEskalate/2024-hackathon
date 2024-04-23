@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "serve dist/hacks-website",
     "build": "ng build",
-    "gcp-build": "npm install && npm run build && npm install --global serve",
+    "gcp-build": "npm install && npm install --global serve && npm run build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
