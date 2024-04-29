@@ -44,6 +44,7 @@ import { TermsPluginLoaderService } from './privacy_consent/terms-plugin-loader.
 import { WinnerModal } from './shared/winner_modal/winner_modal.component';
 import { Prize2024Component } from './pages/prize2024/prize2024.component';
 import { LandingComponent } from './components/landing/landing.component';
+import { TimelineComponent } from './components/timeline/timeline.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,7 +82,8 @@ import { LandingComponent } from './components/landing/landing.component';
     ConsentComponent,
     WinnerModal,
     Prize2024Component,
-    LandingComponent
+    LandingComponent,
+    TimelineComponent
     // PrivacyConsentComponent,
     
   ],
