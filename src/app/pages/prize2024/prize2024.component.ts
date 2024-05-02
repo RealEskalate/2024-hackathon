@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 export class Prize2024Component {
   awards = [
     "Trip to Addis Ababa, including airfare, hotel, and other expenses.",
-    "Opportunity to pitch one's project idea to renowned individuals and venture capitalists.",
+    "Opportunity to pitch one's project idea to renowned tech individuals and venture capitalists.",
     "Certificate of achievement."
   ]
   missionTextPart1 = "A2SV (Africa to Silicon Valley) is a US-based nonprofit academy igniting Africa's tech revolution with comprehensive software engineering training and tech-driven solutions"
@@ -28,7 +28,7 @@ export class Prize2024Component {
     padding: '32px',
     color: '#AC6AFF',
     image: 'assets/gold 1 (no bg).png',
-    awards: [...this.awards,"Direct placement opportunity in the A2SV education cohort 5.", "Custom-designed A2SV swag."]
+    awards: [...this.awards,"Direct placement opportunity in the A2SV education cohort 6.", "Custom-designed A2SV swag."]
     }
 
     thirdPrize = {

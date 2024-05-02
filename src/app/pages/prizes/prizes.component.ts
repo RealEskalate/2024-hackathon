@@ -34,7 +34,7 @@ export class PrizesComponent implements AfterViewInit {
   // }
   awards = [
     "Trip to Addis Ababa, including airfare, hotel, and other expenses.",
-    "Opportunity to pitch one's project idea to renowned individuals and venture capitalists.",
+    "Opportunity to pitch one's project idea to renowned tech individuals and venture capitalists.",
     "Certificate of achievement."
   ]
   missionTextPart1 = "A2SV (Africa to Silicon Valley) is a US-based nonprofit academy igniting Africa's tech revolution with comprehensive software engineering training and tech-driven solutions"
@@ -43,7 +43,7 @@ export class PrizesComponent implements AfterViewInit {
     place: 'Second',
     prize: '6,000',
     padding: '32px',
-    color: '#FFC876',
+    color: '#C0C0C0',
     image: 'assets/silver 1 (no bg).png',
     awards: [...this.awards, "Custom-designed A2SV swag.","Direct placement opportunity in the A2SV education cohort 5."]
   }
@@ -51,7 +51,7 @@ export class PrizesComponent implements AfterViewInit {
     place: 'First',
     prize: '10,000',
     padding: '32px',
-    color: '#AC6AFF',
+    color: '#FFC876',
     image: 'assets/gold 1 (no bg).png',
     awards: [...this.awards,"Direct placement opportunity in the A2SV education cohort 5.", "Custom-designed A2SV swag.", "Partnership with Modus VC to assist with fundraising and tailored 1-on-1 expert support."]
     }
@@ -60,7 +60,7 @@ export class PrizesComponent implements AfterViewInit {
     place: 'Third',
     prize: '4,000',
     padding: '32px',
-    color: '#E298FF',
+    color: '#CD7F32',
     image: 'assets/bronze 1.png',
     awards: [...this.awards,"Direct placement opportunity in the A2SV education cohort 5."]
     }

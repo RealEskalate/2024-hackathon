@@ -14,9 +14,9 @@
     <!-- nav-text-->
     <div class="hidden justify-between gap-x-4 lg:flex">
       <a
-        (click)="scrollToSection('home')"
+        (click)="scrollToSection('landing')"
         class="text-sm max-xl:text-[0.75rem] cursor-pointer  font-semibold leading-6 hover:text-indigo-600 nav-item {{
-          currentSection.toString() == 'home'
+          currentSection.toString() == 'landing'
             ? 'text-indigo-600'
             : 'text-gray-200'
         }} "
@@ -25,7 +25,7 @@
       <a
         (click)="scrollToSection('prize2024')"
         class="text-sm max-xl:text-[0.75rem] cursor-pointer font-semibold leading-6  hover:text-indigo-600 nav-item {{
-          currentSection.toString() == 'prizes'
+          currentSection.toString() == 'prize2024'
             ? 'text-indigo-600'
             : 'text-gray-200'
         }}"
@@ -290,12 +290,12 @@
         <div class="-my-6 divide-y divide-gray-500/10">
           <div class="space-y-2 py-6">
             <a
-              (click)="scrollToSection('home'); toggleMenu()"
+              (click)="scrollToSection('landing'); toggleMenu()"
               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
               >Home</a
             >
             <a
-              (click)="scrollToSection('prizes'); toggleMenu()"
+              (click)="scrollToSection('prize2024'); toggleMenu()"
               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
               >🏆 Prize</a
             >

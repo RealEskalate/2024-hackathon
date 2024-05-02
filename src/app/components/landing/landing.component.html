@@ -1,29 +1,38 @@
-<div class="min-h-screen pt-[130px] lg:pt-[100px] bg-blue-950 bg-opacity-50">
-  <div class="bg_svg min-h-[80vh] px-20 flex flex-col justify-center items-center ">
-    <div class="flex flex-col md:flex-row justify-center text-white ">
-      <section class=" left flex-1   md:p-5">
+<div id="landing" class="min-h-screen pt-[130px] lg:pt-[100px] bg-blue-950 bg-opacity-50">
+  <div
+    class="bg_svg min-h-[80vh] px-20 flex flex-col justify-center items-center"
+  >
+    <div class="flex flex-col md:flex-row justify-center text-white">
+      <section class="left flex-1 md:p-5">
         <div
-          class=" w-full flex flex-col max-md:items-center items-start  leading-relaxed mb-5"
+          class="w-full flex flex-col max-md:items-center items-start leading-relaxed mb-5"
         >
-        <!-- A2SV Hackathon, 2023 -->
-        <h1 class="text-left w-full max-md:text-center  text-xl font-bold md:text-3xl lg:text-5xl ">A2SV Hackathon, 2024</h1>
-        <h1 class="text-left w-full max-md:text-center  text-xl mt-5 font-semibold md:text-2xl lg:text-4xl ">AI for Impact - Solving Africa's Challenges</h1> 
+          <!-- A2SV Hackathon, 2023 -->
+          <h1
+            class="text-left w-full max-md:text-center text-xl font-bold md:text-3xl lg:text-5xl"
+          >
+            A2SV Hackathon, 2024
+          </h1>
+          <h1
+            class="text-left w-full max-md:text-center text-xl mt-5 font-semibold md:text-2xl lg:text-4xl"
+          >
+            AI for Impact - Solving Africa's Challenges
+          </h1>
         </div>
-        <div style="position: fixed; top: 45vh; left: -40px; z-index: 1000;">
+        <div style="position: fixed; top: 45vh; left: -40px; z-index: 1000">
           <a href="https://form.typeform.com/to/opvWnrn7" target="_blank">
             <button
               (click)="setActiveButton('partner')"
-              class=" px-4 py-3 rounded-md transition-transform duration-300 ease-in-out  bg-gradient-to-r from-indigo-600 to-pink-500"
-              style="transform: rotate(270deg);"
+              class="px-4 py-3 rounded-md transition-transform duration-300 ease-in-out bg-gradient-to-r from-indigo-600 to-pink-500"
+              style="transform: rotate(270deg)"
             >
               Partner with Us
             </button>
           </a>
         </div>
-        
       </section>
-      <section class=" right flex-1 md:h-full md:px-5 mb-10 ">
-        <p class=" my-4 tracking-tight leading-a.5 text-justify justify-between">
+      <section class="right flex-1 md:h-full md:px-5 mb-10">
+        <p class="my-4 tracking-tight leading-a.5 text-justify justify-between">
           Join Africa’s largest Hackathon in 2024, focused on creating social
           and economic solutions with AI. This is the largest hackathon in
           Africa, connecting students, mentors, and industry leaders to develop
@@ -36,45 +45,58 @@
           difference. Be part of moving AI forward in Africa.
         </p>
         <p></p>
-        <h2>Registration start on June 1, 2024</h2>
-        <div class="flex flex-col  md:flex-row justify-center max-md:items-center md:justify-start mt-3">
+        <h2>Registration starts on June 1, 2024.</h2>
+        <div
+          class="flex flex-col md:flex-row justify-center max-md:items-center md:justify-start mt-3"
+        >
           <a href="https://form.typeform.com/to/ShJTk212" target="_blank">
             <button
               (click)="setActiveButton('mentor')"
               class="text-sm px-4 py-2 rounded-full  transition-transform duration-300 ease-in-out  hover:bg-purple-500     {{
-                activeButton === 'mentor' ? 'bg-purple-500   ' : 'bg-purple-700  '
+                activeButton === 'mentor'
+                  ? 'bg-purple-500   '
+                  : 'bg-purple-700  '
               }}"
             >
-              Be a Mentor or Advisor
+              Be a mentor or an advisor
             </button>
           </a>
-          <a
-          href="https://form.typeform.com/to/XoEqw6vQ"
-          target="_blank"
-        >
-          <button
-            (click)="setActiveButton('signup')"
-            class="max-md:mt-5 text-sm px-4 py-2 rounded-full transition-transform duration-300 ease-in-out  hover:bg-purple-500 lg:ml-5 {{
-              activeButton === 'signup' ? 'bg-purple-500   ' : 'bg-purple-700  '
-            }}"
-          >
-            Sign Up for Event Updates
-          </button>
-        </a>
+          <a href="https://form.typeform.com/to/XoEqw6vQ" target="_blank">
+            <button
+              (click)="setActiveButton('signup')"
+              class="max-md:mt-5 text-sm px-4 py-2 rounded-full transition-transform duration-300 ease-in-out  hover:bg-purple-500 lg:ml-5 {{
+                activeButton === 'signup'
+                  ? 'bg-purple-500   '
+                  : 'bg-purple-700  '
+              }}"
+            >
+              Sign up for event updates
+            </button>
+          </a>
         </div>
       </section>
     </div>
-    <div class="hidden md:grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div *ngFor="let image of images; index as i" class="relative">
+    <div class="mx-[10] w-full overflow-hidden">
+      <ngx-slick-carousel
+        class="carousel h-full  flex overflow-hidden justify-center gap-x-12 "
+        #slickModal="slick-carousel"
+        [config]="slickConfig"
+      >
         <div
-          class="h-[250px] bg-white rounded-xl overflow-hidden my-5 bg-gradient-to-br from-purple-500 to-pink-500 animate-gradient p-1"
-          [style.transform]="
-            i % 2 === 0 ? 'translateY(-10%)' : 'translateY(10%)'
-          "
+          ngxSlickItem
+          *ngFor="let image of images; index as i"
+          class="slide mx-auto flex justify-center"
         >
-          <img class="w-full h-full object-cover rounded-xl" [src]="image" />
+          <div
+            class="h-[250px] mx-5 bg-white rounded-xl overflow-hidden my-5 bg-gradient-to-br from-purple-500 to-pink-500 animate-gradient p-1"
+          >
+            <img [src]="image" class="w-full h-full object-cover rounded-xl" />
+          </div>
         </div>
-      </div>
+      </ngx-slick-carousel>
     </div>
+
+
+   
   </div>
 </div>
