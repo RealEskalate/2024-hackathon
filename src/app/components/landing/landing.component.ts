@@ -9,12 +9,11 @@ import { Component } from '@angular/core';
 export class LandingComponent {
   activeButton: string = '';
   images: string[] = [
-    'https://res.cloudinary.com/eskalate/image/upload/v1712136494/Hackathon/hackathon_coding.jpg',
-    'https://res.cloudinary.com/eskalate/image/upload/v1708613326/Hackathon/Expo.png',
-    'https://res.cloudinary.com/eskalate/image/upload/v1712134753/Hackathon/certificateDay.jpg',
+    'https://res.cloudinary.com/eskalate/image/upload/v1714657507/Hackathon/Expo-min.png',
+    'https://res.cloudinary.com/eskalate/image/upload/v1714657509/Hackathon/certificateDay-min.jpg',
     'https://res.cloudinary.com/eskalate/image/upload/v1700746297/Hackathon/yyeni.jpg',
     'https://res.cloudinary.com/eskalate/image/upload/v1703573932/Hackathon/Architect.jpg',
-    'https://res.cloudinary.com/eskalate/image/upload/v1712136494/Hackathon/hackathon_coding.jpg'
+    'https://res.cloudinary.com/eskalate/image/upload/v1714657509/Hackathon/hackathon_coding-min.jpg'
   
     
   ];
