@@ -30,6 +30,8 @@
   background: white; /* Color of the scrollbar track */
 }
 
+.slick-prev, .slick-next { background-color: purple !important; height: 19px !important }
+
 /* Handle */
 .bg_svg::-webkit-scrollbar-thumb {
   background: yellow; /* Color of the scrollbar handle */
@@ -42,6 +44,7 @@
   background-position: center;
   
 }
+
 
 @-moz-keyframes myfirst /* Firefox */ {
   0% {background:red;}
