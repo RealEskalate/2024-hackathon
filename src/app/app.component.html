@@ -4,13 +4,13 @@
 <app-consent></app-consent>
 <ng-container *ngIf="isModalOpen">
   <div
-    class="fixed  top-0 left-0 z-50 mt-4 ml-4 w-full  pt-3"
+    class="fixed  top-0 left-0 z-50   w-full mt-5  pt-3  flex flex-col justify-end"
   >
     <div class="modal-overlay"></div>
     <div
-      class="modal-container modal-box w-11/12 max-sm:w-full max-sm:mx-2 max-w-5xl bg-gray-900 text-center flex flex-col mt-4 shadow-lg m-auto"
+      class="border border-gray-600   modal-box w-11/12 max-sm:w-full max-sm:mx-2 max-w-5xl bg-gray-900 text-center flex flex-col mt-4  shadow-lg m-auto"
     >
-      <app-what-we-provide></app-what-we-provide>
+      <app-what-we-provide ></app-what-we-provide>
     </div>
   </div>
 </ng-container>
@@ -23,6 +23,16 @@
   [modalData]="modalData"
   (closeModalEvent)="closeModal()"
 ></app-winner_modal>
+</div>
+<div *ngIf="showPartnerButton" style="position: fixed; top: 45vh; left: -40px; z-index: 1000">
+  <a href="https://form.typeform.com/to/opvWnrn7" target="_blank">
+    <button
+      class="px-4 py-3 rounded-md transition-transform duration-300 ease-in-out bg-gradient-to-r from-indigo-600 to-pink-500"
+      style="transform: rotate(270deg)"
+    >
+      Partner with Us
+    </button>
+  </a>
 </div>
 <app-landing></app-landing>
 <div id="prize2024" class="relative z-40">

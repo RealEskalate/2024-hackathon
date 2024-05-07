@@ -48,7 +48,7 @@ export class BotComponent {
     this.localStorageService.setWaitingStatus( true )
     try{
       this.chatService.sendMessage( this.chatForm.value.message! ).subscribe((response:any)=>{
-        console.log(response)
+        // console.log(response)
         this.isChatLoading = false;
         this.localStorageService.setWaitingStatus( false )
         this.localStorageService.addMessage({

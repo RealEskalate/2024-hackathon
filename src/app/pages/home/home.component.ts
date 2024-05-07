@@ -81,7 +81,7 @@ export class HomeComponent implements OnInit {
   }
 
   openModal(event: Event) {
-    console.log('openModal home is clicked');
+    // console.log('openModal home is clicked');
     
     event.stopPropagation();
     this.modalService.openModal();

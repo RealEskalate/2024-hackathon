@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class BubbleComponent {
   isIframeLoading: boolean = true;
   onIframeLoad() {
-    console.log("iframe loaded")
+    // console.log("iframe loaded")
     this.isIframeLoading = false;
   }
 }

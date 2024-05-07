@@ -27,6 +27,7 @@ declare var loadPrivacyPlugin: any;
 })
 export class AppComponent implements OnInit, OnDestroy  {
   // constructor(private privacyConsentService: PrivacyConsentService) {}
+  showPartnerButton: boolean = false;
   isWinnerModalOpen = false;
   modalData: any = {};
   modalSubscription: Subscription | undefined;
@@ -44,11 +45,11 @@ export class AppComponent implements OnInit, OnDestroy  {
 
 
   @HostListener('document:click', ['$event'])
-  onDocumentClick(event: MouseEvent) {
-    if (!this.isClickWithinModal(event) && this.modalService.isModalOpen) {
-      this.modalService.closeModal();
-    }
-  }
+  // onDocumentClick(event: MouseEvent) {
+  //   if (!this.isClickWithinModal(event) && this.modalService.isModalOpen) {
+  //     this.modalService.closeModal();
+  //   }
+  // }
 
   isClickWithinModal(event: MouseEvent): boolean {
     // Add logic to determine if the click is within the modal element
@@ -82,10 +83,9 @@ export class AppComponent implements OnInit, OnDestroy  {
     });
 
     this.winnerModalService.modalData$.subscribe((data) => {
-      
-      
       this.modalData = data;
     });
+    
     const hasConsent = localStorage.getItem('consentGiven');
     this.termsPluginLoaderService.loadPlugin();
 
@@ -114,6 +114,9 @@ export class AppComponent implements OnInit, OnDestroy  {
 
   closeModal() {
     this.winnerModalService.toggleModal(false);
+  }
+  closeJoinModal(){
+    this.modalService.closeModal()
   }
   
   
@@ -219,5 +222,17 @@ export class AppComponent implements OnInit, OnDestroy  {
     if (currentSection !== this.currentSection) {
       if (currentSection !== '') this.currentSection = currentSection;
     }
+
+
+    // For Partner button logic 
+    const landingElement = this._el.nativeElement.querySelector('#landing');
+    const landingOffsetTop = landingElement.offsetTop;
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const landingHeight = landingElement.offsetHeight;
+
+    // Adjust the value based on your requirement
+    const triggerPosition = landingOffsetTop + landingHeight - 100;
+
+    this.showPartnerButton = scrollPosition > triggerPosition;
   }
 }
