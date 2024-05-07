@@ -51,7 +51,7 @@ export class ChatService {
 
       }
       default: {
-        console.log('Chat-Service ~ Unknown Error: ',error.message, 'StatusCode: ', error.status)
+        // console.log('Chat-Service ~ Unknown Error: ',error.message, 'StatusCode: ', error.status)
         return `Unknown Server Error`;
       }
 

@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 
 export class Prize2024Component {
   awards = [
-    "Trip to Addis Ababa, including airfare, hotel, and other expenses.",
+    "Trip to Addis Ababa, including airfare, hotel, food and other expenses.",
     "Opportunity to pitch one's project idea to renowned tech individuals and venture capitalists.",
     "Certificate of achievement."
   ]

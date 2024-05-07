@@ -1,4 +1,4 @@
-import { Component,OnInit,OnDestroy } from '@angular/core';
+import { Component,OnInit,OnDestroy,Output, EventEmitter } from '@angular/core';
 import { ModalService } from 'src/app/modal.service';
 
 @Component({
@@ -8,11 +8,15 @@ import { ModalService } from 'src/app/modal.service';
 })
 
 export class WhatWeProvideComponent {
+  @Output() closeModalEvent = new EventEmitter<boolean>();
 
   constructor(private modalService: ModalService) {}
 
   get isModalOpen(): boolean {
     return this.modalService.isModalOpen;
+  }
+  closeModal(){
+    this.modalService.closeModal()
   }
 
   // Other methods and logic in your component

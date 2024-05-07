@@ -2,8 +2,8 @@
   <div
     class="bg_svg min-h-[80vh] px-20 flex flex-col justify-center items-center"
   >
-    <div class="flex flex-col md:flex-row justify-center text-white">
-      <section class="left flex-1 md:p-5">
+    <div class="grid grid-cols-1 md:grid-cols-12 text-white">
+      <section class="left col-span-1 md:col-span-6  md:p-5 md:h-full flex flex-col items-center md:items-start justify-between ">
         <div
           class="w-full flex flex-col max-md:items-center items-start leading-relaxed mb-5"
         >
@@ -14,24 +14,27 @@
             A2SV Hackathon, 2024
           </h1>
           <h1
-            class="text-left w-full max-md:text-center text-xl mt-5 font-semibold md:text-2xl lg:text-4xl"
+            class="text-left w-full max-md:text-center text-xl mt-6  md:text-2xl lg:text-3xl"
           >
             AI for Impact - Solving Africa's Challenges
           </h1>
         </div>
-        <div style="position: fixed; top: 45vh; left: -40px; z-index: 1000">
+
+ 
+
           <a href="https://form.typeform.com/to/opvWnrn7" target="_blank">
             <button
               (click)="setActiveButton('partner')"
-              class="px-4 py-3 rounded-md transition-transform duration-300 ease-in-out bg-gradient-to-r from-indigo-600 to-pink-500"
-              style="transform: rotate(270deg)"
+              class="mb-10 rounded-full px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-pink-500 relative hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-500 text-white transition-all cursor-pointer ease-out duration-300"
+              
             >
               Partner with Us
             </button>
           </a>
-        </div>
+      
+        
       </section>
-      <section class="right flex-1 md:h-full md:px-5 mb-10">
+      <section class="right col-span-1 md:col-span-6  md:h-full md:px-5 mb-10 ">
         <p class="my-4 tracking-tight leading-a.5 text-justify justify-between">
           Join Africa’s largest Hackathon in 2024, focused on creating social
           and economic solutions with AI. This is the largest hackathon in
@@ -47,12 +50,12 @@
         <p></p>
         <h2>Registration starts on June 1, 2024.</h2>
         <div
-          class="flex flex-col md:flex-row justify-center max-md:items-center md:justify-start mt-3"
+          class="max-md:mt-8 flex flex-col md:flex-row justify-center max-md:items-center md:justify-start mt-3"
         >
           <a href="https://form.typeform.com/to/ShJTk212" target="_blank">
             <button
               (click)="setActiveButton('mentor')"
-              class="text-sm px-4 py-2 rounded-full  transition-transform duration-300 ease-in-out  hover:bg-purple-500     {{
+              class="text-sm rounded-full px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-pink-500 relative hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-500 text-white transition-all cursor-pointer ease-out duration-300    hover:bg-purple-500     {{
                 activeButton === 'mentor'
                   ? 'bg-purple-500   '
                   : 'bg-purple-700  '
@@ -64,7 +67,7 @@
           <a href="https://form.typeform.com/to/XoEqw6vQ" target="_blank">
             <button
               (click)="setActiveButton('signup')"
-              class="max-md:mt-5 text-sm px-4 py-2 rounded-full transition-transform duration-300 ease-in-out  hover:bg-purple-500 lg:ml-5 {{
+              class="max-md:mt-5 text-sm rounded-full px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-pink-500 relative hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-500 text-white transition-all cursor-pointer ease-out duration-300 lg:ml-5 {{
                 activeButton === 'signup'
                   ? 'bg-purple-500   '
                   : 'bg-purple-700  '

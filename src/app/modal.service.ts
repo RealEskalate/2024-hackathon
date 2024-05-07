@@ -11,14 +11,14 @@ export class ModalService {
   constructor() {}
 
   openModal() {
-    console.log('open clicked',this.modalStateChanged);
+    // console.log('open clicked',this.modalStateChanged);
     
     this.isModalOpen = true;
     this.modalStateChanged.emit(true);
   }
 
   closeModal() {
-    console.log('closed clicked',this.modalStateChanged);
+    // console.log('closed clicked',this.modalStateChanged);
     
     this.isModalOpen = false;
     this.modalStateChanged.emit(false);
