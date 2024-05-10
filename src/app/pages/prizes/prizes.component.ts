@@ -83,7 +83,7 @@ export class PrizesComponent implements AfterViewInit {
       },
       {
         title: 'Cross-Domain Collaboration Award',
-        description: 'Acknowledges teams that effectively combine generative AI techniques with expertise from different fields.',
+        description: 'Acknowledges teams that effectively combine AI techniques with expertise from different fields.',
         prize: '2500'
       }
     ];

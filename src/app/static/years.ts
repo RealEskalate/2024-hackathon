@@ -7,7 +7,7 @@ export const years = [
     },
     {
       color: "#FBCA3E",
-      title: "A2SV Generative AI for Africa Hackathon",
+      title: "A2SV AI for Africa Hackathon",
       year: "Aug - Nov, 2023",
       desc: "We hosted the biggest hackathon in Africa reaching over 47 African countries. The top 9 teams competed in Ethiopia, presenting different impactful digital solutions for the continent."
     },
@@ -93,12 +93,12 @@ export const years = [
   ];
   export const timeline = [
     
-      {number: '1', color: "#41516C", title: "Registration",desc: "Students to register for the African-wide hackathon focused on Generative AI.",  year: "1-6 June, 2024", final: false},
-      {number: '2', color: "#3081D0", title: "Project Idea Submission and Filtration",desc: "During this phase, participants submit their project ideas for consideration. Ideas undergo thorough evaluation and filtering to ensure alignment with hackathon objectives and feasibility for development.",  year: "8-12 June, 2024", final: false},
-      {number: '3', color: "#FFB534", title: 'Workshops',desc: "Our initial workshops provide participants with an in-depth understanding of generative AI, hackathon dynamics, and idea generation.",  year: '13-14 July, 2024', final: false},
-      {number: '4', color: "#163020", title: "Quarterfinals",desc: "Participants undertake a 50-hour virtual hackathon, competing for a place among the top 30 projects and receiving expert mentorship along the way.",  year: '16-20 July, 2024', final: false},
+      {number: '1', color: "#41516C", title: "Registration",desc: "Students to register for the African-wide hackathon focused on AI.",  year: "1 June - 6 July, 2024", final: false},
+      {number: '2', color: "#3081D0", title: "Project Idea Submission and Filtration",desc: "During this phase, participants submit their project ideas for consideration. Ideas undergo thorough evaluation and filtering to ensure alignment with hackathon objectives and feasibility for development.",  year: "8-12 July, 2024", final: false},
+      {number: '3', color: "#FFB534", title: 'Workshops',desc: "Our initial workshops provide participants with an in-depth understanding of AI, hackathon dynamics, and idea generation.",  year: '13-14 July, 2024', final: false},
+      {number: '4', color: "#163020", title: "Quarterfinals",desc: "Participants undertake a virtual hackathon, competing for a place among the top 30 projects and receiving expert mentorship along the way.",  year: '16-20 July, 2024', final: false},
       {number: '5', color: "#7BD3EA", title: "Semifinals",desc: "Continued guidance from advisors help refine and optimize the projects of the remaining teams. This phase is marked by iterative feedback and project refinement.",  year: 'July 28 - September 6, 2024', final: false},
-      {number : '6', color: "#41516C", title: "Grand Finale", desc: " The top 8 teams are flown to Ethiopia for an all-expense-paid 2-day in-person event. They’ll compete for a total prize pool of $30,000, presenting their projects to a distinguished jury.", year: '21-26 , September 2024'}
+      {number : '6', color: "#41516C", title: "Grand Finale", desc: " The top 8 teams are flown to Ethiopia for an all-expense-paid in-person event. They’ll compete for a total prize pool of $30,000, presenting their projects to a distinguished jury.", year: '21-26 , September 2024'}
       // {number: '6', title: "Grand Finale",desc: "The top 8 teams were flown to Ethiopia for an all-expense-paid 2-day in-person event. They competed for a total prize pool of $30,000, presenting their projects to a distinguished jury.",  date: '21-26 September, 2024', final: false},
     
   ]
