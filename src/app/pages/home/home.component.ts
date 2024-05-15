@@ -36,10 +36,10 @@ export class HomeComponent implements OnInit {
   showIndividualRegistrationModal = false;
   showRegistrationModal = true;
   currentSection: string = 'home';
-  registrationDeadline = new Date(2023, 7, 31, 23, 59, 59);
-  registrationButtonVisible = false;
+  registrationDeadline = new Date(2024, 5, 31, 23, 59, 59);
+  registrationButtonVisible = true;
   countDownVisible = true;
-  countDownDate = new Date('2023-11-11T20:59:00');
+  countDownDate = new Date('2024-5-15T20:59:00');
   animated: boolean = false;
 
   ngOnInit(): void {
