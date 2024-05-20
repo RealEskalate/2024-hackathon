@@ -9,7 +9,7 @@
         <p class="mb-8 text-gray-300 leading-relaxed">{{content.description1}}</p>
         <!-- <p class="mb-8 text-gray-300 leading-relaxed">{{content.description}}</p> -->
         <div *ngIf="content.footer!=null" class="relative border border-white border-opacity-50 my-6 rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-            <a href="{{content.footer}}" target="_blank" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
+            <a href="{{content.footer}}" target="_blank" (click)="setActiveButton('a2sv', 'https://www.a2sv.org')" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
     </div>

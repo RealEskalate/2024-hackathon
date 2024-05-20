@@ -74,7 +74,8 @@ export class LandingComponent {
   //   ],
   // };
 
-  setActiveButton(buttonName: string) {
+  setActiveButton(buttonName: string, link: string) {
     this.activeButton = buttonName;
+    window.open(link, '_blank');
   }
 }

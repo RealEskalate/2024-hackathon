@@ -41,6 +41,10 @@ export class AppComponent implements OnInit, OnDestroy  {
   ) {
     this.localStorage.resetWaitingStatus();
   }
+  openButton(buttonName: string, link: string) {
+    console.log(`${buttonName} will start`)
+    window.open(link, '_blank');
+  }
 
 
 
@@ -182,6 +186,7 @@ export class AppComponent implements OnInit, OnDestroy  {
   changeChatState(state: boolean) {
     this.modalOpen = !state;
   }
+ 
 
   @HostListener('window:scroll')
   onWindowScroll(): void {
@@ -235,4 +240,5 @@ export class AppComponent implements OnInit, OnDestroy  {
 
     this.showPartnerButton = scrollPosition > triggerPosition;
   }
+  
 }

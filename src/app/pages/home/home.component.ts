@@ -211,6 +211,9 @@ export class HomeComponent implements OnInit {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
+  setActiveButton(buttonName: string, link: string) {
+    window.open(link, '_blank');
+  }
 }
 
 

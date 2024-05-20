@@ -32,4 +32,7 @@ export class InfoComponent {
     {title: "Idea Generation", description: "Learn about the basics of AI and how it can be used to solve real-world problems.", author: "Dr. David Moinina Sengeh", authorDescription: "Chief Innovation Officer, Government of Sierra Leone", link: this.sanitizer.bypassSecurityTrustUrl("https://www.youtube.com/embed/7FlRWgVGmUA?si=M_80yBftxegmGaUz")},
   ]
 
+  setActiveButton(buttonName: string, link: string) {
+    window.open(link, '_blank');
+  }
 }
