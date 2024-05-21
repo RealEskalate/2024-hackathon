@@ -17,6 +17,7 @@ export class LandingComponent {
   
     
   ];
+  isMuted=true;
   slickConfig = {
     slidesToShow: 3,
     slidesToScroll: 3,
