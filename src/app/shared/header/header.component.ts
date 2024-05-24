@@ -31,6 +31,10 @@ export class HeaderComponent {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
+
+  setActiveButton(buttonName: string, link: string) {
+    window.open(link, '_blank');
+  }
 }
 
 

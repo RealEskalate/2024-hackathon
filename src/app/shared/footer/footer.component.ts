@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-
+  setActiveButton(buttonName: string, link: string) {
+    window.open(link, '_blank');
+  }
 }
