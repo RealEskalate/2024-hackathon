@@ -79,4 +79,22 @@ export class LandingComponent {
     this.activeButton = buttonName;
     window.open(link, '_blank');
   }
+  shareImage() {
+    const imageUrl = 'https://res.cloudinary.com/eskalate/image/upload/v1716850665/Hackathon-2024/Hackathon_Partner_With_Us.png'; // Replace with your image URL
+    const imageTitle = 'Check out this image!';
+
+    if (navigator.share) {
+      navigator.share({
+        title: imageTitle,
+        text: 'Sharing this awesome image!',
+        url: imageUrl
+      }).then(() => {
+        console.log('Thanks for sharing!');
+      }).catch((error) => {
+        console.error('Error sharing:', error);
+      });
+    } else {
+      console.warn('Web Share API is not supported in this browser.');
+    }
+  }
 }
