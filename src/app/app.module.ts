@@ -45,6 +45,10 @@ import { WinnerModal } from './shared/winner_modal/winner_modal.component';
 import { Prize2024Component } from './pages/prize2024/prize2024.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -94,6 +98,9 @@ import { TimelineComponent } from './components/timeline/timeline.component';
     ReactiveFormsModule,
     HttpClientModule,
     CloudinaryModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDialogModule,
   ],
   providers: [
     ConsentService,

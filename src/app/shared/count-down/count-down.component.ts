@@ -12,12 +12,12 @@ export class CountDownComponent {
   minutesLeft: number | undefined;
   secondsLeft: number | undefined;
   semiFinalDate: Date;
-  eventDate = 'June 1';
-  eventText = 'Registration starts on';
-  eventTime = '6:00 AM EAT';
+  eventDate = 'July 6';
+  eventText = 'Registration will be over on';
+  eventTime = '11:59 PM EAT';
 
   constructor() {
-    this.targetDate = new Date('2024-06-01T10:00:00');
+    this.targetDate = new Date('2024-07-06T20:59:00Z');
     this.semiFinalDate = new Date('2023-11-11T10:00:00');
   }
 
