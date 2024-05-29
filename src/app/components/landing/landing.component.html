@@ -1,25 +1,25 @@
-<div id="landing" class="min-h-screen pt-[0px] lg:pt-[0px] bg-blue-950 bg-opacity-50">
-  <video autoplay [muted]="isMuted" loop class="w-full h-[100vh] object-cover absolute z-0">
+<div id="landing" class="min-h-screen pt-[0px] lg:pt-[0px] bg-blue-950 bg-opacity-50 relative">
+  <video autoplay [muted]="isMuted" loop class="w-full h-full object-cover absolute z-0">
     <source src="https://res.cloudinary.com/eskalate/video/upload/v1716272816/Hackathon/Hackathon_2023_Highlights_RAW_V1.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <div
-    class="h-[100vh] lg:pt-[18vh] px-20 flex flex-col justify-center items-center  z-1 relative drop-shadow-2xl bg-black bg-opacity-50"
+    class=" h-[100vh] lg:pt-[18vh] px:5 md:px-20 flex flex-col max-lg:justify-center justify-start items-start  z-1 relative drop-shadow-2xl bg-black bg-opacity-50"
   >
  
-    <div class="grid grid-cols-2 md:grid-cols-12 text-white">
-      <section class="left col-span-2 md:col-span-6  md:p-5 md:h-full flex flex-col items-center md:items-start justify-between ">
+    <div class=" text-white px-5">
+      <section  class=" left col-span-2  p-5 md:h-full flex flex-col items-center md:items-start justify-between ">
         <div
           class="w-full flex flex-col max-md:items-center items-start leading-relaxed mb-5"
         >
           <!-- A2SV Hackathon, 2023 -->
           <h1
-            class="text-left w-full max-md:text-center text-xl font-bold md:text-3xl lg:text-5xl"
+            class=" text-left w-full max-md:text-center text-xl font-bold md:text-3xl lg:text-5xl"
           >
-            A2SV Hackathon, 2024
+            A2SV Hackathon, 20244
           </h1>
           <h1
-            class="text-left w-full max-md:text-center text-xl mt-6  md:text-2xl lg:text-3xl"
+            class="text-left w-full max-md:text-center text-xl mt-6 mb-10 md:text-2xl lg:text-3xl"
           >
             AI for Impact - Solving Africa's Challenges
           </h1>
@@ -34,7 +34,7 @@
         <a href="https://form.typeform.com/to/XoEqw6vQ" target="_blank">
           <button
             (click)="setActiveButton('signup', 'https://form.typeform.com/to/XoEqw6vQ')"
-            class="text-sm rounded-full px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-pink-500 relative hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-500 text-white transition-all cursor-pointer ease-out duration-300    hover:bg-purple-500     {{
+            class="text-sm rounded-full px-5 py-2.5 mr-2 bg-gradient-to-r from-indigo-600 to-pink-500 relative hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-500 text-white transition-all cursor-pointer ease-out duration-300    hover:bg-purple-500     {{
               activeButton === 'signup'
                 ? 'bg-purple-500   '
                 : 'bg-purple-700  '
@@ -46,7 +46,7 @@
           <a href="https://form.typeform.com/to/ShJTk212" target="_blank">
             <button
               (click)="setActiveButton('mentor', 'https://form.typeform.com/to/ShJTk212')"
-              class="max-md:mt-5 text-sm rounded-full px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-pink-500 relative hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-500 text-white transition-all cursor-pointer ease-out duration-300 lg:ml-5 {{
+              class="max-md:mt-5  mr-2 text-sm rounded-full px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-pink-500 relative hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-500 text-white transition-all cursor-pointer ease-out duration-300 lg:ml-5 {{
                 activeButton === 'mentor'
                   ? 'bg-purple-500   '
                   : 'bg-purple-700  '
@@ -58,7 +58,7 @@
           <a href="https://form.typeform.com/to/opvWnrn7" target="_blank">
             <button
               (click)="setActiveButton('partner', 'https://form.typeform.com/to/opvWnrn7')"
-              class="max-md:mt-5 text-sm rounded-full px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-pink-500 relative hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-500 text-white transition-all cursor-pointer ease-out duration-300 lg:ml-5 {{
+              class="max-md:mt-5  mr-2 text-sm rounded-full px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-pink-500 relative hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-500 text-white transition-all cursor-pointer ease-out duration-300 lg:ml-5 {{
                 activeButton === 'partner'
                   ? 'bg-purple-500   '
                   : 'bg-purple-700  '
@@ -67,6 +67,7 @@
               Partner with us
             </button>
           </a>
+          <!-- <button (click)="shareImage()" class="max-md:mt-5 text-sm rounded-full px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-pink-500 relative hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-500 text-white transition-all cursor-pointer ease-out duration-300 lg:ml-5 ">Share</button> -->
           
         </div>
           
