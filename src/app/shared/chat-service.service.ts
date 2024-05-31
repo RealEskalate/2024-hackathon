@@ -12,12 +12,15 @@ export class ChatService {
     private httpClient: HttpClient
   ) { }
 
-  sendMessage(message: string){
+  sendMessage(message: string, ipAddress: string){
     // console.log("message ", message)
+    console.log("Sending message: ", message);
+    console.log("Sending ipAddress: ", ipAddress);
 
     return this.httpClient.post(
-      'https://ifoki-lylswf275a-ew.a.run.app/api/chat',
-      {prompt: message},
+      // 'https://ifoki-lylswf275a-ew.a.run.app/api/chat',
+      ' https://a2sv-generative-ai-hackathon-lylswf275a-zf.a.run.app/api/v1',
+      { ip_address: ipAddress, query: message },
     ).pipe(
       catchError(error => {
         if (error.error instanceof ErrorEvent) {

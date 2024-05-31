@@ -1,6 +1,17 @@
-<div id="landing" class="min-h-screen pt-[0px] lg:pt-[0px] bg-blue-950 bg-opacity-50 relative">
-  <video autoplay [muted]="isMuted" loop class="w-full h-full object-cover absolute z-0">
-    <source src="https://res.cloudinary.com/eskalate/video/upload/v1716272816/Hackathon/Hackathon_2023_Highlights_RAW_V1.mp4" type="video/mp4">
+<div
+  id="landing"
+  class="min-h-screen pt-[0px] lg:pt-[0px] bg-blue-950 bg-opacity-50 relative"
+>
+  <video
+    autoplay
+    [muted]="isMuted"
+    loop
+    class="w-full h-full object-cover absolute z-0"
+  >
+    <source
+      src="https://res.cloudinary.com/eskalate/video/upload/v1716272816/Hackathon/Hackathon_2023_Highlights_RAW_V1.mp4"
+      type="video/mp4"
+    />
     Your browser does not support the video tag.
   </video>
   <app-registration [comingName]="individualName" [showModal]="showIndividualRegistrationModal" [registrationLink]="indivisualRegistrationLink" (closeModalEvent)="onHideModal()"></app-registration>
@@ -11,15 +22,16 @@
   <div
     class=" h-[100vh] lg:pt-[18vh] px:5 md:px-20 flex flex-col max-lg:justify-center justify-start items-start  z-1 relative drop-shadow-2xl bg-black bg-opacity-50"
   >
- 
-    <div class=" text-white px-5">
-      <section  class=" left col-span-2  p-5 md:h-full flex flex-col items-center md:items-start justify-between ">
+    <div class="text-white px-5">
+      <section
+        class="left col-span-2 p-5 md:h-full flex flex-col items-center md:items-start justify-between"
+      >
         <div
           class="w-full flex flex-col max-md:items-center items-start leading-relaxed mb-5"
         >
           <!-- A2SV Hackathon, 2023 -->
           <h1
-            class=" text-left w-full max-md:text-center text-xl font-bold md:text-3xl lg:text-5xl"
+            class="text-left w-full max-md:text-center text-xl font-bold md:text-3xl lg:text-5xl"
           >
             A2SV Hackathon, 20244
           </h1>
@@ -30,10 +42,13 @@
           </h1>
         </div>
 
-        <h2><app-count-down class="inline-block pl-0 max-md:text-center"></app-count-down></h2>
+        <h2>
+          <app-count-down
+            class="inline-block pl-0 max-md:text-center"
+          ></app-count-down>
+        </h2>
 
-         
-          <div
+        <div
           class="max-md:mt-8 flex flex-col md:flex-row justify-center max-md:items-center md:justify-start mt-3"
         >
         
@@ -74,12 +89,9 @@
         
           
         </div>
-          
-      
-        
       </section>
       <!-- <section class="right col-span-1 md:col-span-6  md:h-full md:px-5 mb-10 "> -->
-        <!-- <p class="my-4 tracking-tight leading-a.5 text-justify justify-between">
+      <!-- <p class="my-4 tracking-tight leading-a.5 text-justify justify-between">
           Join Africa’s largest Hackathon in 2024, focused on creating social
           and economic solutions with AI. This is the largest hackathon in
           Africa, connecting students, mentors, and industry leaders to develop
@@ -91,10 +103,8 @@
           Take this chance to contribute, collaborate, and make a real
           difference. Be part of moving AI forward in Africa.
         </p> -->
-        <!-- <p></p> -->
-        
-        
-        
+      <!-- <p></p> -->
+
       <!-- </section> -->
     </div>
     <!-- <div class="mx-[10] w-full overflow-hidden">

@@ -19,6 +19,23 @@ export class LandingComponent {
     
   ];
   isMuted=true;
+  // showChat = false;
+  // showMentorsModal = false;
+  // showAdvisorsModal = false;
+  // mentorsRegistrationLink = 'https://form.typeform.com/to/UvayCDEJ';
+  // advisorsRegistrationLink = 'https://form.typeform.com/to/mMzeQ63l';
+  // showGetInvolvedModal = true;
+  // showTeamRegistrationModal = false;
+  // showIndividualRegistrationModal = false;
+  // showRegistrationModal = false;
+  // currentSection: string = 'home';
+  // registrationDeadline = new Date(2024, 5, 31, 23, 59, 59);
+  // registrationButtonVisible = false;
+  // countDownVisible = false;
+  // countDownDate = new Date('2024-5-15T20:59:00');
+  // animated: boolean = false;
+  // @Output() toggleChatEvent = new EventEmitter<boolean>();
+
   slickConfig = {
     slidesToShow: 3,
     slidesToScroll: 3,
