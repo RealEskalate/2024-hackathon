@@ -45,9 +45,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.checkElementsInView();
 
-    setInterval(() => {
-      this.updateRegistrationButtonVisibility();
-    }, 1000);
+    // setInterval(() => {
+    //   this.updateRegistrationButtonVisibility();
+    // }, 1000);
     setInterval(() => {
       this.updateCountDownVisibility();
     }, 1000);
@@ -117,60 +117,60 @@ export class HomeComponent implements OnInit {
   }
 
  
-  updateRegistrationButtonVisibility() {
-    const now = new Date();
-    this.registrationButtonVisible = now < this.registrationDeadline;
-  }
-  onRegisterTeam() {
-    this.toggleChatEvent.emit(false);
-    this.showTeamRegistrationModal = true;
-    this.showRegistrationModal = false;
-    document.body.classList.add('overflow-hidden', 'z-0');
-    document.getElementById('prizes')?.classList.add('z-0');
-    document.getElementById('prizes')?.classList.remove('z-40');
-    document.getElementById('partners')?.classList.add('hidden');
-    document.getElementById('partners')?.classList.add('hidden');
-    document.getElementById('info')?.classList.add('hidden');
-    document.getElementById('judges')?.classList.add('hidden');
-    document.getElementById('eligibility')?.classList.add('hidden');
-    document.getElementById('about-us')?.classList.add('hidden');
-    document.getElementById('footer')?.classList.add('hidden');
-    document.getElementById('workshops')?.classList.add('hidden');
-  }
+  // updateRegistrationButtonVisibility() {
+  //   const now = new Date();
+  //   this.registrationButtonVisible = now < this.registrationDeadline;
+  // }
+  // onRegisterTeam() {
+  //   this.toggleChatEvent.emit(false);
+  //   this.showTeamRegistrationModal = true;
+  //   this.showRegistrationModal = false;
+  //   document.body.classList.add('overflow-hidden', 'z-0');
+  //   document.getElementById('prizes')?.classList.add('z-0');
+  //   document.getElementById('prizes')?.classList.remove('z-40');
+  //   document.getElementById('partners')?.classList.add('hidden');
+  //   document.getElementById('partners')?.classList.add('hidden');
+  //   document.getElementById('info')?.classList.add('hidden');
+  //   document.getElementById('judges')?.classList.add('hidden');
+  //   document.getElementById('eligibility')?.classList.add('hidden');
+  //   document.getElementById('about-us')?.classList.add('hidden');
+  //   document.getElementById('footer')?.classList.add('hidden');
+  //   document.getElementById('workshops')?.classList.add('hidden');
+  // }
 
-  onRegisterIndividual() {
-    this.toggleChatEvent.emit(false);
-    this.showIndividualRegistrationModal = true;
-    this.showRegistrationModal = false;
-    document.body.classList.add('overflow-hidden', 'z-0');
-    document.getElementById('prizes')?.classList.add('z-0');
-    document.getElementById('prizes')?.classList.remove('z-40');
-    document.getElementById('partners')?.classList.add('hidden');
-    document.getElementById('info')?.classList.add('hidden');
-    document.getElementById('judges')?.classList.add('hidden');
-    document.getElementById('eligibility')?.classList.add('hidden');
-    document.getElementById('about-us')?.classList.add('hidden');
-    document.getElementById('footer')?.classList.add('hidden');
-    document.getElementById('workshops')?.classList.add('hidden');
-  }
+  // onRegisterIndividual() {
+  //   this.toggleChatEvent.emit(false);
+  //   this.showIndividualRegistrationModal = true;
+  //   this.showRegistrationModal = false;
+  //   document.body.classList.add('overflow-hidden', 'z-0');
+  //   document.getElementById('prizes')?.classList.add('z-0');
+  //   document.getElementById('prizes')?.classList.remove('z-40');
+  //   document.getElementById('partners')?.classList.add('hidden');
+  //   document.getElementById('info')?.classList.add('hidden');
+  //   document.getElementById('judges')?.classList.add('hidden');
+  //   document.getElementById('eligibility')?.classList.add('hidden');
+  //   document.getElementById('about-us')?.classList.add('hidden');
+  //   document.getElementById('footer')?.classList.add('hidden');
+  //   document.getElementById('workshops')?.classList.add('hidden');
+  // }
 
-  onShowMentorsModal() {
-    this.toggleChatEvent.emit(false);
-    this.showMentorsModal = true;
-    this.showGetInvolvedModal = false;
-    document.body.classList.add('overflow-hidden', 'z-0');
-    document.getElementById('prizes')?.classList.add('z-0');
-    document.getElementById('prizes')?.classList.remove('z-40');
-  }
+  // onShowMentorsModal() {
+  //   this.toggleChatEvent.emit(false);
+  //   this.showMentorsModal = true;
+  //   this.showGetInvolvedModal = false;
+  //   document.body.classList.add('overflow-hidden', 'z-0');
+  //   document.getElementById('prizes')?.classList.add('z-0');
+  //   document.getElementById('prizes')?.classList.remove('z-40');
+  // }
 
-  onShowAdvisorsModal() {
-    this.toggleChatEvent.emit(false);
-    this.showAdvisorsModal = true;
-    this.showGetInvolvedModal = false;
-    document.body.classList.add('overflow-hidden', 'z-0');
-    document.getElementById('prizes')?.classList.add('z-0');
-    document.getElementById('prizes')?.classList.remove('z-40');
-  }
+  // onShowAdvisorsModal() {
+  //   this.toggleChatEvent.emit(false);
+  //   this.showAdvisorsModal = true;
+  //   this.showGetInvolvedModal = false;
+  //   document.body.classList.add('overflow-hidden', 'z-0');
+  //   document.getElementById('prizes')?.classList.add('z-0');
+  //   document.getElementById('prizes')?.classList.remove('z-40');
+  // }
 
   onHideModal() {
     this.toggleChatEvent.emit(true);

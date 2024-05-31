@@ -1,4 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-advisors-registration',
@@ -10,9 +12,18 @@ export class AdvisorsRegistrationComponent {
   @Input() registrationLink: string = "";
   @Output() closeModalEvent = new EventEmitter<void>();
   isIframeLoading: boolean = true;
+  sanitizedUrl: SafeResourceUrl | undefined;
 
-  constructor() {
+  constructor(private sanitizer: DomSanitizer) {
 
+  }
+
+  ngOnChanges() {
+    this.sanitizedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.registrationLink);
+  }
+
+  getSafeRegistrationLink(): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(this.registrationLink);
   }
 
   closeModal(){
