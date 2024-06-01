@@ -4,6 +4,7 @@ import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/
 import {NgForOf, NgIf} from "@angular/common";
 import {LocalStorageService} from "../local-storage.service";
 import {takeUntil} from "rxjs";
+import { IpService } from '../ip.service';
 
 export interface Message{
   role: string,
@@ -15,7 +16,7 @@ export interface Message{
   styleUrls: ['./bot.component.css'],
 })
 export class BotComponent {
-  constructor( private chatService: ChatService, private localStorageService: LocalStorageService) {
+  constructor(private ipService: IpService, private chatService: ChatService, private localStorageService: LocalStorageService) {
     this.localStorageService.seedData()
     this.localStorageService._waitingResponse$.subscribe((waitingStatus)=>{
       this.isChatLoading = waitingStatus
@@ -24,12 +25,28 @@ export class BotComponent {
       this.messages = messages
     })
   }
+  ngOnInit() {
+    this.fetchIpAddress();
+  }
+
+  fetchIpAddress() {
+    this.ipService.getIpAddress().subscribe(
+      (response: any) => {
+        this.ipAddress = response.ip;
+        console.log('IP Address:', this.ipAddress); // Debug log
+      },
+      (error) => {
+        console.error('Failed to fetch IP address:', error);
+      }
+    );
+  }
 
   isChatLoading: boolean = false;
   messages: Message[] = [];
   chatForm = new FormGroup({
     message: new FormControl('', [Validators.required])
   })
+  ipAddress: string = '';
 
   @Output() closeChatEvent = new EventEmitter<void>()
   @ViewChild('scrollableContainer') private scrollableContainer: ElementRef | undefined;
@@ -46,9 +63,12 @@ export class BotComponent {
       content: this.chatForm.value.message!
     })
     this.localStorageService.setWaitingStatus( true )
+
+    const messageContent = this.chatForm.value.message!;
     try{
-      this.chatService.sendMessage( this.chatForm.value.message! ).subscribe((response:any)=>{
+      this.chatService.sendMessage( messageContent,this.ipAddress ).subscribe((response:any)=>{
         // console.log(response)
+        console.log("Response: ", response);
         this.isChatLoading = false;
         this.localStorageService.setWaitingStatus( false )
         this.localStorageService.addMessage({

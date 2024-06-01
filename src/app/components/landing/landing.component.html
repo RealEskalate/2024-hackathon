@@ -1,20 +1,37 @@
-<div id="landing" class="min-h-screen pt-[0px] lg:pt-[0px] bg-blue-950 bg-opacity-50 relative">
-  <video autoplay [muted]="isMuted" loop class="w-full h-full object-cover absolute z-0">
-    <source src="https://res.cloudinary.com/eskalate/video/upload/v1716272816/Hackathon/Hackathon_2023_Highlights_RAW_V1.mp4" type="video/mp4">
+<div
+  id="landing"
+  class="min-h-screen pt-[0px] lg:pt-[0px] bg-blue-950 bg-opacity-50 relative"
+>
+  <video
+    autoplay
+    [muted]="isMuted"
+    loop
+    class="w-full h-full object-cover absolute z-0"
+  >
+    <source
+      src="https://res.cloudinary.com/eskalate/video/upload/v1716272816/Hackathon/Hackathon_2023_Highlights_RAW_V1.mp4"
+      type="video/mp4"
+    />
     Your browser does not support the video tag.
   </video>
+  <app-registration [comingName]="individualName" [showModal]="showIndividualRegistrationModal" [registrationLink]="indivisualRegistrationLink" (closeModalEvent)="onHideModal()"></app-registration>
+  <app-registration [comingName]="teamName" [showModal]="showTeamRegistrationModal" [registrationLink]="teamRegistrationLink" (closeModalEvent)="onHideModal()"></app-registration>
+  <app-mentors-registration [registrationLink]="mentorsRegistrationLink" [showModal]="showMentorsModal" (closeModalEvent)="onHideModal()"></app-mentors-registration>
+  <app-advisors-registration [registrationLink]="advisorsRegistrationLink" [showModal]="showAdvisorsModal" (closeModalEvent)="onHideModal()" ></app-advisors-registration>
+
   <div
     class=" h-[100vh] lg:pt-[18vh] px:5 md:px-20 flex flex-col max-lg:justify-center justify-start items-start  z-1 relative drop-shadow-2xl bg-black bg-opacity-50"
   >
- 
-    <div class=" text-white px-5">
-      <section  class=" left col-span-2  p-5 md:h-full flex flex-col items-center md:items-start justify-between ">
+    <div class="text-white px-5">
+      <section
+        class="left col-span-2 p-5 md:h-full flex flex-col items-center md:items-start justify-between"
+      >
         <div
           class="w-full flex flex-col max-md:items-center items-start leading-relaxed mb-5"
         >
           <!-- A2SV Hackathon, 2023 -->
           <h1
-            class=" text-left w-full max-md:text-center text-xl font-bold md:text-3xl lg:text-5xl"
+            class="text-left w-full max-md:text-center text-xl font-bold md:text-3xl lg:text-5xl"
           >
             A2SV Hackathon, 20244
           </h1>
@@ -25,28 +42,31 @@
           </h1>
         </div>
 
-        <h2><app-count-down class="inline-block pl-0 max-md:text-center"></app-count-down></h2>
+        <h2>
+          <app-count-down
+            class="inline-block pl-0 max-md:text-center"
+          ></app-count-down>
+        </h2>
 
-         
-          <div
+        <div
           class="max-md:mt-8 flex flex-col md:flex-row justify-center max-md:items-center md:justify-start mt-3"
         >
-        <a href="https://form.typeform.com/to/XoEqw6vQ" target="_blank">
+        
           <button
-            (click)="setActiveButton('signup', 'https://form.typeform.com/to/XoEqw6vQ')"
-            class="text-sm rounded-full px-5 py-2.5 mr-2 bg-gradient-to-r from-indigo-600 to-pink-500 relative hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-500 text-white transition-all cursor-pointer ease-out duration-300    hover:bg-purple-500     {{
+            onClick="document.getElementById('register_modal').showModal()" 
+            class="text-sm rounded-full px-5 py-2.5 md:mr-3 bg-gradient-to-r from-indigo-600 to-pink-500 relative hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-500 text-white transition-all cursor-pointer ease-out duration-300    hover:bg-purple-500     {{
               activeButton === 'signup'
                 ? 'bg-purple-500   '
                 : 'bg-purple-700  '
             }}"
           >
-            Join waitlist
+            Register now
           </button>
-        </a>
-          <a href="https://form.typeform.com/to/ShJTk212" target="_blank">
+       
+  
             <button
-              (click)="setActiveButton('mentor', 'https://form.typeform.com/to/ShJTk212')"
-              class="max-md:mt-5  mr-2 text-sm rounded-full px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-pink-500 relative hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-500 text-white transition-all cursor-pointer ease-out duration-300 lg:ml-5 {{
+            (click)="onShowMentorsModal()"
+              class="max-md:mt-5 text-sm rounded-full px-5 py-2.5 md:mr-3 bg-gradient-to-r from-indigo-600 to-pink-500 relative hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-500 text-white transition-all cursor-pointer ease-out duration-300 lg:ml-5 {{
                 activeButton === 'mentor'
                   ? 'bg-purple-500   '
                   : 'bg-purple-700  '
@@ -54,11 +74,11 @@
             >
               Be mentor/advisor
             </button>
-          </a>
-          <a href="https://form.typeform.com/to/opvWnrn7" target="_blank">
+         
+          
             <button
-              (click)="setActiveButton('partner', 'https://form.typeform.com/to/opvWnrn7')"
-              class="max-md:mt-5  mr-2 text-sm rounded-full px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-pink-500 relative hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-500 text-white transition-all cursor-pointer ease-out duration-300 lg:ml-5 {{
+            (click)="onShowAdvisorsModal()"
+              class="max-md:mt-5 text-sm rounded-full px-5 py-2.5  bg-gradient-to-r from-indigo-600 to-pink-500 relative hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-500 text-white transition-all cursor-pointer ease-out duration-300 lg:ml-5 {{
                 activeButton === 'partner'
                   ? 'bg-purple-500   '
                   : 'bg-purple-700  '
@@ -66,16 +86,12 @@
             >
               Partner with us
             </button>
-          </a>
-          <!-- <button (click)="shareImage()" class="max-md:mt-5 text-sm rounded-full px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-pink-500 relative hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-500 text-white transition-all cursor-pointer ease-out duration-300 lg:ml-5 ">Share</button> -->
+        
           
         </div>
-          
-      
-        
       </section>
       <!-- <section class="right col-span-1 md:col-span-6  md:h-full md:px-5 mb-10 "> -->
-        <!-- <p class="my-4 tracking-tight leading-a.5 text-justify justify-between">
+      <!-- <p class="my-4 tracking-tight leading-a.5 text-justify justify-between">
           Join Africa’s largest Hackathon in 2024, focused on creating social
           and economic solutions with AI. This is the largest hackathon in
           Africa, connecting students, mentors, and industry leaders to develop
@@ -87,10 +103,8 @@
           Take this chance to contribute, collaborate, and make a real
           difference. Be part of moving AI forward in Africa.
         </p> -->
-        <!-- <p></p> -->
-        
-        
-        
+      <!-- <p></p> -->
+
       <!-- </section> -->
     </div>
     <!-- <div class="mx-[10] w-full overflow-hidden">
@@ -112,6 +126,47 @@
         </div>
       </ngx-slick-carousel>
     </div> -->
+    <dialog *ngIf="showRegistrationModal" id="register_modal" class="modal mt-4">
+      <form method="dialog" class="modal-box w-11/12 max-sm:w-full max-sm:mx-2 max-w-5xl bg-gray-900">
+        <section class="text-gray-400 bg-gray-900 body-font">
+          <div class="container p-4 ">
+            <div class="flex flex-wrap justify-center -m-4">
+              <div class="p-4 lg:w-1/3">
+                <div class="h-full flex flex-col justify-between bg-gray-800 bg-opacity-40 px-8 py-8 rounded-lg overflow-hidden relative">
+                  <div>
+<!--                        <h1 class="title-font sm:text-2xl text-xl font-medium text-white mb-3 text-center">Individual Registration</h1>-->
+                    <p class="leading-relaxed mb-3">Don't have a team yet? Register individually and we'll match you with other talented developers, designers, and problem solvers.</p>
+                  </div>
+                  <div class="flex  w-full flex-wrap space-y-4 justify-center items-end">
+                    <a (click)="onRegisterIndividual()" class="rounded-full cursor-pointer modal-action px-5 py-2.5 overflow-hidden group bg-gradient-to-r from-indigo-600 to-pink-500 relative hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-500 text-white transition-all ease-out duration-300">
+                      <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+                      <span class="relative">Register Individually</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="p-4 lg:w-1/3">
+                <div class="h-full flex flex-col justify-between bg-gray-800 bg-opacity-40 px-8 py-8 rounded-lg overflow-hidden relative">
+                  <div>
+                    <p class="leading-relaxed mb-3">Already have a team? If you are the captain, register your team and start working on your project today.
+                    </p>
+                  </div>
+                  <div class="flex w-full flex-wrap space-y-4 justify-center items-end modal-action">
+                    <a (click)="onRegisterTeam()" class="rounded-full cursor-pointer px-5 py-2.5 overflow-hidden group bg-gradient-to-r from-indigo-600 to-pink-500 relative hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-500 text-white transition-all ease-out duration-300">
+                      <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+                      <span class="relative">Register as a Team</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- <div class="modal-action" >
+          <button class="btn" (click)="onHideModal()" >Close</button>
+        </div> -->
+      </form>
+    </dialog>
 
 
    

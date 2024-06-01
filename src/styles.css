@@ -73,3 +73,6 @@
   animation: loader_5191 675ms ease-in-out 600ms infinite;
 }
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

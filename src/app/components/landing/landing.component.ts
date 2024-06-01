@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
+
 // import { SlickCarouselConfig } from 'ngx-slick-carousel';
 
 @Component({
@@ -18,6 +19,23 @@ export class LandingComponent {
     
   ];
   isMuted=true;
+  // showChat = false;
+  // showMentorsModal = false;
+  // showAdvisorsModal = false;
+  // mentorsRegistrationLink = 'https://form.typeform.com/to/UvayCDEJ';
+  // advisorsRegistrationLink = 'https://form.typeform.com/to/mMzeQ63l';
+  // showGetInvolvedModal = true;
+  // showTeamRegistrationModal = false;
+  // showIndividualRegistrationModal = false;
+  // showRegistrationModal = false;
+  // currentSection: string = 'home';
+  // registrationDeadline = new Date(2024, 5, 31, 23, 59, 59);
+  // registrationButtonVisible = false;
+  // countDownVisible = false;
+  // countDownDate = new Date('2024-5-15T20:59:00');
+  // animated: boolean = false;
+  // @Output() toggleChatEvent = new EventEmitter<boolean>();
+
   slickConfig = {
     slidesToShow: 3,
     slidesToScroll: 3,
@@ -45,6 +63,24 @@ export class LandingComponent {
       }
     ]
   };
+  @Output() toggleChatEvent = new EventEmitter<boolean>();
+  showModal: boolean = false;
+  showChat = false;
+  showMentorsModal = false;
+  showAdvisorsModal = false;
+  indivisualRegistrationLink = "https://a2sv.typeform.com/to/yxMUctSN"
+  teamRegistrationLink = "https://a2sv.typeform.com/to/qtKuYH58"
+  mentorsRegistrationLink = "https://form.typeform.com/to/UvayCDEJ"
+  advisorsRegistrationLink = "https://form.typeform.com/to/mMzeQ63l"
+  showGetInvolvedModal = true;
+  showTeamRegistrationModal = false;
+  showIndividualRegistrationModal = false;
+  showRegistrationModal = true;
+  // passing links directly to the child is causig me error so I have thos use this name 
+  individualName = 'individual'
+  teamName = 'team'
+  advisorName = "advisor"
+  mentorName = "mentor"
   // slideConfig = {
   //   slidesToShow: 4,
   //   slidesToScroll: 1,
@@ -74,6 +110,96 @@ export class LandingComponent {
   //     },
   //   ],
   // };
+  onShowModal() {
+    console.log('Team clicked')
+    this.toggleChatEvent.emit(false);
+    this.showModal = true;
+    document.body.classList.add('overflow-hidden', 'z-0')
+  }
+
+  onRegisterTeam() {
+    this.toggleChatEvent.emit(false);
+    this.showTeamRegistrationModal = true;
+    this.showRegistrationModal = false;
+    document.body.classList.add('overflow-hidden', 'z-0')
+    document.getElementById('prizes')?.classList.add('z-0')
+    document.getElementById('prizes')?.classList.remove('z-40')
+    document.getElementById('partners')?.classList.add('hidden')
+    document.getElementById('partners')?.classList.add('hidden')
+    document.getElementById('info')?.classList.add('hidden')
+    document.getElementById('judges')?.classList.add('hidden')
+    document.getElementById('eligibility')?.classList.add('hidden')
+    document.getElementById('about-us')?.classList.add('hidden')
+    document.getElementById('footer')?.classList.add('hidden')
+  }
+
+  onRegisterIndividual() {
+    console.log('Indivisual clicked')
+    this.toggleChatEvent.emit(false);
+    this.showIndividualRegistrationModal = true;
+    this.showRegistrationModal = false;
+    document.body.classList.add('overflow-hidden', 'z-0')
+    document.getElementById('prizes')?.classList.add('z-0')
+    document.getElementById('prizes')?.classList.remove('z-40')
+    document.getElementById('partners')?.classList.add('hidden')
+    document.getElementById('info')?.classList.add('hidden')
+    document.getElementById('judges')?.classList.add('hidden')
+    document.getElementById('eligibility')?.classList.add('hidden')
+    document.getElementById('about-us')?.classList.add('hidden')
+    document.getElementById('footer')?.classList.add('hidden')
+  }
+
+  onShowMentorsModal() {
+    this.toggleChatEvent.emit(false);
+    this.showMentorsModal = true;
+    this.showGetInvolvedModal = false;
+    document.body.classList.add('overflow-hidden', 'z-0')
+    document.getElementById('prizes')?.classList.add('z-0')
+    document.getElementById('prizes')?.classList.remove('z-40')
+  }
+
+  onShowAdvisorsModal(){
+    this.toggleChatEvent.emit(false)
+    this.showAdvisorsModal = true;
+    this.showGetInvolvedModal = false;
+    document.body.classList.add('overflow-hidden', 'z-0')
+    document.getElementById('prizes')?.classList.add('z-0')
+    document.getElementById('prizes')?.classList.remove('z-40')
+  }
+
+  onHideModal() {
+    console.log('Hide modal clicked')
+    this.toggleChatEvent.emit(true)
+    this.showModal = false;
+    this.showGetInvolvedModal = true;
+    this.showRegistrationModal = true;
+    this.showMentorsModal = false;
+    this.showAdvisorsModal = false;
+    this.showTeamRegistrationModal = false;
+    this.showIndividualRegistrationModal = false;
+    document.body.classList.remove('overflow-hidden', 'z-0' )
+    document.getElementById('prizes')?.classList.remove('z-0')
+    document.getElementById('prizes')?.classList.add('z-40')
+    document.getElementById('partners')?.classList.remove('hidden')
+    document.getElementById('info')?.classList.remove('hidden')
+    document.getElementById('judges')?.classList.remove('hidden')
+    document.getElementById('eligibility')?.classList.remove('hidden')
+    document.getElementById('about-us')?.classList.remove('hidden')
+    document.getElementById('footer')?.classList.remove('hidden')
+  }
+  closeModal() {
+    console.log('Close modal clicked')
+    this.showRegistrationModal = false;
+  }
+
+  scrollDown(): void {
+    const canNavigate: boolean = !document.body.classList.contains('overflow-hidden');
+    const element = document.getElementById('prizes');
+    if (element != null && canNavigate) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
 
   setActiveButton(buttonName: string, link: string) {
     this.activeButton = buttonName;
