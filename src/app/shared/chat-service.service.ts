@@ -19,7 +19,7 @@ export class ChatService {
 
     return this.httpClient.post(
       // 'https://ifoki-lylswf275a-ew.a.run.app/api/chat',
-      ' https://a2sv-generative-ai-hackathon-lylswf275a-zf.a.run.app/api/v1',
+      'https://a2sv-generative-ai-hackathon-lylswf275a-zf.a.run.app/api/v1/chats',
       { ip_address: ipAddress, query: message },
     ).pipe(
       catchError(error => {
