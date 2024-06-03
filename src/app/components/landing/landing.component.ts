@@ -111,7 +111,6 @@ export class LandingComponent {
   //   ],
   // };
   onShowModal() {
-    console.log('Team clicked')
     this.toggleChatEvent.emit(false);
     this.showModal = true;
     document.body.classList.add('overflow-hidden', 'z-0')
@@ -134,7 +133,6 @@ export class LandingComponent {
   }
 
   onRegisterIndividual() {
-    console.log('Indivisual clicked')
     this.toggleChatEvent.emit(false);
     this.showIndividualRegistrationModal = true;
     this.showRegistrationModal = false;
@@ -168,7 +166,6 @@ export class LandingComponent {
   }
 
   onHideModal() {
-    console.log('Hide modal clicked')
     this.toggleChatEvent.emit(true)
     this.showModal = false;
     this.showGetInvolvedModal = true;
@@ -188,7 +185,6 @@ export class LandingComponent {
     document.getElementById('footer')?.classList.remove('hidden')
   }
   closeModal() {
-    console.log('Close modal clicked')
     this.showRegistrationModal = false;
   }
 
