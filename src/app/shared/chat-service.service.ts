@@ -13,9 +13,6 @@ export class ChatService {
   ) { }
 
   sendMessage(message: string, ipAddress: string){
-    // console.log("message ", message)
-    console.log("Sending message: ", message);
-    console.log("Sending ipAddress: ", ipAddress);
 
     return this.httpClient.post(
       // 'https://ifoki-lylswf275a-ew.a.run.app/api/chat',
