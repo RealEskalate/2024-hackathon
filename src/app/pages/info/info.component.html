@@ -21,27 +21,27 @@
         class="flex flex-col lg:flex-row justify-center gap-x-12 items-center"
       >
         <div class="sm:py-8 flex-1 mt-4 pt-4 sm:mt-0 sm:text-left">
-          <h2
-            class="sm:text-3xl text-center text-2xl font-medium mb-8 text-white"
+          <p
+            class="sm:text-4xl text-center text-2xl font-medium mb-4 text-white"
           >
             About The Hackathon
-          </h2>
+          </p>
           <p class="mt-3 text-gray-300 leading-relaxed">
             Our exciting multi-stage Hackathon, starts with
             <span
               class="text-transparent bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text animate-text"
               >Workshops</span
             >
-            from 13-14 July, 2024. You'll learn about AI, hackathon
-            dynamics, and innovative idea generation.
+            from 13-14 July, 2024. You'll learn about AI, hackathon dynamics,
+            and innovative idea generation.
           </p>
           <p class="mt-3 text-gray-300 leading-relaxed">
             Then, from July 16-20, compete in the
             <span
               class="text-transparent bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text animate-text"
               >Quarter-finals</span
-            >, a virtual hackathon where you'll aim for a spot among the
-            top 30 projects. Throughout, expert mentors will guide you.
+            >, a virtual hackathon where you'll aim for a spot among the top 30
+            projects. Throughout, expert mentors will guide you.
           </p>
           <p class="mt-3 text-gray-300 leading-relaxed">
             In the
@@ -49,8 +49,8 @@
               class="text-transparent bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text animate-text"
               >Semi-finals</span
             >
-            (July 28 - September 6, 2024), selected 40 teams will receive ongoing
-            support to refine their projects with feedback.
+            (July 28 - September 6, 2024), selected 40 teams will receive
+            ongoing support to refine their projects with feedback.
           </p>
           <p class="mt-3 text-gray-300 leading-relaxed">
             The
@@ -59,15 +59,15 @@
               >Grand Finale</span
             >
             on September 21-26 ,2024, is the ultimate showdown. The top 8 teams
-            will fly to Ethiopia for an all-expense-paid event, competing
-            for a $30,000 USD prize pool and presenting their projects to a
+            will fly to Ethiopia for an all-expense-paid event, competing for a
+            $30,000 USD prize pool and presenting their projects to a
             distinguished jury.
           </p>
           <br />
           <!-- <div
             class="inline-flex space-x-3 mb-6 justify-center hover:border-indigo-600 border-white border border-opacity-50 rounded-full p-4 text-white hover:text-indigo-600 items-center sm:justify-start mt-2"
           > -->
-            <!-- <svg
+          <!-- <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
@@ -82,19 +82,24 @@
                 clip-rule="evenodd"
               />
             </svg> -->
-            <!-- <div class="flex flex-col justify-center">
+          <!-- <div class="flex flex-col justify-center">
               <a href="{{ calendarLink }}" target="_blank" class="font-semibold"
                 >Get Hackathon Calendar</a
               >
             </div> -->
-            <a href="https://form.typeform.com/to/XoEqw6vQ" target="_blank">
-              <button
-                (click)="setActiveButton('register', 'https://form.typeform.com/to/XoEqw6vQ')"
-                class="my-5 bg-purple-700 hover:bg-purple-500 text-white text-sm px-4 py-2 rounded-full transition-transform duration-300 ease-in-out   lg:ml-5"
-              >
-                Sign up for event updates
-              </button>
-            </a>
+          <a href="https://form.typeform.com/to/XoEqw6vQ" target="_blank">
+            <button
+              (click)="
+                setActiveButton(
+                  'register',
+                  'https://form.typeform.com/to/XoEqw6vQ'
+                )
+              "
+              class="my-5 bg-purple-700 hover:bg-purple-500 text-white text-sm px-4 py-2 rounded-full transition-transform duration-300 ease-in-out lg:ml-5"
+            >
+              Sign up for event updates
+            </button>
+          </a>
           <!-- </div> -->
         </div>
         <img
@@ -104,9 +109,9 @@
         />
       </div>
     </div>
-    <div class="text-center mt-5 w-full md:text-center text-3xl text-white">
+    <p class="sm:text-4xl mt-5 text-center text-2xl font-medium  text-white">
       Hackathon Timeline
-    </div>
+    </p>
     <!-- <div class="flex flex-col justify-center items-start md:flex-row py-8">
       <section class="flex-1 hidden md:block h-full w-full p-5 rounded-xl">
         <img

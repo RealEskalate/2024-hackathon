@@ -70,8 +70,8 @@ export class LandingComponent {
   showAdvisorsModal = false;
   indivisualRegistrationLink = "https://a2sv.typeform.com/to/yxMUctSN"
   teamRegistrationLink = "https://a2sv.typeform.com/to/qtKuYH58"
-  mentorsRegistrationLink = "https://form.typeform.com/to/UvayCDEJ"
-  advisorsRegistrationLink = "https://form.typeform.com/to/mMzeQ63l"
+  mentorsRegistrationLink = "https://form.typeform.com/to/ShJTk212"
+  advisorsRegistrationLink = "https://form.typeform.com/to/opvWnrn7"
   showGetInvolvedModal = true;
   showTeamRegistrationModal = false;
   showIndividualRegistrationModal = false;
