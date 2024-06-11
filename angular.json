@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Hacks-Website:build:production"
+              "buildTarget": "Hacks-Website:build:production"
             },
             "development": {
-              "browserTarget": "Hacks-Website:build:development"
+              "buildTarget": "Hacks-Website:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Hacks-Website:build"
+            "buildTarget": "Hacks-Website:build"
           }
         },
         "test": {

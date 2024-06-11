@@ -26,7 +26,8 @@ export class EligibilityComponent {
   criterieas = [
     {text: "Every team must have a minimum of 3 members and a maximum of 5 members."},
     {text: "Every team member must be located in Africa."},
-    {text: "All team members must be students currently enrolled in a University or College (undergrad, Associates, Diploma program), or High School throughout the entirety of the hackathon. Students who are currently pursuing or have completed their Master's degree or higher are not eligible to participate."}
+    {text: "All team members must be students currently enrolled in a University, College (undergrad, Associate, Diploma program), or High School, with a graduation year after January 2024. Students currently pursuing or who have completed a Master's degree or higher are not eligible to participate."},
+    {text: "If you don't have a team you can register individually and we'll match you with other talented developers, designers, and problem solvers."}
   ]
 
 }
