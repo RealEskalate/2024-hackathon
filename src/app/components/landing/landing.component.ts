@@ -1,5 +1,5 @@
 import {Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
-
+// import { ShareButton } from 'ngx-sharebuttons/button';
 // import { SlickCarouselConfig } from 'ngx-slick-carousel';
 
 @Component({
@@ -81,6 +81,14 @@ export class LandingComponent {
   teamName = 'team'
   advisorName = "advisor"
   mentorName = "mentor"
+   shareData = {
+    title: "MDN",
+    text: "Learn web development on MDN!",
+    url: "https://res.cloudinary.com/eskalate/image/upload/v1716850665/Hackathon-2024/Hackathon_Partner_With_Us.png",
+  };
+  sharedImgUrl: string = 'https://res.cloudinary.com/eskalate/image/upload/v1716850665/Hackathon-2024/Hackathon_Partner_With_Us.png';
+  shareImgTitle: string = 'Hackathon Links!';
+  shareText: string = 'https://res.cloudinary.com/eskalate/image/upload/v1716850665/Hackathon-2024/Hackathon_Partner_With_Us.png';
   // slideConfig = {
   //   slidesToShow: 4,
   //   slidesToScroll: 1,
@@ -201,22 +209,42 @@ export class LandingComponent {
     this.activeButton = buttonName;
     window.open(link, '_blank');
   }
+  // "ngx-slick-carousel": "^17.0.0",
   shareImage() {
-    const imageUrl = 'https://res.cloudinary.com/eskalate/image/upload/v1716850665/Hackathon-2024/Hackathon_Partner_With_Us.png'; // Replace with your image URL
-    const imageTitle = 'Check out this image!';
-
+    console.log("share clicked");
+    // navigator.canShare(shareData)
     if (navigator.share) {
       navigator.share({
-        title: imageTitle,
-        text: 'Sharing this awesome image!',
-        url: imageUrl
+        title: this.shareImgTitle,
+        text: this.shareText,
+        url: this.sharedImgUrl
       }).then(() => {
         console.log('Thanks for sharing!');
       }).catch((error) => {
         console.error('Error sharing:', error);
       });
     } else {
-      console.warn('Web Share API is not supported in this browser.');
+      this.fallbackShare();
     }
+
+    // if (!navigator.canShare) {
+    //   this.fallbackShare();
+    // } else if (navigator.canShare(this.shareData)) {
+    //   navigator.share({
+    //     title: this.shareImgTitle,
+    //     text: this.shareText,
+    //     url: this.sharedImgUrl
+    //   }).then(() => {
+    //     console.log('Thanks for sharing!');
+    //   }).catch((error) => {
+    //     console.error('Error sharing:', error);
+    //   });
+    // } else {
+    //   this.fallbackShare();
+    // }
+  }
+
+  fallbackShare() {
+    alert('Web Share API is not supported in this browser. Please use the share buttons below.');
   }
 }

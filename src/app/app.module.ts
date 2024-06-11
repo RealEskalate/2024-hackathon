@@ -48,6 +48,8 @@ import { TimelineComponent } from './components/timeline/timeline.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ShareBtnComponent } from './components/share-btn/share-btn.component';
+// import { ShareButton } from 'ngx-sharebuttons/button';
 
 @NgModule({
   declarations: [
@@ -88,6 +90,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     Prize2024Component,
     LandingComponent,
     TimelineComponent
+    
+    // ShareButton
     // PrivacyConsentComponent,
     
   ],
@@ -101,6 +105,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     BrowserAnimationsModule,
     MatButtonModule,
     MatDialogModule,
+    ShareBtnComponent
   ],
   providers: [
     ConsentService,
