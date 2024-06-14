@@ -1,7 +1,7 @@
-<section id="partners" class="flex bg-bubbles px-8 max-sm:px-4 py-8 max-sm:py-4 pb-8  flex-col justify-center">
+<!-- <section id="partners" class="flex bg-bubbles px-8 max-sm:px-4 py-8 max-sm:py-4 pb-8  flex-col justify-center">
 
   <p class="sm:text-4xl text-center text-2xl font-medium  mb-4 text-white">Interview Partners</p>
-  <div class=" hidden max-md:hidden  flex justify-between items-center  py-6 p-4 overflow-hidden my-5">
+  <div class=" hidden max-md:hidden   justify-between items-center  py-6 p-4 overflow-hidden my-5">
     <div *ngFor="let slide of slides" class="mx-4">
       <img src="{{slide.img}}" class="w-48 h-16  text-white" fill="currentColor">
     </div>
@@ -14,12 +14,12 @@
       </div>
     </ngx-slick-carousel>
   </div>
-  <!-- You can open the modal using ID.showModal() method -->
+
   <a  onclick="sponsor_us_modal.showModal()" class="mx-auto  rounded-full px-5 py-2.5 overflow-hidden group bg-gradient-to-r from-indigo-600 to-pink-500 relative hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-500 text-white transition-all cursor-pointer ease-out duration-300">
     <span class="absolute right-0 w-8  -mt-6 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
     <span class="relative mb-5">Support Us</span>
   </a>
-<!--  <button class="btn mx-auto" onclick="my_modal_3.showModal()">open modal</button>-->
+
   <dialog id="sponsor_us_modal" class="modal">
     <form method="dialog" class="modal-box bg-gray-900 w-11/12 max-md:w-full">
       <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
@@ -35,4 +35,13 @@
       </div>
     </form>
   </dialog>
+</section> -->
+<section class="w-full py-6 ">
+  <p class="sm:text-4xl text-center text-2xl font-medium  mb-4 text-white">Interview Partners</p>
+<owl-carousel-o [options]="customOptions" class=" w-full " >
+  <ng-container *ngFor="let slide of slides; let index = index" >
+    <ng-template carouselSlide id="{{ 'slide-' + index }}"  class=" mx-auto flex justify-center ">
+      <img src="{{ slide.img }}" class="w-full  h-24 py-5 px-16  "></ng-template>  
+    </ng-container>
+</owl-carousel-o>
 </section>

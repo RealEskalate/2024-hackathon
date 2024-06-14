@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { OwlOptions } from 'ngx-owl-carousel-o';
 @Component({
   selector: 'app-potential-partners',
   templateUrl: './potential-partners.component.html',
@@ -43,6 +43,33 @@ export class PotentialPartnersComponent {
       },
     ],
   };
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    autoplay:true,
+    autoplayTimeout:2500,
+    autoplaySpeed: 2000,
+    autoplayHoverPause:true,
+    dots: false,
+    // navSpeed: 700,
+    nav: false,
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 4
+      }
+    }
+  }
 }
 // '#gallery').slick({
 //   slidesToShow: 6,

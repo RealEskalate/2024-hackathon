@@ -198,7 +198,7 @@ export class LandingComponent {
 
   scrollDown(): void {
     const canNavigate: boolean = !document.body.classList.contains('overflow-hidden');
-    const element = document.getElementById('prizes');
+    const element = document.getElementById('prize2024');
     if (element != null && canNavigate) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
