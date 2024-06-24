@@ -12,7 +12,7 @@ import { BannerComponent } from './shared/banner/banner.component';
 import { PrizeCardComponent } from './shared/prize-card/prize-card.component';
 import { PotentialPartnersComponent } from './pages/potential-partners/potential-partners.component';
 import { InfoComponent } from './pages/info/info.component';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
+// import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { JudgesComponent } from './pages/judges/judges.component';
 import { EligibilityComponent } from './pages/eligibility/eligibility.component';
 import { BotComponent } from './shared/bot/bot.component';
@@ -49,6 +49,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ShareBtnComponent } from './components/share-btn/share-btn.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 // import { ShareButton } from 'ngx-sharebuttons/button';
 
 @NgModule({
@@ -98,14 +99,15 @@ import { ShareBtnComponent } from './components/share-btn/share-btn.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SlickCarouselModule,
+    // SlickCarouselModule,
     ReactiveFormsModule,
     HttpClientModule,
     CloudinaryModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatDialogModule,
-    ShareBtnComponent
+    ShareBtnComponent,
+    CarouselModule
   ],
   providers: [
     ConsentService,

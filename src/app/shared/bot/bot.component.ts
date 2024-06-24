@@ -68,7 +68,7 @@ export class BotComponent {
     try{
       this.chatService.sendMessage( messageContent,this.ipAddress ).subscribe((response:any)=>{
         // console.log(response)
-        console.log("Response: ", response);
+        //  console.log("Response: ", response);
         this.isChatLoading = false;
         this.localStorageService.setWaitingStatus( false )
         this.localStorageService.addMessage({
