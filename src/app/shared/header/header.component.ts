@@ -1,5 +1,6 @@
 import { Component, Input, HostListener, ElementRef, Output, EventEmitter } from "@angular/core";
 import { ModalService } from "src/app/modal.service";
+import { RegisterService } from "src/app/services/register.service";
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
@@ -11,7 +12,7 @@ export class HeaderComponent {
   @Input() currentSection: string = "home";
   showRegistrationModal = true;
   @Output() toggleChatEvent = new EventEmitter<boolean>();
-  constructor(private elRef: ElementRef, private modalService: ModalService) {}
+  constructor(private elRef: ElementRef, private modalService: ModalService, private registerService: RegisterService) {}
   showTeamRegistrationModal = false;
   showIndividualRegistrationModal = false;
   indivisualRegistrationLink = "https://a2sv.typeform.com/to/yxMUctSN"
@@ -19,6 +20,7 @@ export class HeaderComponent {
  individualName = 'individual'
   teamName = 'team'
   showModal: boolean = false;
+  dropdownVisible: boolean = false;
 
   toggleMenu() {
     this.showMenu = !this.showMenu;
@@ -27,6 +29,10 @@ export class HeaderComponent {
   openModal(event: Event) {
     event.stopPropagation();
     this.modalService.openModal();
+  }
+
+  openRegisterModal() {
+    this.registerService.openModal();
   }
 
   onShowModal() {
@@ -96,5 +102,13 @@ export class HeaderComponent {
 
   setActiveButton(buttonName: string, link: string) {
     window.open(link, "_blank");
+  }
+  navigateToEligiblity(){
+    const shareModal = window.document.getElementById('register_modal') as HTMLDialogElement;
+    shareModal?.close();
+    this.scrollToSection('eligibility')
+  }
+  toggleDropdown() {
+    this.dropdownVisible = !this.dropdownVisible;
   }
 }
