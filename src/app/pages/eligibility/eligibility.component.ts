@@ -46,12 +46,12 @@ export class EligibilityComponent {
     {text: "If you don't have a team you can register individually and we'll match you with other talented developers, designers, and problem solvers."}
   ]
   individualCriteria = [
-    { text: "Are you currently enrolled in a University, College (undergraduate, Associate, or Diploma program), or High School in Africa?", answered: null },
+    { text: "Are you currently studying or have you completed your studies in a University, College (undergraduate, Associate, or Diploma program), or High School in Africa?", answered: null },
     { text: "Is your graduation year after January 2024?", answered: null },
     { text: "Are you already in a team of 4 - 5 or are you willing to be grouped into teams by the organizers?", answered: null }
   ];
   teamCriteria = [
-    {text:"Are all of your team members currently enrolled in a University, College (undergraduate, Associate, or Diploma program), or High School in Africa?", answered: null},
+    {text:"Are all of your team members currently studying or have completed their studies in a University, College (undergraduate, Associate, or Diploma program), or High School in Africa?", answered: null},
     {text:"Are the graduation years of all team members after January 2024?", answered: null},
     {text:"Is each team member registered only to one team?", answered: null},
     {text:"Does your team have 3 to 5 members?", answered:null},
