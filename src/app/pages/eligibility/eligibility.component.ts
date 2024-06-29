@@ -1,17 +1,31 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import { RegisterService } from 'src/app/services/register.service';
+import { trigger, state, style, animate, transition } from '@angular/animations';
+
 @Component({
   selector: 'app-eligibility',
   templateUrl: './eligibility.component.html',
-  styleUrls: ['./eligibility.component.css']
+  styleUrls: ['./eligibility.component.css'],
+  animations: [
+    trigger('fadeInOut', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('500ms ease-in', style({ opacity: 1 }))
+      ]),
+      
+    ])
+  ]
 })
 export class EligibilityComponent {
 
-  constructor(private registerService: RegisterService) {}
+  constructor(private registerService: RegisterService) {
+
+  }
   @Output() openChatEvent = new EventEmitter<void>()
   registrationDeadline = new Date(2023, 7, 31, 23, 59, 59)
   isIndividual: boolean = true;
   registrationButtonVisible = true;
+  
   ngOnInit(): void {
     setInterval(() => {
       this.updateRegistrationButtonVisibility();
@@ -31,30 +45,61 @@ export class EligibilityComponent {
     {text: "All team members must be students currently enrolled in a University, College (undergrad, Associate, Diploma program), or High School, with a graduation year after January 2024. Students currently pursuing or who have completed a Master's degree or higher are not eligible to participate."},
     {text: "If you don't have a team you can register individually and we'll match you with other talented developers, designers, and problem solvers."}
   ]
-  individualCriterieas = [
-    /*
-   All team members must be currently enrolled in a University, College (undergraduate, Associate, or Diploma program), or High School in Africa.
-Graduation years of all team members must be after January 2024.
-Each team member can only be registered to one team.
-Teams must have 3 to 5 members.*/
-    {text:"All participants must be students currently enrolled in a University, College (undergraduate, Associate, or Diploma program), or High School in Africa."},
-    {text:"Graduation years of students must be after January 2024."},
-    {text:"Students can form teams after registration or will be grouped into teams by the organizers."},
+  individualCriteria = [
+    { text: "Are you currently enrolled in a University, College (undergraduate, Associate, or Diploma program), or High School in Africa?", answered: null },
+    { text: "Is your graduation year after January 2024?", answered: null },
+    { text: "Are you already in a team of 4 - 5 or are you willing to be grouped into teams by the organizers?", answered: null }
+  ];
+  teamCriteria = [
+    {text:"Are all of your team members currently enrolled in a University, College (undergraduate, Associate, or Diploma program), or High School in Africa?", answered: null},
+    {text:"Are the graduation years of all team members after January 2024?", answered: null},
+    {text:"Is each team member registered only to one team?", answered: null},
+    {text:"Does your team have 3 to 5 members?", answered:null},
 
   ]
-  teamCriterieas = [
-    {text:"All team members must be currently enrolled in a University, College (undergraduate, Associate, or Diploma program), or High School in Africa."},
-    {text:"Graduation years of all team members must be after January 2024."},
-    {text:"Each team member can only be registered to one team."},
-    {text:"Teams must have 3 to 5 members."},
+ 
+ 
 
-  ]
+  criteria: any[] = this.individualCriteria;
+
+  currentQuestionIndex: number = 0;
+  eligibilityConfirmed: boolean = false;
+  ineligible: boolean = false;
+ 
+
+ 
+
   showIndividualCriteria() {
     this.isIndividual = true;
+    this.resetEligibility();
+    this.criteria = this.individualCriteria;
   }
 
   showTeamCriteria() {
     this.isIndividual = false;
+    this.resetEligibility();
+    this.criteria = this.teamCriteria;
   }
 
+  resetEligibility() {
+    this.currentQuestionIndex = 0;
+    this.eligibilityConfirmed = false;
+    this.ineligible = false;
+    this.registrationButtonVisible = false;
+    this.criteria.forEach(c => c.answered = null);
+  }
+
+  answerYes() {
+    this.criteria[this.currentQuestionIndex].answered = true;
+    this.currentQuestionIndex++;
+    if (this.currentQuestionIndex >= this.criteria.length) {
+      this.eligibilityConfirmed = true;
+      this.registrationButtonVisible = true;
+    }
+  }
+
+  answerNo() {
+    this.criteria[this.currentQuestionIndex].answered = false;
+    this.ineligible = true;
+  }
 }

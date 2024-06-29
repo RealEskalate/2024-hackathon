@@ -75,7 +75,7 @@ export class LandingComponent {
   showGetInvolvedModal = true;
   showTeamRegistrationModal = false;
   showIndividualRegistrationModal = false;
-  showRegistrationModal = true;
+  showRegistration2Modal = true;
   // passing links directly to the child is causig me error so I have thos use this name 
   individualName = 'individual'
   teamName = 'team'
@@ -127,7 +127,7 @@ export class LandingComponent {
   onRegisterTeam() {
     this.toggleChatEvent.emit(false);
     this.showTeamRegistrationModal = true;
-    this.showRegistrationModal = false;
+    this.showRegistration2Modal = false;
     document.body.classList.add('overflow-hidden', 'z-0')
     document.getElementById('prizes')?.classList.add('z-0')
     document.getElementById('prizes')?.classList.remove('z-40')
@@ -143,7 +143,7 @@ export class LandingComponent {
   onRegisterIndividual() {
     this.toggleChatEvent.emit(false);
     this.showIndividualRegistrationModal = true;
-    this.showRegistrationModal = false;
+    this.showRegistration2Modal = false;
     document.body.classList.add('overflow-hidden', 'z-0')
     document.getElementById('prizes')?.classList.add('z-0')
     document.getElementById('prizes')?.classList.remove('z-40')
@@ -177,7 +177,7 @@ export class LandingComponent {
     this.toggleChatEvent.emit(true)
     this.showModal = false;
     this.showGetInvolvedModal = true;
-    this.showRegistrationModal = true;
+    this.showRegistration2Modal = true;
     this.showMentorsModal = false;
     this.showAdvisorsModal = false;
     this.showTeamRegistrationModal = false;
@@ -193,7 +193,7 @@ export class LandingComponent {
     document.getElementById('footer')?.classList.remove('hidden')
   }
   closeModal() {
-    this.showRegistrationModal = false;
+    this.showRegistration2Modal = false;
   }
 
   scrollDown(): void {
