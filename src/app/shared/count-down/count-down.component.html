@@ -1,8 +1,8 @@
-<div class="text-white rounded-xl">
-  <h2 class="text-lg mb-2 font-extralight  lg:inline  lg:whitespace-nowrap  ">{{eventText}}
+<div class="text-white rounded-xl n">
+  <h2 class="text-5xl mb-2 font-bold  lg:inline  lg:whitespace-nowrap  ">{{eventText}}
     <span class="font-bold text-transparent bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text">{{eventDate}}</span>  at
     <span class="font-bold text-transparent bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text "> {{eventTime}}</span>:</h2>
-  <div class="text-3xl max-sm:text-2xl gap-y-8 text-center flex inline-block max-sm:flex-wrap w-full items-center justify-center sm:justify-start mt-2">
+  <div class="md:text-7xl  max-sm:text-2xl gap-y-8 text-center flex inline-block sm:flex-wrap w-full items-center max-sm:justify-center md:justify-start mt-4">
     <div class="w-30  mx-1 px-auto py-2 max-sm:p-1  text-indigo-700 rounded">
       <div class="font-mono text-center leading-none text-white " x-text="days">{{ Number( daysLeft ) > 9 ? daysLeft : '0' + daysLeft}}</div>
       <div class="font-mono text-center uppercase text-sm text-white leading-none">Days</div>
@@ -19,5 +19,6 @@
       <div class="font-mono text-center leading-none text-white " x-text="minutes">{{ Number( secondsLeft ) > 9 ? secondsLeft : '0' + secondsLeft}}</div>
       <div class="font-mono text-center uppercase text-sm text-white leading-none">Seconds</div>
     </div>
+    
   </div>
 </div>

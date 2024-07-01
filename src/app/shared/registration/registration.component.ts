@@ -45,8 +45,6 @@ export class RegistrationComponent {
     const shareModal = window.document.getElementById('share_modal') as HTMLDialogElement;
     shareModal?.showModal();
     this.showShareModal = true;
-    console.log("showSharedModal",this.showShareModal);
-    
   }
   closeForReal(){
     const shareModal = window.document.getElementById('share_modal') as HTMLDialogElement;

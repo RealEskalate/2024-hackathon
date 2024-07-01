@@ -33,7 +33,6 @@ export class BotComponent {
     this.ipService.getIpAddress().subscribe(
       (response: any) => {
         this.ipAddress = response.ip;
-        console.log('IP Address:', this.ipAddress); // Debug log
       },
       (error) => {
         console.error('Failed to fetch IP address:', error);

@@ -16,18 +16,10 @@ export class RegisterService {
   }
 
   closeModal() {
-    console.log("yes close modal is clicked");
-    
     this.modalOpenSource.next(false);
   }
 
-  // setEligibilityChecked(isChecked: boolean) {
-    
-  //   this.eligibilityCheckedSource.next(isChecked);
-  // }
   checkEligibility() {
-    console.log("yes I am service");
-    
     this.eligibilityCheckedSource.next(true);
   }
 }

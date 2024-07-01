@@ -35,8 +35,6 @@ export class RegisterModalComponent implements OnInit, OnDestroy {
         if (this.isModalOpen) {
           dialog.showModal();
         } else {
-          console.log("correct close modal is being excuted in register modal component");
-          
           dialog.close();
         }
       }
@@ -44,7 +42,6 @@ export class RegisterModalComponent implements OnInit, OnDestroy {
 
     this.eligibilitySubscription = this.registerService.eligibilityChecked$.subscribe(isChecked => {
       this.isEligibilityChecked = isChecked;
-      console.log("in regisrer modal checking eleigiblity on ngOnInit",this.isEligibilityChecked);
     });
   }
 
@@ -58,7 +55,6 @@ export class RegisterModalComponent implements OnInit, OnDestroy {
   }
 
   onRegisterIndividual() {
-    console.log("on indivisual register");
     this.closeModal()
     this.toggleChatEvent.emit(false);
     this.showIndividualRegistrationModal = true;
@@ -108,7 +104,7 @@ export class RegisterModalComponent implements OnInit, OnDestroy {
   }
 
   navigateToEligibility() {
-    this.registerService.checkEligibility();
+    // this.registerService.checkEligibility();
     this.closeModal();
     this.scrollToSection('eligibility')
     // Implement navigation logic here
