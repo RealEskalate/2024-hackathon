@@ -31,7 +31,7 @@ export class LandingComponent {
   // mentorsRegistrationLink = 'https://form.typeform.com/to/UvayCDEJ';
   // advisorsRegistrationLink = 'https://form.typeform.com/to/mMzeQ63l';
   // showGetInvolvedModal = true;
-  // showTeamRegistrationModal = false;
+  showTeamRegistrationModal = true;
   // showIndividualRegistrationModal = false;
   // showRegistrationModal = false;
   // currentSection: string = 'home';
@@ -78,7 +78,7 @@ export class LandingComponent {
   mentorsRegistrationLink = "https://form.typeform.com/to/ShJTk212"
   advisorsRegistrationLink = "https://form.typeform.com/to/opvWnrn7"
   showGetInvolvedModal = true;
-  showTeamRegistrationModal = false;
+  // showTeamRegistrationModal = false;
   showIndividualRegistrationModal = false;
   showRegistration2Modal = true;
   // passing links directly to the child is causig me error so I have thos use this name 

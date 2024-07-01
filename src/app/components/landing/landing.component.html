@@ -26,7 +26,13 @@
     [showModal]="showAdvisorsModal"
     (closeModalEvent)="onHideModal()"
   ></app-advisors-registration>
-
+  <app-register-modal></app-register-modal>
+  <!-- <app-registration
+    [comingName]="teamName"
+    [showModal]="showTeamRegistrationModal"
+    [registrationLink]="teamRegistrationLink"
+    (closeModalEvent)="onHideModal()"
+  ></app-registration> -->
   <div
     class="h-[100vh] lg:pt-[18vh] px:5 md:px-20 flex flex-col max-lg:justify-center justify-start z-1 drop-shadow-2xl bg-black bg-opacity-60"
   >
@@ -78,8 +84,6 @@
           <div
             class="max-md:mt-5 flex flex-col md:flex-row max-md:items-center justify-start"
           >
-           
-
             <button
               (click)="onShowMentorsModal()"
               class="text-sm rounded-full px-5 py-2.5 text-white transition-all border border-1 cursor-pointer ease-out duration-300 hover:text-underline"
