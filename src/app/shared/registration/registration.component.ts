@@ -4,7 +4,8 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css']
+  styleUrls: ['./registration.component.css'],
+  
 })
 export class RegistrationComponent {
   constructor(private sanitizer: DomSanitizer) {
@@ -44,8 +45,6 @@ export class RegistrationComponent {
     const shareModal = window.document.getElementById('share_modal') as HTMLDialogElement;
     shareModal?.showModal();
     this.showShareModal = true;
-    console.log("showSharedModal",this.showShareModal);
-    
   }
   closeForReal(){
     const shareModal = window.document.getElementById('share_modal') as HTMLDialogElement;

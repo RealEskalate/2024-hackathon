@@ -31,6 +31,11 @@ export class EligibilityComponent {
       this.updateRegistrationButtonVisibility();
     }, 1000);
   }
+
+  checkEligibility() {
+    // this.registerService.checkEligibility();
+    this.registerService.openModal();
+  }
   updateRegistrationButtonVisibility() {
     const now = new Date();
     this.registrationButtonVisible = now < this.registrationDeadline;
@@ -95,6 +100,7 @@ export class EligibilityComponent {
     if (this.currentQuestionIndex >= this.criteria.length) {
       this.eligibilityConfirmed = true;
       this.registrationButtonVisible = true;
+      this.registerService.checkEligibility();
     }
   }
 

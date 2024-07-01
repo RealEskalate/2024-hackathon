@@ -1,4 +1,5 @@
 import {Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
+import { RegisterService } from 'src/app/services/register.service';
 // import { ShareButton } from 'ngx-sharebuttons/button';
 // import { SlickCarouselConfig } from 'ngx-slick-carousel';
 
@@ -8,6 +9,11 @@ import {Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/c
   styleUrls: ['./landing.component.css']
 })
 export class LandingComponent {
+
+  constructor(private registerService: RegisterService) {
+
+  }
+
   activeButton: string = '';
   images: string[] = [
     'https://res.cloudinary.com/eskalate/image/upload/v1714657507/Hackathon/Expo-min.png',
@@ -68,8 +74,7 @@ export class LandingComponent {
   showChat = false;
   showMentorsModal = false;
   showAdvisorsModal = false;
-  indivisualRegistrationLink = "https://a2sv.typeform.com/to/yxMUctSN"
-  teamRegistrationLink = "https://a2sv.typeform.com/to/qtKuYH58"
+ 
   mentorsRegistrationLink = "https://form.typeform.com/to/ShJTk212"
   advisorsRegistrationLink = "https://form.typeform.com/to/opvWnrn7"
   showGetInvolvedModal = true;
@@ -77,8 +82,7 @@ export class LandingComponent {
   showIndividualRegistrationModal = false;
   showRegistration2Modal = true;
   // passing links directly to the child is causig me error so I have thos use this name 
-  individualName = 'individual'
-  teamName = 'team'
+
   advisorName = "advisor"
   mentorName = "mentor"
    shareData = {
@@ -124,36 +128,13 @@ export class LandingComponent {
     document.body.classList.add('overflow-hidden', 'z-0')
   }
 
-  onRegisterTeam() {
-    this.toggleChatEvent.emit(false);
-    this.showTeamRegistrationModal = true;
-    this.showRegistration2Modal = false;
-    document.body.classList.add('overflow-hidden', 'z-0')
-    document.getElementById('prizes')?.classList.add('z-0')
-    document.getElementById('prizes')?.classList.remove('z-40')
-    document.getElementById('partners')?.classList.add('hidden')
-    document.getElementById('partners')?.classList.add('hidden')
-    document.getElementById('info')?.classList.add('hidden')
-    document.getElementById('judges')?.classList.add('hidden')
-    document.getElementById('eligibility')?.classList.add('hidden')
-    document.getElementById('about-us')?.classList.add('hidden')
-    document.getElementById('footer')?.classList.add('hidden')
+  
+
+  checkEligibility() {
+    // this.registerService.checkEligibility();
+    this.registerService.openModal();
   }
 
-  onRegisterIndividual() {
-    this.toggleChatEvent.emit(false);
-    this.showIndividualRegistrationModal = true;
-    this.showRegistration2Modal = false;
-    document.body.classList.add('overflow-hidden', 'z-0')
-    document.getElementById('prizes')?.classList.add('z-0')
-    document.getElementById('prizes')?.classList.remove('z-40')
-    document.getElementById('partners')?.classList.add('hidden')
-    document.getElementById('info')?.classList.add('hidden')
-    document.getElementById('judges')?.classList.add('hidden')
-    document.getElementById('eligibility')?.classList.add('hidden')
-    document.getElementById('about-us')?.classList.add('hidden')
-    document.getElementById('footer')?.classList.add('hidden')
-  }
 
   onShowMentorsModal() {
     this.toggleChatEvent.emit(false);
@@ -177,11 +158,8 @@ export class LandingComponent {
     this.toggleChatEvent.emit(true)
     this.showModal = false;
     this.showGetInvolvedModal = true;
-    this.showRegistration2Modal = true;
     this.showMentorsModal = false;
     this.showAdvisorsModal = false;
-    this.showTeamRegistrationModal = false;
-    this.showIndividualRegistrationModal = false;
     document.body.classList.remove('overflow-hidden', 'z-0' )
     document.getElementById('prizes')?.classList.remove('z-0')
     document.getElementById('prizes')?.classList.add('z-40')
@@ -192,9 +170,7 @@ export class LandingComponent {
     document.getElementById('about-us')?.classList.remove('hidden')
     document.getElementById('footer')?.classList.remove('hidden')
   }
-  closeModal() {
-    this.showRegistration2Modal = false;
-  }
+
 
   scrollDown(): void {
     const canNavigate: boolean = !document.body.classList.contains('overflow-hidden');
@@ -211,7 +187,6 @@ export class LandingComponent {
   }
   // "ngx-slick-carousel": "^17.0.0",
   shareImage() {
-    console.log("share clicked");
     // navigator.canShare(shareData)
     if (navigator.share) {
       navigator.share({
@@ -227,21 +202,6 @@ export class LandingComponent {
       this.fallbackShare();
     }
 
-    // if (!navigator.canShare) {
-    //   this.fallbackShare();
-    // } else if (navigator.canShare(this.shareData)) {
-    //   navigator.share({
-    //     title: this.shareImgTitle,
-    //     text: this.shareText,
-    //     url: this.sharedImgUrl
-    //   }).then(() => {
-    //     console.log('Thanks for sharing!');
-    //   }).catch((error) => {
-    //     console.error('Error sharing:', error);
-    //   });
-    // } else {
-    //   this.fallbackShare();
-    // }
   }
 
   fallbackShare() {
