@@ -27,9 +27,13 @@
             </div>
         </li>
       </ul>
+      <button (click)="checkEligibility()" class="px-5 py-2 rounded-full bg-purple-500">Register Now</button>
+      <!-- <app-register-modal></app-register-modal> -->
       <div *ngIf="registrationButtonVisible" class="flex mt-12 justify-center">
         <button onClick="register_modal.showModal()"  class="inline-flex disabled:bg-gray-500  text-black bg-white border-0 max-sm:px-4 py-2 px-6 focus:outline-none hover:drop-shadow-xl  hover:bg-gray-300 rounded max-sm:text-sm text-lg">Register Now</button>
       </div>
+     
+      
     </div>
     <img src="assets/chat%20image.png" class="  flex-none max-md:hidden  w-full object-cover object-center rounded-3xl" alt="">
   </div>

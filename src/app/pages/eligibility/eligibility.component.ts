@@ -17,6 +17,11 @@ export class EligibilityComponent {
       this.updateRegistrationButtonVisibility();
     }, 1000);
   }
+
+  checkEligibility() {
+    this.registerService.checkEligibility();
+    this.registerService.openModal();
+  }
   updateRegistrationButtonVisibility() {
     const now = new Date();
     this.registrationButtonVisible = now < this.registrationDeadline;

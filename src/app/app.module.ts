@@ -19,7 +19,7 @@ import { BotComponent } from './shared/bot/bot.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './shared/footer/footer.component';
-import { RegistrationComponent } from './shared/registration/registration.component';
+// import { RegistrationComponent } from './shared/registration/registration.component';
 import { BubbleComponent } from './shared/bubble/bubble.component';
 import { CountDownComponent } from './shared/count-down/count-down.component';
 import { TrackCardComponent } from './shared/track-card/track-card.component';
@@ -50,6 +50,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ShareBtnComponent } from './components/share-btn/share-btn.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { SharedModule } from './shared/shared.module';
 // import { ShareButton } from 'ngx-sharebuttons/button';
 
 @NgModule({
@@ -69,7 +70,6 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     EligibilityComponent,
     BotComponent,
     FooterComponent,
-    RegistrationComponent,
     BubbleComponent,
     CountDownComponent,
     TrackCardComponent,
@@ -79,7 +79,6 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     GetInvolvedComponent,
     AdvisorsRegistrationComponent,
     WhatWeProvideComponent,
-    RegisterModalComponent,
     TeamRegistrationComponent,
     WorkshopComponent,
     ProjectsComponent,
@@ -90,8 +89,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     WinnerModal,
     Prize2024Component,
     LandingComponent,
-    TimelineComponent
-    
+    TimelineComponent,
+    // RegistrationComponent,
     // ShareButton
     // PrivacyConsentComponent,
     
@@ -107,7 +106,10 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     MatButtonModule,
     MatDialogModule,
     ShareBtnComponent,
-    CarouselModule
+    CarouselModule,
+    RegisterModalComponent,
+    SharedModule
+    
   ],
   providers: [
     ConsentService,
