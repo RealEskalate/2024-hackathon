@@ -44,21 +44,19 @@
             <div class="flex items-start py-2">
               <div class="flex-none w-8 h-8 mr-5">
                 <svg
-                *ngIf="criterion.answered === null && i <= currentQuestionIndex "
+                  *ngIf="
+                    criterion.answered === null && i <= currentQuestionIndex
+                  "
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
-                  fill="currentColor"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
                   class="w-full h-full text-gray-400"
                 >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    fill="none"
-                  />
+                  <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
+
                 <svg
                   *ngIf="criterion.answered === true"
                   xmlns="http://www.w3.org/2000/svg"
@@ -174,6 +172,5 @@
         </button>
       </div>
     </div>
-
   </div>
 </section>
