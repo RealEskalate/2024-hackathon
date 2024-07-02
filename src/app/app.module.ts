@@ -14,7 +14,7 @@ import { PotentialPartnersComponent } from './pages/potential-partners/potential
 import { InfoComponent } from './pages/info/info.component';
 // import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { JudgesComponent } from './pages/judges/judges.component';
-import { EligibilityComponent } from './pages/eligibility/eligibility.component';
+// import { EligibilityComponent } from './pages/eligibility/eligibility.component';
 import { BotComponent } from './shared/bot/bot.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -51,6 +51,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ShareBtnComponent } from './components/share-btn/share-btn.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SharedModule } from './shared/shared.module';
+import {FixedEligiblityComponent} from './pages/fixed-eligiblity/fixed-eligiblity.component'
 // import { ShareButton } from 'ngx-sharebuttons/button';
 
 @NgModule({
@@ -67,7 +68,7 @@ import { SharedModule } from './shared/shared.module';
     PotentialPartnersComponent,
     InfoComponent,
     JudgesComponent,
-    EligibilityComponent,
+    // EligibilityComponent,
     BotComponent,
     FooterComponent,
     BubbleComponent,
@@ -90,6 +91,7 @@ import { SharedModule } from './shared/shared.module';
     Prize2024Component,
     LandingComponent,
     TimelineComponent,
+    
     // RegistrationComponent,
     // ShareButton
     // PrivacyConsentComponent,
@@ -108,7 +110,9 @@ import { SharedModule } from './shared/shared.module';
     ShareBtnComponent,
     CarouselModule,
     RegisterModalComponent,
-    SharedModule
+    SharedModule,
+    FixedEligiblityComponent
+    
     
   ],
   providers: [

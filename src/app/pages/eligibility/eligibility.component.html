@@ -1,11 +1,11 @@
 <section
   id="eligibility"
-  class="max-sm:px-4 max-lg:px-12 sm:pb-16 pt-24 pb-32 px-20 overflow-x-hidden"
+  class="max-sm:px-4 max-lg:px-12 py-6 px- overflow-x-hidden"
 >
   <p class="sm:text-4xl text-center text-2xl font-medium mb-4 text-white">
     Eligibility
   </p>
-  <div class="p-2 grid grid-cols-1 lg:grid-cols-2 gap-x-12 items-center">
+  <div class="p-2 flex flex-col justify-center items-center">
     <div class="flex-none max-lg:my-6 sm:pb-8 md:mx-8 sm:mt-0 sm:text-left">
       <p class="text-gray-300 leading-relaxed max-sm:text-start">
         The hackathon is open to all students located in Africa who are
@@ -13,11 +13,12 @@
         To participate, you must meet the following eligibility requirements:
       </p>
 
-      <div class="flex justify-center mt-6 mb-5">
+      <div class="flex justify-start mt-6 mb-5">
         <button
           (click)="showIndividualCriteria()"
           [ngClass]="{
-            ' border-[1.5px] border-gray-300 text-gray-500 cursor-not-allowed disabled': isIndividual,
+            ' border-[1.5px] border-gray-300 text-gray-500 cursor-not-allowed disabled':
+              isIndividual,
             'bg-purple-700': !isIndividual
           }"
           class="inline-flex text-white border-0 max-sm:px-4 py-2 px-4 rounded-full focus:outline-none hover:drop-shadow-xl text-sm mr-4"
@@ -27,7 +28,8 @@
         <button
           (click)="showTeamCriteria()"
           [ngClass]="{
-            'border-[1.5px] border-gray-300 text-gray-500 cursor-not-allowed disabled': !isIndividual,
+            'border-[1.5px] border-gray-300 text-gray-500 cursor-not-allowed disabled':
+              !isIndividual,
             'bg-purple-700': isIndividual
           }"
           class="inline-flex text-white border-0 max-sm:px-4 py-2 px-6 focus:outline-none hover:drop-shadow-xl rounded-full text-sm"
@@ -39,8 +41,24 @@
       <div>
         <ul>
           <li *ngFor="let criterion of criteria; let i = index">
-            <div class="flex items-start gap-x-3 py-2">
-              <div class="flex-none w-8 h-8">
+            <div class="flex items-start py-2">
+              <div class="flex-none w-8 h-8 mr-5">
+                <svg
+                *ngIf="criterion.answered === null && i <= currentQuestionIndex "
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-full h-full text-gray-400"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    fill="none"
+                  />
+                </svg>
                 <svg
                   *ngIf="criterion.answered === true"
                   xmlns="http://www.w3.org/2000/svg"
@@ -68,13 +86,14 @@
                   />
                 </svg>
               </div>
-              <p
-                *ngIf="i <= currentQuestionIndex"
-                class="text-gray-300 leading-relaxed max-sm:text-start"
-                [@fadeInOut]
-              >
-                {{ criterion.text }}
-              </p>
+              <div *ngIf="i <= currentQuestionIndex" class="flex-grow">
+                <p
+                  class="text-gray-300 leading-relaxed text-start"
+                  [@fadeInOut]
+                >
+                  {{ criterion.text }}
+                </p>
+              </div>
             </div>
             <hr
               *ngIf="criterion.answered !== null"
@@ -89,7 +108,7 @@
             !ineligible &&
             currentQuestionIndex < criteria.length
           "
-          class="flex justify-center"
+          class="flex justify-center mt-4"
         >
           <button
             (click)="answerYes()"
@@ -104,9 +123,26 @@
             No
           </button>
         </div>
+
+        <div *ngIf="eligibilityConfirmed" class="text-center mt-4">
+          <p class="text-green-500 font-bold">
+            Congratulations! You are eligible to register.
+          </p>
+          <p class="text-gray-400">
+            Proceed to register individually or as a team and join the A2SV AI
+            for Africa Hackathon.
+          </p>
+        </div>
+
+        <div *ngIf="ineligible" class="text-center mt-4">
+          <p class="text-red-500 font-bold">
+            Unfortunately, you are not eligible to register for the hackathon at
+            this time.
+          </p>
+        </div>
       </div>
 
-      <div *ngIf="eligibilityConfirmed" [@fadeInOut]>
+      <!-- <div *ngIf="eligibilityConfirmed" [@fadeInOut]>
         <p
           class="text-gray-300 leading-relaxed max-sm:text-start mt-6"
           *ngIf="eligibilityConfirmed"
@@ -118,13 +154,10 @@
             (click)="checkEligibility()"
             class="inline-flex transition-all cursor-pointer ease-out duration-400 bg-purple-700 hover:bg-purple-500 relative disabled:bg-gray-500 text-white border-0 max-sm:px-4 py-2 px-9 focus:outline-none hover:drop-shadow-xl rounded-full max-sm:text-sm text-lg group"
           >
-            <!-- <span
-              class="absolute right-0 w-6 h-12 -mt-2 text-white transition-all duration-1000 transform translate-x-17 sm:bg-transparent md:bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"
-            ></span> -->
             Register Now
           </button>
         </div>
-      </div>
+      </div> -->
       <div *ngIf="ineligible">
         <p
           class="text-gray-300 leading-relaxed max-sm:text-start mt-6"
@@ -136,16 +169,11 @@
           (click)="resetEligibility()"
           class="flex items-center transition-all cursor-pointer ease-out duration-400 bg-purple-700 hover:bg-purple-500 relative disabled:bg-gray-500 text-white border-0 max-sm:px-4 py-2 px-5 focus:outline-none hover:drop-shadow-xl rounded-full max-sm:text-sm text-lg group"
         >
-        <!-- <span class="mr-3">Check again</span> -->
-        <img src="assets/loopIcon.svg" class="w-8 h-8 " />
-          
+          <!-- <span class="mr-3">Check again</span> -->
+          <img src="assets/loopIcon.svg" class="w-8 h-8" />
         </button>
       </div>
     </div>
-    <img
-      src="assets/chat%20image.png"
-      class="flex-none max-md:hidden w-full object-cover object-center rounded-3xl"
-      alt=""
-    />
+
   </div>
 </section>

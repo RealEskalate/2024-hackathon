@@ -52,8 +52,11 @@
   <app-info></app-info>
 </div>
 
-<div id="eligibility" class="relative z-40">
+<!-- <div id="eligibility" class="relative z-40">
   <app-eligibility (openChatEvent)="openChat()"></app-eligibility>
+</div> -->
+<div id="fixed-eligibility">
+  <app-fixed-eligiblity (openChatEvent)="openChat()"></app-fixed-eligiblity>
 </div>
 <div id="home" class="relative z-40">
   <app-home (toggleChatEvent)="changeChatState($event)"></app-home>
