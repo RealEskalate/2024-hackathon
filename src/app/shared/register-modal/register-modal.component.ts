@@ -15,6 +15,8 @@ export class RegisterModalComponent implements OnInit, OnDestroy {
   isEligibilityChecked: boolean = false;
   private modalSubscription!: Subscription;
   private eligibilitySubscription!: Subscription;
+  private showEligibilitySubscription!: Subscription;
+
   @Input() currentSection: string = "home";
   constructor(private registerService: RegisterService) {}
   @Output() toggleChatEvent = new EventEmitter<boolean>();
@@ -26,6 +28,7 @@ export class RegisterModalComponent implements OnInit, OnDestroy {
   indivisualRegistrationLink = "https://a2sv.typeform.com/to/yxMUctSN";
   individualName = "individual";
   teamName = "team";
+  showEligibilitySection = false;
 
   ngOnInit() {
     this.modalSubscription = this.registerService.modalOpen$.subscribe(isOpen => {
@@ -43,11 +46,16 @@ export class RegisterModalComponent implements OnInit, OnDestroy {
     this.eligibilitySubscription = this.registerService.eligibilityChecked$.subscribe(isChecked => {
       this.isEligibilityChecked = isChecked;
     });
+
+    this.showEligibilitySubscription = this.registerService.showEligibility$.subscribe(show => {
+      this.showEligibilitySection = show;
+    });
   }
 
   ngOnDestroy() {
     this.modalSubscription.unsubscribe();
     this.eligibilitySubscription.unsubscribe();
+    this.showEligibilitySubscription.unsubscribe();
   }
 
   closeModal() {
@@ -103,11 +111,17 @@ export class RegisterModalComponent implements OnInit, OnDestroy {
     document.getElementById("footer")?.classList.remove("hidden");
   }
 
+  showEligibility() {
+    this.registerService.showEligibility();
+  }
   navigateToEligibility() {
     // this.registerService.checkEligibility();
-    this.closeModal();
-    this.scrollToSection('eligibility')
+    
+    // this.closeModal();
+    // this.scrollToSection('eligibility')
+
     // Implement navigation logic here
+    this.showEligibility();
   }
 
   scrollToSection(sectionId: string): void {
