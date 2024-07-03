@@ -17,9 +17,9 @@
         <button
           (click)="showIndividualCriteria()"
           [ngClass]="{
-            ' border-[1.5px] border-gray-300 text-gray-500 cursor-not-allowed disabled':
-              isIndividual,
-            'bg-purple-700': !isIndividual
+            ' border-[1.5px] border-gray-300 text-gray-500 ':
+              !isIndividual,
+            'bg-purple-700 cursor-not-allowed disabled': isIndividual
           }"
           class="inline-flex text-white border-0 max-sm:px-4 py-2 px-4 rounded-full focus:outline-none hover:drop-shadow-xl text-sm mr-4"
         >
@@ -29,8 +29,8 @@
           (click)="showTeamCriteria()"
           [ngClass]="{
             'border-[1.5px] border-gray-300 text-gray-500 cursor-not-allowed disabled':
-              !isIndividual,
-            'bg-purple-700': isIndividual
+              isIndividual,
+            'bg-purple-700 cursor-not-allowed disabled': !isIndividual
           }"
           class="inline-flex text-white border-0 max-sm:px-4 py-2 px-6 focus:outline-none hover:drop-shadow-xl rounded-full text-sm"
         >

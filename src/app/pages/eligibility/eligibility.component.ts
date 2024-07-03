@@ -27,6 +27,12 @@ export class EligibilityComponent {
   registrationButtonVisible = true;
   
   ngOnInit(): void {
+    this.registerService.registrationType$.subscribe(type => {
+      if (type) {
+        this.isIndividual = type === 'individual';
+        this.criteria = this.isIndividual ? this.individualCriteria : this.teamCriteria;
+      }
+    });
     setInterval(() => {
       this.updateRegistrationButtonVisibility();
     }, 1000);
@@ -66,25 +72,30 @@ export class EligibilityComponent {
  
 
   criteria: any[] = this.individualCriteria;
-
   currentQuestionIndex: number = 0;
   eligibilityConfirmed: boolean = false;
   ineligible: boolean = false;
+  registrationTypeSelected: boolean = false;
  
 
- 
-
-  showIndividualCriteria() {
-    this.isIndividual = true;
+  selectRegistrationType(type: string) {
+    this.registrationTypeSelected = true;
+    this.isIndividual = type === 'individual';
+    this.criteria = this.isIndividual ? this.individualCriteria : this.teamCriteria;
     this.resetEligibility();
-    this.criteria = this.individualCriteria;
+    this.registerService.setRegistrationType(type);
   }
 
-  showTeamCriteria() {
-    this.isIndividual = false;
+
+  switchRegistrationType() {
+    this.isIndividual = !this.isIndividual;
+    this.criteria = this.isIndividual ? this.individualCriteria : this.teamCriteria;
     this.resetEligibility();
-    this.criteria = this.teamCriteria;
+    const type = this.isIndividual ? 'individual' : 'team';
+    this.registerService.setRegistrationType(type);
   }
+
+  
 
   resetEligibility() {
     this.currentQuestionIndex = 0;

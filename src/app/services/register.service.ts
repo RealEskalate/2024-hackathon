@@ -14,13 +14,19 @@ export class RegisterService {
   private showEligibilitySource = new BehaviorSubject<boolean>(false);
   showEligibility$ = this.showEligibilitySource.asObservable();
 
+  private registrationTypeSource = new BehaviorSubject<string | null>(null);
+  registrationType$ = this.registrationTypeSource.asObservable();
+
   openModal() {
     this.modalOpenSource.next(true);
   }
 
   closeModal() {
+    // console.log("Yes close modal");
+    
     this.modalOpenSource.next(false);
     this.showEligibilitySource.next(false);
+    // this.registrationTypeSource.next(null);
   }
 
   checkEligibility() {
@@ -30,5 +36,15 @@ export class RegisterService {
 
   showEligibility() {
     this.showEligibilitySource.next(true);
+  }
+  setRegistrationType(type: string) {
+    this.registrationTypeSource.next(type);
+  }
+
+  // This is used incase if I want to change it in globally 
+  switchRegistrationType() {
+    const currentType = this.registrationTypeSource.value;
+    const newType = currentType === 'individual' ? 'team' : 'individual';
+    this.registrationTypeSource.next(newType);
   }
 }
