@@ -13,9 +13,11 @@ import { SharedModule } from '../shared.module';
 export class RegisterModalComponent implements OnInit, OnDestroy {
   isModalOpen: boolean = false;
   isEligibilityChecked: boolean = false;
+  registrationType: string | null = null;
   private modalSubscription!: Subscription;
   private eligibilitySubscription!: Subscription;
   private showEligibilitySubscription!: Subscription;
+  private registrationTypeSubscription!: Subscription;
 
   @Input() currentSection: string = "home";
   constructor(private registerService: RegisterService) {}
@@ -50,12 +52,17 @@ export class RegisterModalComponent implements OnInit, OnDestroy {
     this.showEligibilitySubscription = this.registerService.showEligibility$.subscribe(show => {
       this.showEligibilitySection = show;
     });
+
+    this.registrationTypeSubscription = this.registerService.registrationType$.subscribe(type => {
+      this.registrationType = type;
+    }); 
   }
 
   ngOnDestroy() {
     this.modalSubscription.unsubscribe();
     this.eligibilitySubscription.unsubscribe();
     this.showEligibilitySubscription.unsubscribe();
+    this.registrationTypeSubscription.unsubscribe();
   }
 
   closeModal() {
