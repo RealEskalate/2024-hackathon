@@ -97,7 +97,7 @@ export const timeline = [
     color: "#41516C",
     title: "Registration",
     desc: "Students to register for the African-wide hackathon focused on AI.",
-    year: "1 June - 6 July, 2024",
+    year: "1 June - 15 July, 2024",
     final: false,
   },
   {
