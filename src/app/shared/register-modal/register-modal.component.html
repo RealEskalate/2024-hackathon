@@ -7,7 +7,7 @@
       <section class="text-gray-400 bg-gray-900 body-font ">
         <div class="container p-4">
           <div class="flex flex-wrap justify-center -m-4">
-            <div class="p-4 lg:w-1/3" *ngIf="!isEligibilityChecked && !showEligibilitySection">
+            <!-- <div class="p-4 lg:w-1/3" *ngIf="!isEligibilityChecked && !showEligibilitySection">
               <div
                 class="h-full flex flex-col justify-between bg-gray-800 bg-opacity-40 px-8 py-8 rounded-lg overflow-hidden relative"
               >
@@ -20,7 +20,6 @@
                 <div
                   class="flex w-full flex-wrap space-y-4 justify-center items-end"
                 >
-                  <!--  (click)="navigateToEligibility()" -->
                   <a
                     (click)="navigateToEligibility()"
                     class="rounded-full cursor-pointer modal-action px-5 py-2.5 overflow-hidden group bg-gradient-to-r from-indigo-600 to-pink-500 relative hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-500 text-white transition-all ease-out duration-300"
@@ -32,11 +31,11 @@
                   </a>
                 </div>
               </div>
-            </div>
-            <div *ngIf="isEligibilityChecked" class="w-[80%] my-5">
+            </div> -->
+            <!-- <div *ngIf="isEligibilityChecked" class="w-[80%] my-5">
               <p class="md:text-3xl font-bold text-center text-white">Congratulations🎉! You are eligible to register.</p>
               <p class="text-gray-400 text-center ">Proceed to register individually or as a team and join the A2SV AI for Impact Hackathon.</p>
-            </div>
+            </div> -->
             <div class="p-4 w-full" *ngIf="!isEligibilityChecked && showEligibilitySection">
               <app-eligibility ></app-eligibility>
             </div>

@@ -133,6 +133,7 @@ export class LandingComponent {
   checkEligibility() {
     // this.registerService.checkEligibility();
     this.registerService.openModal();
+    this.registerService.showEligibility();
   }
 
 
