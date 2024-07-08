@@ -26,6 +26,7 @@ export class HeaderComponent {
 
   openRegisterModal() {
     this.registerService.openModal();
+    this.registerService.showEligibility();
   }
 
 
