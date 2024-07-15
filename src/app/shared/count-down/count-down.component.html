@@ -5,19 +5,24 @@
   <div class="md:text-7xl  max-sm:text-2xl gap-y-8 text-center flex inline-block sm:flex-wrap w-full items-center max-sm:justify-center md:justify-start mt-4">
     <div class="w-30  mx-1 px-auto py-2 max-sm:p-1  text-indigo-700 rounded">
       <div class="font-mono text-center leading-none text-white " x-text="days">{{ Number( daysLeft ) > 9 ? daysLeft : '0' + daysLeft}}</div>
-      <div class="font-mono text-center uppercase text-sm text-white leading-none">Days</div>
+      <div *ngIf="Number(daysLeft) === 1" class="font-mono text-center uppercase text-sm text-white leading-none">Day</div>
+      <div *ngIf="Number(daysLeft) !== 1" class="font-mono text-center uppercase text-sm text-white leading-none">Days</div>
     </div>
     <div class="w-30 mx-1 px-auto py-2 max-sm:p-1 text-indigo-700 rounded">
       <div class="font-mono text-center leading-none text-white " x-text="hours">{{ Number( hoursLeft ) > 9 ? hoursLeft : '0' + hoursLeft}}</div>
-      <div class="font-mono text-center uppercase text-sm text-white leading-none">Hours</div>
+      <div *ngIf="Number(hoursLeft) === 1" class="font-mono text-center uppercase text-sm text-white leading-none">Hour</div>
+      <div *ngIf="Number(hoursLeft) !== 1" class="font-mono text-center uppercase text-sm text-white leading-none">Hours</div>
+
     </div>
     <div class="w-30 mx-1 px-auto py-2 max-sm:p-1 text-indigo-700 rounded">
       <div class="font-mono text-center leading-none text-white" x-text="minutes">{{ Number( minutesLeft ) > 9 ? minutesLeft : '0' + minutesLeft}}</div>
-      <div class="font-mono text-center uppercase text-sm text-white leading-none">Minutes</div>
+      <div *ngIf="Number(minutesLeft) !== 1" class="font-mono text-center uppercase text-sm text-white leading-none">Minutes</div>
+      <div *ngIf="Number(minutesLeft) === 1" class="font-mono text-center uppercase text-sm text-white leading-none">Minute</div>
     </div>
     <div class="w-30 mx-1 px-auto py-2 max-sm:p-1 text-indigo-700 rounded">
       <div class="font-mono text-center leading-none text-white " x-text="minutes">{{ Number( secondsLeft ) > 9 ? secondsLeft : '0' + secondsLeft}}</div>
-      <div class="font-mono text-center uppercase text-sm text-white leading-none">Seconds</div>
+      <div *ngIf="Number(secondsLeft) !== 1" class="font-mono text-center uppercase text-sm text-white leading-none">Seconds</div>
+      <div *ngIf="Number(secondsLeft) === 1" class="font-mono text-center uppercase text-sm text-white leading-none">Second</div>
     </div>
     
   </div>
