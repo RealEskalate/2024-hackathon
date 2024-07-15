@@ -40,6 +40,16 @@
         }}"
         >Projects</a
       > -->
+
+      <a
+      (click)="scrollToSection('workshop')"
+      class="text-sm max-xl:text-[0.75rem] cursor-pointer  font-semibold leading-6 hover:text-indigo-600 nav-item {{
+        currentSection.toString() == 'workshop'
+          ? 'text-indigo-600'
+          : 'text-gray-200'
+      }} "
+      >Workshop </a
+    >
       <a
         (click)="scrollToSection('info')"
         class="text-sm max-xl:text-[0.75rem] cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item {{
@@ -454,6 +464,15 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
               >A2SV Interview Partners</a
             > -->
+            <a
+            (click)="scrollToSection('workshop')"
+            class="text-sm max-xl:text-[0.75rem] cursor-pointer  font-semibold leading-6 hover:text-indigo-600 nav-item {{
+              currentSection.toString() == 'workshop'
+                ? 'text-indigo-600'
+                : 'text-gray-200'
+            }} "
+            >Workshop </a
+          >
             <a
               (click)="scrollToSection('info'); toggleMenu()"
               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"

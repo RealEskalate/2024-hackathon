@@ -1,9 +1,9 @@
-<section class="m-auto md:px-20 px-4">
+<section id="workshop" class="m-auto md:px-20 py-5 px-4  flex flex-col items-center ">
   <div class="container flex items-center justify-center">
     <button class="mt-2" (click)="toggleCards()">
-      <span class="flex items-center">
+      <span class="flex items-center  py-5">
         <p
-          class="sm:text-4xl text-center text-2xl pt-8 mb-12 font-bold text-transparent bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text"
+          class="sm:text-4xl text-center text-2xl  mb-12 font-bold text-transparent bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text"
         >
           Our Workshop Summary
         </p>
@@ -45,52 +45,33 @@
   <p
     class="lg:w-2/3 mx-auto leading-relaxed text-base text-white text-justify justify-between"
   >
-    Unlock valuable data and information in the form of videos used by our
-    participants during the hackathon. Gain profound insights into hackathon
-    dynamics, AI applications, and implementation strategies through
-    our exclusive workshop videos. See the intersection of theory and practice
-    with valuable insights from industry leaders, helping you prepare
-    effectively for building tech projects.
+  Our hackathon featured a series of insightful workshops designed to equip participants with essential skills for success. Topics included preparing effective presentations, Git, GitHub, and version control, UI/UX design and prototyping, and the effective use of generative AI and AI tools.
+  We encourage you to check out the recorded sessions of these valuable workshops to gain insights and boost your skills. Don't miss the opportunity to learn from our expert-led sessions and take your projects to the next level!  
   </p>
 
   <div *ngIf="showCards">
     <div
-      class="grid grid-cols-1 max-sm:px-0 px-12 md:grid-cols-3 sm:grid-cols-2 gap-2"
+      class="grid grid-cols-1 max-sm:px-0 px-12  lg:grid-cols-3 sm:grid-cols-2 gap-2"
     >
-      <div class="container px-5 py-5 mx-auto">
+      <div *ngFor="let workshop of workshops_lists;let i = index " class="container px-5 py-5 mx-auto">
         <div class="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
           <iframe
             class="lg:h-48 md:h-36 w-full object-cover object-center"
-            src="https://www.youtube.com/embed/7FlRWgVGmUA?si=xT8jLc1Bi-W9XmL_"
+            [src]="workshop.src"
           ></iframe>
           <div class="p-6">
             <h1 class="title-font text-lg font-medium text-white mb-3">
-              Innovative Idea Generation
+              {{workshop.title}}
             </h1>
-            <p class="leading-relaxed mb-3 text-gray-600">
-              Learn to brainstorm and refine groundbreaking ideas for project
-              success. Grasp the role of innovative ideas, harness effective
-              brainstorming techniques, apply SWOT analysis and feasibility
-              checks, and adopt a customer-oriented approach.
+            <p class="leading-relaxed mb-3 text-gray-400">
+              {{workshop.description}}
             </p>
-            <a class="inline-flex items-center">
-              <img
-                alt="blog"
-                src="/assets/yekta.jpg"
-                class="w-8 h-8 rounded-full flex-shrink-0 object-cover object-center"
-              />
-              <span class="flex-grow flex flex-col pl-3">
-                <span class="title-font font-medium text-gray-300">
-                  Yekta Ozcan Ozozer: Managing Partner &#64; Sürekli Gelişim
-                  Danışmanlık ve Eğitim Ltd.</span
-                >
-              </span>
-            </a>
+            
           </div>
         </div>
       </div>
 
-      <div class="container px-5 py-5 mx-auto">
+      <!-- <div class="container px-5 py-5 mx-auto">
         <div class="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
           <iframe
             class="lg:h-48 md:h-36 w-full object-cover object-center"
@@ -250,7 +231,7 @@
             </a>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
