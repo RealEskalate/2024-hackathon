@@ -105,7 +105,7 @@ export const timeline = [
     color: "#3081D0",
     title: "Project Idea Submission and Filtration",
     desc: "During this phase, participants submit their project ideas for consideration. Ideas undergo thorough evaluation and filtering to ensure alignment with hackathon objectives and feasibility for development.",
-    year: "8-15 July, 2024",
+    year: "8-17 July, 2024",
     final: false,
   },
   {

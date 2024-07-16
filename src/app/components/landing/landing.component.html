@@ -61,9 +61,9 @@
             <app-count-down
               class="inline-block pl-0 max-md:text-center"
             ></app-count-down>
-            <!-- <button
-              (click)="checkEligibility()"
-              class="max-md:mt-5 text-2xl mt-5 rounded-full px-16 md:px-28 py-4 text-white transition-all cursor-pointer ease-out duration-400 bg-purple-700 hover:bg-purple-500 relative overflow-hidden group"
+            <button
+              (click)="onShowMentorsModal()"
+              class="max-md:mt-5 text-2xl mt-5 rounded-full px-10 md:px-24 py-4 text-white transition-all cursor-pointer ease-out duration-400 bg-purple-700 hover:bg-purple-500 relative overflow-hidden group"
             >
               <span
                 class="absolute inset-0 w-full h-full rounded-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-50 blur-md animate-pulse"
@@ -71,14 +71,14 @@
               <span
                 class="absolute inset-0 w-full h-full rounded-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-75 blur-lg"
               ></span>
-              <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-20 ease"></span>
+              <!-- <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-20 ease"></span>
           <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-30 bg-white opacity-10 rotate-12 group-hover:-translate-x-50 ease"></span>
-          <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-18 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+          <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-18 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span> -->
               <span
                 class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-14 bg-white opacity-10 rotate-12 group-hover:-translate-x-80 ease"
               ></span>
-              <span class="relative text-white font-bold">Register Now</span>
-            </button> -->
+              <span class="relative text-white font-bold">Submit project idea</span>
+            </button> 
           </h2>
 
           <div
@@ -86,7 +86,7 @@
           >
             <button
               (click)="onShowMentorsModal()"
-              class="text-sm rounded-full px-6 py-3 text-white transition-all  bg-purple-500 cursor-pointer ease-out duration-300 hover:bg-gradient-to-r from-purple-700 to-pink-500"
+              class="text-sm rounded-full px-8 py-3 text-white transition-all  bg-purple-500 cursor-pointer ease-out duration-300 hover:bg-gradient-to-r from-purple-700 to-pink-500"
             >
             
               <span >Be mentor/advisor</span>
@@ -105,7 +105,7 @@
 
             <button
               (click)="onShowAdvisorsModal()"
-              class="max-md:mt-5 text-sm rounded-full md:ml-8 px-7 py-3 text-white transition-all bg-purple-500 cursor-pointer ease-out duration-300 lg:ml-8 left-1/2 hover:bg-gradient-to-r from-purple-700 to-pink-500"
+              class="max-md:mt-5 text-sm rounded-full md:ml-8 px-8 py-3 text-white transition-all bg-purple-500 cursor-pointer ease-out duration-300 lg:ml-8 left-1/2 hover:bg-gradient-to-r from-purple-700 to-pink-500"
             >
               <span >Partner with us</span>
             </button>

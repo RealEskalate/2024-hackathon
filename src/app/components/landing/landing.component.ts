@@ -75,7 +75,7 @@ export class LandingComponent {
   showMentorsModal = false;
   showAdvisorsModal = false;
  
-  mentorsRegistrationLink = "https://form.typeform.com/to/ShJTk212"
+  mentorsRegistrationLink = "https://a2sv.typeform.com/to/UoJj70aQ"
   advisorsRegistrationLink = "https://form.typeform.com/to/opvWnrn7"
   showGetInvolvedModal = true;
   // showTeamRegistrationModal = false;
