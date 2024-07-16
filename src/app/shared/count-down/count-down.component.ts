@@ -15,10 +15,13 @@ export class CountDownComponent {
   eventDate = 'July 16';
   eventText = 'Project idea submission ends on';
   eventTime = '11:59 PM WAT';
+  nextEventDate= 'July 19';
+  nextEventText='Quarter finals starts on'
+  nextEventTime= '11:00AM'
 
   constructor() {
     this.targetDate = new Date('2024-07-16T22:59:00Z');
-    this.semiFinalDate = new Date('2023-11-11T10:00:00');
+    this.semiFinalDate = new Date('2024-07-19T08:00:00Z');
   }
 
   chooseTargetDate(): number {
@@ -26,9 +29,13 @@ export class CountDownComponent {
     if (currentDate < this.targetDate.getTime()) {
       return this.targetDate.getTime();
     } else {
-      this.eventDate = 'November 11';
-      this.eventText = 'Our hackathon grand finale will be over on';
-      this.eventTime = '10:00 AM EAT';
+      const button = window.document.getElementById('herosectionbutton');
+      if (button) {
+        button.style.display = 'none';
+      }
+      this.eventDate = 'July 19';
+      this.eventText = 'Our hackathon quarter final will start on';
+      this.eventTime = '11:00 AM EAT';
       return this.semiFinalDate.getTime();
     }
   }
@@ -43,9 +50,9 @@ export class CountDownComponent {
   calculateTimeLeft(): void {
     const currentDate = new Date();
    
-
+    
     const timeDifference = this.chooseTargetDate() - currentDate.getTime();
-
+    
     // this.daysLeft = Math.floor(timeDifference / (1000 * 3600 * 24));
     // console.log('days left',this.daysLeft);
     // this.hoursLeft = Math.floor((timeDifference % (1000 * 3600 * 24)) / (1000 * 3600));
