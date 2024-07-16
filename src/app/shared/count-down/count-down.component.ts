@@ -14,10 +14,10 @@ export class CountDownComponent {
   semiFinalDate: Date;
   eventDate = 'July 19';
   eventText = 'Our quarter final will be started on';
-  eventTime = '01:00 AM EAT';
+  eventTime = '11:00 AM EAT';
 
   constructor() {
-    this.targetDate = new Date('2024-07-18T22:00:00Z');
+    this.targetDate = new Date('2024-07-19T08:00:00Z');
     this.semiFinalDate = new Date('2023-11-11T10:00:00');
   }
 
