@@ -1,0 +1,12 @@
+.link-button {
+  color: blue;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.link-button:hover {
+  color: darkblue;
+}
