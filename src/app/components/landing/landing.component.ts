@@ -13,6 +13,7 @@ export class LandingComponent {
   constructor(private registerService: RegisterService) {
 
   }
+  
 
   activeButton: string = '';
   images: string[] = [
@@ -75,7 +76,7 @@ export class LandingComponent {
   showMentorsModal = false;
   showAdvisorsModal = false;
  
-  mentorsRegistrationLink = "https://a2sv.typeform.com/to/UoJj70aQ"
+  mentorsRegistrationLink = "https://form.typeform.com/to/ShJTk212"
   advisorsRegistrationLink = "https://form.typeform.com/to/opvWnrn7"
   showGetInvolvedModal = true;
   // showTeamRegistrationModal = false;
