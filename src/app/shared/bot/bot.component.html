@@ -117,7 +117,7 @@
       <div
         #fullScreenScrollableContainer
         [scrollTop]="fullScreenScrollableContainer.scrollHeight"
-        class="h-full w-[75%] py-2 overflow-hidden"
+        class="h-full w-[75%] py-2 overflow-auto"
       >
         <div *ngFor="let message of messages">
           <div *ngIf="message.role === 'bot'" class="chat chat-start">
