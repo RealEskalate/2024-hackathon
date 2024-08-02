@@ -29,6 +29,7 @@ export class HeaderComponent {
   dropdownVisible: boolean = false;
   showGetInvolvedModal = true;
   @Output() toggleChatEvent = new EventEmitter<boolean>();
+  showWaitlistBanner: boolean = true;
 
   toggleMenu() {
     this.showMenu = !this.showMenu;
@@ -53,7 +54,7 @@ export class HeaderComponent {
     document.getElementById("prizes")?.classList.add("z-0");
     document.getElementById("prizes")?.classList.remove("z-40");
   }
-
+ 
 
   onHideModal() {
     this.toggleChatEvent.emit(true)
@@ -94,5 +95,8 @@ export class HeaderComponent {
   }
   toggleDropdown() {
     this.dropdownVisible = !this.dropdownVisible;
+  }
+  onHideWaitlistBanner (){
+    this.showWaitlistBanner = false;
   }
 }

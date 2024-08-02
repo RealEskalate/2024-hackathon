@@ -68,10 +68,11 @@
                 <path
                   d="M6 .5a.5.5 0 01.5-.5h3a.5.5 0 010 1H9v1.07a7.001 7.001 0 013.274 12.474l.601.602a.5.5 0 01-.707.708l-.746-.746A6.97 6.97 0 018 16a6.97 6.97 0 01-3.422-.892l-.746.746a.5.5 0 01-.707-.708l.602-.602A7.001 7.001 0 017 2.07V1h-.5A.5.5 0 016 .5zm2.5 5a.5.5 0 00-1 0v3.362l-1.429 2.38a.5.5 0 10.858.515l1.5-2.5A.5.5 0 008.5 9V5.5zM.86 5.387A2.5 2.5 0 114.387 1.86 8.035 8.035 0 00.86 5.387zM11.613 1.86a2.5 2.5 0 113.527 3.527 8.035 8.035 0 00-3.527-3.527z" />
               </svg>
-            <h1 class="text-6xl mb-2 font-bold  lg:inline  lg:whitespace-nowrap">Hackathon Quarterfinals Has Ended!</h1>
+            <h1 class="text-6xl mb-2 font-bold  lg:inline  lg:whitespace-nowrap text-center md:text-start">Hackathon Semifinals Has Started!</h1>
            
-            <h1 class="font-bold text-transparent bg-gradient-to-r from-indigo-600 to to-pink-500 text-xl bg-clip-text hover:text-blue-600 hover:underline" ><a (click)="setActiveButton('video', 'https://www.youtube.com/watch?v=GdoIBeYn5ys')" href='https://www.youtube.com/watch?v=GdoIBeYn5ys' >Watch: Quarterfinals closing ceremony! </a></h1>
-            
+            <div class="flex items-start text-[15px] py-2 ml-3"><img src="assets/star.svg" alt="star" class="pr-5"/><p class="">Attracted  nearly <strong class="font-bold text-transparent  bg-gradient-to-r from-indigo-600 to to-pink-500 bg-clip-text">5,000</strong> registrations from students across <strong class="font-bold text-transparent  bg-gradient-to-r from-indigo-600 to to-pink-500 bg-clip-text">1,000+</strong> universities and high schools in <strong class="font-bold text-transparent  bg-gradient-to-r from-indigo-600 to to-pink-500 bg-clip-text"> 48</strong> African countries.</p></div>
+            <div class="flex items-start text-[15px]  py-2 ml-3"><img src="assets/star.svg" alt="star" class="pr-5"/><p class="">Generated <strong class="font-bold text-transparent bg-gradient-to-r from-indigo-600 to to-pink-500 bg-clip-text">500+</strong> project ideas, leading to <strong class="font-bold bg-gradient-to-r text-transparent from-indigo-600 to to-pink-500 bg-clip-text">32</strong> projects in the semi-finals.</p></div>
+                
           </div>
                   <!-- <button
               (click)="onShowMentorsModal()"
@@ -94,13 +95,13 @@
           <div
             class="max-md:mt-5 flex flex-col md:flex-row max-md:items-center justify-start"
           >
-            <button
+            <!-- <button
               (click)="onShowMentorsModal()"
               class="text-sm rounded-full px-8 py-3 text-white transition-all  bg-purple-500 cursor-pointer ease-out duration-300 hover:bg-gradient-to-r from-purple-700 to-pink-500"
             >
             
               <span >Be an advisor</span>
-            </button>
+            </button> -->
             <!-- <button
             (click)="shareImage()"
               class="max-md:mt-5 text-sm rounded-full px-5 py-2.5 md:mr-3 bg-gradient-to-r from-indigo-600 to-pink-500 relative hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-500 text-white transition-all cursor-pointer ease-out duration-300 lg:ml-5 {{
@@ -115,7 +116,7 @@
 
             <button
               (click)="onShowAdvisorsModal()"
-              class="max-md:mt-5 text-sm rounded-full md:ml-8 px-8 py-3 text-white transition-all bg-purple-500 cursor-pointer ease-out duration-300 lg:ml-8 left-1/2 hover:bg-gradient-to-r from-purple-700 to-pink-500"
+              class="max-md:mt-5 text-sm rounded-full px-8 py-3 text-white transition-all bg-purple-500 cursor-pointer ease-out duration-300 left-1/2 hover:bg-gradient-to-r from-purple-700 to-pink-500"
             >
               <span >Partner with us</span>
             </button>

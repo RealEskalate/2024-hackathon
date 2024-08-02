@@ -392,8 +392,10 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
   </nav>
 
   <div
-    class=" text-white bg-yellow-600 text-center w-full fixed z-50 shadow-md custom-banner"
+  *ngIf="showWaitlistBanner"  
+  class=" text-white bg-yellow-600 text-center w-full fixed z-50 shadow-md custom-banner relative "
   >
+  <div class="font-bold text-[12xl]  absolute right-4 top-1" (click)="onHideWaitlistBanner()"> <button>X </button></div>
     <div class="flex justify-center items-center py-2 px-2 md:px-4">
       <span class="text-left">
         🙏 Thank you! ✨ A2SV Hackathon 2024 registration is closed with 4,928 participants—join next year's waitlist! 🚀
@@ -404,7 +406,9 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
       >
         <span>Waitlist </span>
       </button>
+      
     </div>
+   
   </div>
   <div class="pt-10"></div>
 
@@ -470,7 +474,7 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
                   ? 'text-indigo-600'
                   : 'text-gray-200'
               }} "
-              >Workshop
+              >Workshops
             </a>
             <a
               (click)="scrollToSection('info'); toggleMenu()"
