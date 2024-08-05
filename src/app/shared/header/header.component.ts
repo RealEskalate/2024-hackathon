@@ -16,7 +16,7 @@ import { RegisterService } from "src/app/services/register.service";
 export class HeaderComponent {
   showMenu: boolean = false;
   isModalOpenArray: boolean = false;
-  @Input() currentSection: string = "home";
+  @Input() currentSection: string = "landing";
   constructor(
     private elRef: ElementRef,
     private modalService: ModalService,
@@ -73,6 +73,7 @@ export class HeaderComponent {
   }
 
 
+
   scrollToSection(sectionId: string): void {
     this.currentSection = sectionId;
     const canNavigate: boolean =
@@ -83,7 +84,7 @@ export class HeaderComponent {
     }
   }
 
-  setActiveButton(buttonName: string, link: string) {
+  setLinks( link: string) {
     window.open(link, "_blank");
   }
   navigateToEligiblity() {

@@ -1,12 +1,20 @@
-<section id="workshop" class="m-auto md:px-20 py-5 px-4  flex flex-col items-center ">
+<section
+  id="workshops"
+  class="m-auto md:px-20 py-5 px-4 flex flex-col items-center"
+>
   <div class="container flex items-center justify-center">
-    <button class="mt-2" (click)="toggleCards()">
-      <span class="flex items-center  py-5">
+    <button
+      class="mt-2 border border-gray-700 flex justify-between items-center px-10 py-3 rounded-full mb-12 transition-transform transform-all hover:scale-105"
+      (click)="toggleCards()"
+    >
+      <span class="flex items-center mr-10">
         <p
-          class="sm:text-4xl text-center text-2xl  mb-12 font-bold text-transparent bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text"
+          class="sm:text-2xl text-center text-xl font-bold text-transparent bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text"
         >
           Workshops Summary
         </p>
+      </span>
+      <span class="mb-2">
         <svg
           *ngIf="!showCards"
           xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +22,7 @@
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-8 h-8 mb-3 ml-2 text-pink-400"
+          class="w-8 h-8 text-pink-400"
         >
           <path
             stroke-linecap="round"
@@ -30,7 +38,7 @@
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-8 h-8 mb-3 ml-2 text-pink-400 transform rotate-180"
+          class="w-8 h-8 text-pink-400 transform rotate-180"
         >
           <path
             stroke-linecap="round"
@@ -43,17 +51,25 @@
   </div>
 
   <p
-    class="lg:w-2/3 mx-auto leading-relaxed text-base text-white text-justify justify-between"
+    class="lg:w-4/5 mx-auto leading-relaxed text-base text-white text-justify justify-between"
   >
-  Our hackathon featured a series of insightful workshops designed to equip participants with essential skills for success. Topics included preparing effective presentations, Git, GitHub, and version control, UI/UX design and prototyping, and the effective use of generative AI and AI tools.
-  We encourage you to check out the recorded sessions of these valuable workshops to gain insights and boost your skills. Don't miss the opportunity to learn from our expert-led sessions and take your projects to the next level!  
+    Our hackathon featured a series of insightful workshops designed to equip
+    participants with essential skills for success. Topics included preparing
+    effective presentations, Git, GitHub, and version control, UI/UX design and
+    prototyping, and the effective use of generative AI and AI tools. We
+    encourage you to check out the recorded sessions of these valuable workshops
+    to gain insights and boost your skills. Don't miss the opportunity to learn
+    from our expert-led sessions and take your projects to the next level!
   </p>
 
   <div *ngIf="showCards">
     <div
-      class="grid grid-cols-1 max-sm:px-0 px-12  lg:grid-cols-3 sm:grid-cols-2 gap-2"
+      class="grid grid-cols-1 max-sm:px-0 px-12 lg:grid-cols-3 sm:grid-cols-2 gap-2"
     >
-      <div *ngFor="let workshop of workshops_lists;let i = index " class="container px-5 py-5 mx-auto">
+      <div
+        *ngFor="let workshop of workshops_lists; let i = index"
+        class="container px-5 py-5 mx-auto"
+      >
         <div class="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
           <iframe
             class="lg:h-48 md:h-36 w-full object-cover object-center"
@@ -61,12 +77,11 @@
           ></iframe>
           <div class="p-6">
             <h1 class="title-font text-lg font-medium text-white mb-3">
-              {{workshop.title}}
+              {{ workshop.title }}
             </h1>
             <p class="leading-relaxed mb-3 text-gray-400">
-              {{workshop.description}}
+              {{ workshop.description }}
             </p>
-            
           </div>
         </div>
       </div>

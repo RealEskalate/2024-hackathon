@@ -62,7 +62,7 @@
   100% {background:red;}
 }
 .box {
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.65);
   padding: 16px 24px;
   position: relative;
   border-radius: 8px;
@@ -78,8 +78,19 @@
   height: 100%;
   width: 100%;
   transform: scale(0.9) translateZ(0);
-  filter: blur(15px);
-  background: linear-gradient(to left, #ff5770, #e4428d, #c42da8, #9e16c3, #6501de, #9e16c3, #c42da8, #e4428d, #ff5770);
+  filter: blur(10px);
+  background: linear-gradient(
+    to left,
+    rgba(255, 87, 112, 0.4), /* Add alpha for transparency */
+    rgba(228, 66, 141, 0.4),
+    rgba(196, 45, 168, 0.4),
+    rgba(158, 22, 195, 0.4),
+    rgba(101, 1, 222, 0.4),
+    rgba(158, 22, 195, 0.4),
+    rgba(196, 45, 168, 0.4),
+    rgba(228, 66, 141, 0.4),
+    rgba(255, 87, 112, 0.4)
+  );
   background-size: 200% 200%;
   animation: animateGlow 1.25s linear infinite;
 }

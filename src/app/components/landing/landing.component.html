@@ -15,7 +15,6 @@
     />
     Your browser does not support the video tag.
   </video>
-  
 
   <app-mentors-registration
     [registrationLink]="mentorsRegistrationLink"
@@ -37,7 +36,7 @@
   <div
     class="h-[100vh] pt-[50px] lg:pt-[18vh] px:5 md:px-20 flex flex-col max-lg:justify-center justify-start z-1 drop-shadow-2xl bg-black bg-opacity-60"
   >
-    <div class="text-white px-5  max-md:mt-5">
+    <div class="text-white px-5 max-md:mt-5">
       <section
         class="left col-span-2 p-5 md:h-[76vh] flex flex-col items-center md:items-start justify-start"
       >
@@ -46,7 +45,7 @@
         >
           <!-- A2SV Hackathon, 2023 -->
           <p
-            class="text-left w-full max-md:text-center text-[24px] font-bold md:text-[46px] lg:text-[60px]"
+            class="text-left w-full max-md:text-center text-xl font-bold md:text-3xl lg:text-4xl"
           >
             A2SV Hackathon, 2024
           </p>
@@ -59,22 +58,57 @@
 
         <div class="flex flex-col w-full justify-center">
           <h2 class="flex flex-col justify-center md:items-start">
-             <!-- <app-count-down
+            <!-- <app-count-down
               class="inline-block pl-0 max-md:text-center"
             ></app-count-down> -->
-            
-            <div class="box relative ">
-              <svg class="absolute top-0 right-0 text-red-500 w-4 h-4" fill="currentColor" viewBox="0 0 16 16">
-                <path
-                  d="M6 .5a.5.5 0 01.5-.5h3a.5.5 0 010 1H9v1.07a7.001 7.001 0 013.274 12.474l.601.602a.5.5 0 01-.707.708l-.746-.746A6.97 6.97 0 018 16a6.97 6.97 0 01-3.422-.892l-.746.746a.5.5 0 01-.707-.708l.602-.602A7.001 7.001 0 017 2.07V1h-.5A.5.5 0 016 .5zm2.5 5a.5.5 0 00-1 0v3.362l-1.429 2.38a.5.5 0 10.858.515l1.5-2.5A.5.5 0 008.5 9V5.5zM.86 5.387A2.5 2.5 0 114.387 1.86 8.035 8.035 0 00.86 5.387zM11.613 1.86a2.5 2.5 0 113.527 3.527 8.035 8.035 0 00-3.527-3.527z" />
-              </svg>
-            <h1 class="text-6xl mb-2 font-bold  lg:inline  lg:whitespace-nowrap text-center md:text-start">Hackathon Semifinals Has Started!</h1>
-           
-            <div class="flex items-start text-[15px] py-2 ml-3"><img src="assets/star.svg" alt="star" class="pr-5"/><p class="">Attracted  nearly <strong class="font-bold text-transparent  bg-gradient-to-r from-indigo-600 to to-pink-500 bg-clip-text">5,000</strong> registrations from students across <strong class="font-bold text-transparent  bg-gradient-to-r from-indigo-600 to to-pink-500 bg-clip-text">1,000+</strong> universities and high schools in <strong class="font-bold text-transparent  bg-gradient-to-r from-indigo-600 to to-pink-500 bg-clip-text"> 48</strong> African countries.</p></div>
-            <div class="flex items-start text-[15px]  py-2 ml-3"><img src="assets/star.svg" alt="star" class="pr-5"/><p class="">Generated <strong class="font-bold text-transparent bg-gradient-to-r from-indigo-600 to to-pink-500 bg-clip-text">500+</strong> project ideas, leading to <strong class="font-bold bg-gradient-to-r text-transparent from-indigo-600 to to-pink-500 bg-clip-text">32</strong> projects in the semi-finals.</p></div>
-                
-          </div>
-                  <!-- <button
+
+            <div class="box relative pl-3">
+              <h1
+                class="text-6xl mb-2 font-bold lg:inline lg:whitespace-nowrap text-center md:text-start"
+              >
+                Hackathon Semifinals Has Started!
+              </h1>
+
+              <div class="flex items-start text-lg font-normal py-3 ">
+                <img src="assets/star.svg" alt="star" class="pr-5" />
+                <p class="">
+                  Attracted nearly
+                  <strong
+                    class="font-bold text-transparent bg-gradient-to-r from-indigo-600 to to-pink-500 bg-clip-text"
+                    >5,000</strong
+                  >
+                  registrations from students across
+                  <strong
+                    class="font-bold text-transparent bg-gradient-to-r from-indigo-600 to to-pink-500 bg-clip-text"
+                    >1,000+</strong
+                  >
+                  universities and high schools in
+                  <strong
+                    class="font-bold text-transparent bg-gradient-to-r from-indigo-600 to to-pink-500 bg-clip-text"
+                  >
+                    48</strong
+                  >
+                  African countries.
+                </p>
+              </div>
+              <div class="flex items-start text-lg font-normal pb-2 ">
+                <img src="assets/star.svg" alt="star" class="pr-5" />
+                <p class="">
+                  Generated
+                  <strong
+                    class="font-bold text-transparent bg-gradient-to-r from-indigo-600 to to-pink-500 bg-clip-text"
+                    >500+</strong
+                  >
+                  project ideas, leading to
+                  <strong
+                    class="font-bold bg-gradient-to-r text-transparent from-indigo-600 to to-pink-500 bg-clip-text"
+                    >32</strong
+                  >
+                  projects in the semi-finals.
+                </p>
+              </div>
+            </div>
+            <!-- <button
               (click)="onShowMentorsModal()"
               class="max-md:mt-5 text-2xl mt-5 rounded-full px-10 md:px-24 py-4 text-white transition-all cursor-pointer ease-out duration-400 bg-purple-700 hover:bg-purple-500 relative overflow-hidden group"
             >
@@ -118,7 +152,7 @@
               (click)="onShowAdvisorsModal()"
               class="max-md:mt-5 text-sm rounded-full px-8 py-3 text-white transition-all bg-purple-500 cursor-pointer ease-out duration-300 left-1/2 hover:bg-gradient-to-r from-purple-700 to-pink-500"
             >
-              <span >Partner with us</span>
+              <span>Partner with us</span>
             </button>
 
             <div
@@ -142,6 +176,7 @@
             </div>
           </div>
         </div>
+
         <!-- <app-share-btn class="border border-red-500">Share</app-share-btn> -->
       </section>
       <!-- <section class="right col-span-1 md:col-span-6  md:h-full md:px-5 mb-10 "> -->

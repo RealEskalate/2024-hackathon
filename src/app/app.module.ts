@@ -52,6 +52,7 @@ import { ShareBtnComponent } from './components/share-btn/share-btn.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SharedModule } from './shared/shared.module';
 import {FixedEligiblityComponent} from './pages/fixed-eligiblity/fixed-eligiblity.component'
+import { OrganizersComponent } from './pages/organizers/organizers.component';
 // import { ShareButton } from 'ngx-sharebuttons/button';
 
 @NgModule({
@@ -90,7 +91,8 @@ import {FixedEligiblityComponent} from './pages/fixed-eligiblity/fixed-eligiblit
     WinnerModal,
     Prize2024Component,
     LandingComponent,
-    TimelineComponent,
+    TimelineComponent
+    
     
     // RegistrationComponent,
     // ShareButton
@@ -111,7 +113,8 @@ import {FixedEligiblityComponent} from './pages/fixed-eligiblity/fixed-eligiblit
     CarouselModule,
     RegisterModalComponent,
     SharedModule,
-    FixedEligiblityComponent
+    FixedEligiblityComponent,
+    OrganizersComponent
     
     
   ],

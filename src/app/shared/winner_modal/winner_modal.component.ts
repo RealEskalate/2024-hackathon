@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-winner_modal',
@@ -10,7 +11,20 @@ export class WinnerModal {
   @Input() modalData: any = {};
   @Output() closeModalEvent = new EventEmitter<boolean>();
 
+  constructor(private sanitizer: DomSanitizer) {}
+
+  getSanitizedUrl(url: string): SafeUrl {
+    console.log("the linkedin url is ", url);
+    
+    return this.sanitizer.bypassSecurityTrustUrl(url);
+  }
+
+  setLinks(link: string) {
+    window.open(link, "_blank");
+  }
+
   closeModal() {
+    console.log('datas',this.modalData)
     this.closeModalEvent.emit(true);
   }
 }
