@@ -4,7 +4,12 @@
     aria-label="Global"
   >
     <!-- logo    -->
-    <a href="https://a2sv.org" target="_blank" rel="">
+    <a
+      (click)="setLinks('https://a2sv.org')"
+      class="cursor-pointer"
+      target="_blank"
+      rel=""
+    >
       <img
         src="assets/A2SV_LOGO%20(2).svg"
         class="w-32 max-sm:w-22 max-lg:w-24 max-md:w-20"
@@ -42,9 +47,9 @@
       > -->
 
       <a
-        (click)="scrollToSection('workshop')"
+        (click)="scrollToSection('workshops')"
         class="text-sm max-xl:text-[0.75rem] cursor-pointer  font-semibold leading-6 hover:text-indigo-600 nav-item {{
-          currentSection.toString() == 'workshop'
+          currentSection.toString() == 'workshops'
             ? 'text-indigo-600'
             : 'text-gray-200'
         }} "
@@ -57,7 +62,7 @@
             ? 'text-indigo-600'
             : 'text-gray-200'
         }}"
-        >Information</a
+        >Timeline</a
       >
       <!-- <a
         (click)="scrollToSection('judges')"
@@ -68,6 +73,15 @@
         }}"
         >Judges</a
       > -->
+      <a
+        (click)="scrollToSection('organizers')"
+        class="text-sm max-xl:text-[0.75rem] cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item {{
+          currentSection.toString() == 'organizers'
+            ? 'text-indigo-600'
+            : 'text-gray-200'
+        }}"
+        >Organizers</a
+      >
       <a
         (click)="scrollToSection('about-us')"
         class="text-sm max-xl:text-[0.75rem] cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item {{
@@ -134,7 +148,7 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
         <a
           class="ml-2 text-gray-100 hover:text-indigo-600 mb-1"
           target="_blank"
-          (click)="setActiveButton('signup', 'https://t.me/+yqzQh04AAXRjZGQ0')"
+          (click)="setLinks('https://t.me/+yqzQh04AAXRjZGQ0')"
           href="https://t.me/+yqzQh04AAXRjZGQ0"
         >
           <svg
@@ -152,12 +166,7 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
         <a
           class="text-gray-100 hover:text-indigo-600 mr-2"
           target="_blank"
-          (click)="
-            setActiveButton(
-              'signup',
-              'https://www.facebook.com/africatosiliconvalley'
-            )
-          "
+          (click)="setLinks('https://www.facebook.com/africatosiliconvalley')"
           href="https://www.facebook.com/africatosiliconvalley"
         >
           <svg
@@ -177,12 +186,7 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
         <a
           class="text-gray-100 align-middle hover:text-indigo-600"
           target="_blank"
-          (click)="
-            setActiveButton(
-              'signup',
-              'https://www.instagram.com/a2sv_org/?hl=en'
-            )
-          "
+          (click)="setLinks('https://www.instagram.com/a2sv_org/?hl=en')"
           href="https://www.instagram.com/a2sv_org/?hl=en"
         >
           <svg
@@ -202,7 +206,7 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
         <a
           class="ml-3 text-gray-100 hover:text-indigo-600"
           target="_blank"
-          (click)="setActiveButton('signup', 'https://twitter.com/A2_SV')"
+          (click)="setLinks('https://twitter.com/A2_SV')"
           href="https://twitter.com/A2_SV"
         >
           <svg
@@ -220,9 +224,7 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
         <a
           class="ml-3 text-gray-100 hover:text-indigo-600"
           target="_blank"
-          (click)="
-            setActiveButton('signup', 'https://www.linkedin.com/company/a2sv/')
-          "
+          (click)="setLinks('https://www.linkedin.com/company/a2sv/')"
           href="https://www.linkedin.com/company/a2sv/"
         >
           <svg
@@ -258,7 +260,7 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
         <a
           class="text-gray-100 hover:text-indigo-600"
           target="_blank"
-          (click)="setActiveButton('signup', 'https://t.me/+yqzQh04AAXRjZGQ0')"
+          (click)="setLinks('https://t.me/+yqzQh04AAXRjZGQ0')"
           href="https://t.me/+yqzQh04AAXRjZGQ0"
         >
           <svg
@@ -275,12 +277,7 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
         <a
           class="text-gray-100 hover:text-indigo-600"
           target="_blank"
-          (click)="
-            setActiveButton(
-              'signup',
-              'https://www.facebook.com/africatosiliconvalley'
-            )
-          "
+          (click)="setLinks('https://www.facebook.com/africatosiliconvalley')"
           href="https://www.facebook.com/africatosiliconvalley"
         >
           <svg
@@ -299,12 +296,7 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
         <a
           class="text-gray-100 align-middle hover:text-indigo-600"
           target="_blank"
-          (click)="
-            setActiveButton(
-              'signup',
-              'https://www.instagram.com/a2sv_org/?hl=en'
-            )
-          "
+          (click)="setLinks('https://www.instagram.com/a2sv_org/?hl=en')"
           href="https://www.instagram.com/a2sv_org/?hl=en"
         >
           <svg
@@ -324,7 +316,7 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
         <a
           class="text-gray-100 hover:text-indigo-600"
           target="_blank"
-          (click)="setActiveButton('signup', 'https://twitter.com/A2_SV')"
+          (click)="setLinks('https://twitter.com/A2_SV')"
           href="https://twitter.com/A2_SV"
         >
           <svg
@@ -342,9 +334,7 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
         <a
           class="text-gray-100 hover:text-indigo-600"
           target="_blank"
-          (click)="
-            setActiveButton('signup', 'https://www.linkedin.com/company/a2sv/')
-          "
+          (click)="setLinks('https://www.linkedin.com/company/a2sv/')"
           href="https://www.linkedin.com/company/a2sv/"
         >
           <svg
@@ -392,13 +382,19 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
   </nav>
 
   <div
-  *ngIf="showWaitlistBanner"  
-  class=" text-white bg-yellow-600 text-center w-full fixed z-50 shadow-md custom-banner relative "
+    *ngIf="showWaitlistBanner"
+    class="text-white bg-yellow-600 text-center w-full fixed z-50 shadow-md custom-banner relative"
   >
-  <div class="font-bold text-[12xl]  absolute right-4 top-1" (click)="onHideWaitlistBanner()"> <button>X </button></div>
+    <div
+      class="font-bold text-[12xl] absolute right-4 top-1"
+      (click)="onHideWaitlistBanner()"
+    >
+      <button>X</button>
+    </div>
     <div class="flex justify-center items-center py-2 px-2 md:px-4">
       <span class="text-left">
-        🙏 Thank you! ✨ A2SV Hackathon 2024 registration is closed with 4,928 participants—join next year's waitlist! 🚀
+        🙏 Thank you! ✨ A2SV Hackathon 2024 registration is closed with 4,928
+        participants—join next year's waitlist! 🚀
       </span>
       <button
         (click)="onShowMentorsModal()"
@@ -406,9 +402,7 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
       >
         <span>Waitlist </span>
       </button>
-      
     </div>
-   
   </div>
   <div class="pt-10"></div>
 
@@ -468,18 +462,14 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
               >A2SV Interview Partners</a
             > -->
             <a
-              (click)="scrollToSection('workshop')"
-              class="text-sm max-xl:text-[0.75rem] cursor-pointer  font-semibold leading-6 hover:text-indigo-600 nav-item {{
-                currentSection.toString() == 'workshop'
-                  ? 'text-indigo-600'
-                  : 'text-gray-200'
-              }} "
+              (click)="scrollToSection('workshops'); toggleMenu()"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
               >Workshops
             </a>
             <a
               (click)="scrollToSection('info'); toggleMenu()"
               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
-              >Information</a
+              >Timeline</a
             >
             <!-- <a
               (click)="scrollToSection('judges'); toggleMenu()"
@@ -491,6 +481,11 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
               >Eligibility</a
             > -->
+            <a
+              (click)="scrollToSection('organizers'); toggleMenu()"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
+              >Organizers</a
+            >
             <a
               (click)="scrollToSection('about-us'); toggleMenu()"
               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"

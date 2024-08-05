@@ -203,15 +203,18 @@ export class AppComponent implements OnInit, OnDestroy  {
   private spiedTags = ['DIV'];
 
   @Output() public sectionChange = new EventEmitter<string>();
-  public currentSection: string = 'home';
+  public currentSection: string = 'landing';
 
   @HostListener('document:mousewheel', ['$event'])
   onScroll(event: any) {
     let currentSection = '';
     const children = this._el.nativeElement.children;
+    console.log("children",children);
+    
     const top = event.target.scrollTop;
     const parentRect = event.target.getBoundingClientRect(); // Get the container's position relative to the viewport
-
+    console.log("parentRect",parentRect);
+    
     for (let i = 0; i < children.length; i++) {
       const element = children[i];
       const elementRect = element.getBoundingClientRect(); // Get the child element's position relative to the viewport
@@ -219,10 +222,12 @@ export class AppComponent implements OnInit, OnDestroy  {
         if (elementRect.top - parentRect.top <= top) {
           // Compare element's top position with container's top position
           currentSection = element.id;
+          
         }
       }
     }
 
+    console.log("currentSection calculated before if clause",currentSection);
     if (currentSection !== this.currentSection) {
       if (currentSection !== '') this.currentSection = currentSection;
     }
