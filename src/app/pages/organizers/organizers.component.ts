@@ -60,7 +60,7 @@ export class OrganizersComponent {
     {
       name: "Paulos Dessie",
       description:
-        "He believes software engineering is the most existing field in the world. There is always something new to learn.\n\nPaulos loves playing basketball and watching movies.",
+        "Paulos Dessie finds software engineering to be the most exciting field, offering endless opportunities for learning and growth. He enjoys the challenges and innovations at the forefront of technology. In his free time, Paulos loves playing basketball for the teamwork and strategy, and watching movies for the storytelling. These activities provide a perfect balance to his work, helping him relax and recharge.",
       image:
         "https://res.cloudinary.com/eskalate/image/upload/v1721895905/team/paulos4.png",
       contact: "#",
@@ -77,7 +77,7 @@ export class OrganizersComponent {
     {
       name: "Amanuel Alehegne",
       description:
-        "Amanuel has a deep-seated love for mathematics, puzzles, and problem-solving, which has naturally led him to a career in software engineering. For him, it is the logic and the math in action. He believes that technology holds the power to solve almost any challenge, with software being the very soul of machines. His passion for AI and machine learning drives his ambition to not only pursue a career as an engineer but also be at the forefront of the coming Artificial General Intelligence (AGI) revolution.",
+        "Amanuel Alehegn's love for mathematics, puzzles, and problem-solving has naturally led him to a career in software engineering, where logic and math come to life. He believes technology can solve almost any challenge, with software as the soul of machines. His passion for AI and machine learning drives his ambition to be at the forefront of the coming Artificial General Intelligence (AGI) revolution.",
       image:
         "https://res.cloudinary.com/eskalate/image/upload/v1722863506/team/aman_astu4.png",
       contact: "https://www.linkedin.com/in/amanuel-alehegne/",
