@@ -44,7 +44,7 @@ export class OrganizersComponent {
     {
       name: "Rediet Ferew",
       description:
-        "Rediet, a software engineering student in the Artificial Intelligence stream, loves various aspects of her field. First, its flexibility allows her to apply it to real-life challenges across different domains. Second, it hones her problem-solving skills and broadens her perspectives. Third, being in-demand and remote-friendly, it offers convenience and opportunities for collaboration, fostering a strong team spirit.\n\nAs a 4th-year student, Rediet delves into AI-based topics and continuously acquires new AI-related skills.",
+        "Rediet, a software engineering student in the Artificial Intelligence stream, loves various aspects of her field. First, its flexibility allows her to apply it to real-life challenges across different domains. Second, it hones her problem-solving skills and broadens her perspectives. Third, being in-demand and remote-friendly, it offers convenience and opportunities for collaboration, fostering a strong team spirit.",
       image:
         "https://res.cloudinary.com/eskalate/image/upload/v1721895905/team/rediet4.png",
       contact: "https://www.linkedin.com/in/rediet-ferew-8a18b922a/",
@@ -52,7 +52,7 @@ export class OrganizersComponent {
     {
       name: "Bethelhem Yemane",
       description:
-        "Rediet, a software engineering student in the Artificial Intelligence stream, loves various aspects of her field. First, its flexibility allows her to apply it to real-life challenges across different domains. Second, it hones her problem-solving skills and broadens her perspectives. Third, being in-demand and remote-friendly, it offers convenience and opportunities for collaboration, fostering a strong team spirit.\n\nAs a 4th-year student, Rediet delves into AI-based topics and continuously acquires new AI-related skills.",
+        "Bethelhem is a passionate individual deeply fascinated by the world of software engineering. For her, the field's allure lies in the chance to exercise creativity and devise innovative solutions to real-life challenges, whether through automation, problem-solving, or entertainment.",
       image:
         "https://res.cloudinary.com/eskalate/image/upload/v1721895905/team/bethelhem4.png",
       contact: "https://www.linkedin.com/in/betabravah/",
@@ -77,7 +77,7 @@ export class OrganizersComponent {
     {
       name: "Amanuel Alehegne",
       description:
-        "I have a deep-seated love for mathematics, puzzles, and problem-solving, which has naturally led me to a career in software engineering. It is the logic and the math in action. I believe that technology holds the power to solve almost any challenge, with software being the very soul of machines. My passion for AI and machine learning drives my ambition to not only pursue a career as an engineer but also be at the forefront of the coming Artificial General Intelligence (AGI) revolution.",
+        "Amanuel has a deep-seated love for mathematics, puzzles, and problem-solving, which has naturally led him to a career in software engineering. For him, it is the logic and the math in action. He believes that technology holds the power to solve almost any challenge, with software being the very soul of machines. His passion for AI and machine learning drives his ambition to not only pursue a career as an engineer but also be at the forefront of the coming Artificial General Intelligence (AGI) revolution.",
       image:
         "https://res.cloudinary.com/eskalate/image/upload/v1722863506/team/aman_astu4.png",
       contact: "https://www.linkedin.com/in/amanuel-alehegne/",
@@ -92,3 +92,9 @@ export class OrganizersComponent {
     this.showCards = !this.showCards; // Toggle the visibility
   }
 }
+
+
+/*
+ "Bethelhem is a passionate individual deeply fascinated by the world of software engineering.",
+    "For her, the field's allure lies in the chance to exercise creativity and devise innovative solutions to real-life challenges, whether through automation, problem-solving, or entertainment. Collaboration is another aspect she finds thrilling, relishing the opportunity to work alongside like-minded enthusiasts to achieve common objectives.\n\nWith competitive programming, development, and communication skills, Bethelhem aspires to continuously improve as a programmer and problem solver. Her drive to become better in her craft fuels her dedication to the software engineering journey."
+   */
