@@ -67,7 +67,20 @@ export class EligibilityComponent {
     {text:"Is each team member registered only to one team?", answered: null},
     {text:"Does your team have 3 to 5 members?", answered:null},
 
-  ]
+  ];
+  // general criteria list
+  // individualCriteria = [
+  //   { text: "You should currently be studying or have completed your studies at a University, College (undergraduate, Associate, or Diploma program), or High School in Africa.", answered: null },
+  //   { text: "Your graduation year should be on or after the year the hackathon is held.", answered: null },
+  //   { text: "You should already be in a team of 4-5 members or be willing to be grouped into teams by the organizers.", answered: null }
+  // ];
+  
+  // teamCriteria = [
+  //   { text: "All of your team members should currently be studying or have completed their studies at a University, College (undergraduate, Associate, or Diploma program), or High School in Africa.", answered: null },
+  //   { text: "The graduation years of all team members should be on or after the year the hackathon is held.", answered: null },
+  //   { text: "Each team member should be registered in only one team.", answered: null },
+  //   { text: "Your team should have 3 to 5 members.", answered: null }
+  // ];
  
  
 

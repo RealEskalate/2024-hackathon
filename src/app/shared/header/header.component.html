@@ -389,12 +389,24 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
       class="font-bold text-[12xl] absolute right-4 top-1"
       (click)="onHideWaitlistBanner()"
     >
-      <button>X</button>
+      <button> <svg
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="white"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg></button>
     </div>
     <div class="flex justify-center items-center py-2 px-2 md:px-4">
       <span class="text-left">
-        🙏 Thank you! ✨ A2SV Hackathon 2024 registration is closed with 4,928
-        participants—join next year's waitlist! 🚀
+        🎉 A2SV Hackathon 2024 brought together 4,928 innovators! Don’t miss out on next year’s excitement—join our waitlist. 🚀
       </span>
       <button
         (click)="onShowMentorsModal()"
