@@ -13,7 +13,7 @@
     </div>
   </div>
 </ng-container>
-<div *ngIf="!modalOpen" class="relative z-41">
+<div *ngIf="!modalOpen" class="relative z-40">
   <app-header [currentSection]="currentSection"></app-header>
 </div>
 <div
@@ -47,19 +47,19 @@
   <app-landing></app-landing>
 </div>
 
-<div id="prize2024" class="relative z-40">
+<div id="prize2024" class="relative z-30">
   <app-prize2024></app-prize2024>
 </div>
 
-<div id="quarter" class="relative z-40">
+<div id="quarter" class="relative z-30">
   <app-quarter></app-quarter>
 </div>
 
-<div id="workshops" class="relative z-40">
+<div id="workshops" class="relative z-30">
   <app-workshop></app-workshop>
 </div>
 
-<div id="info" class="relative z-40">
+<div id="info" class="relative z-30">
   <app-info></app-info>
 </div>
 
@@ -69,10 +69,10 @@
 <div id="fixed-eligibility">
   <app-fixed-eligiblity (openChatEvent)="openChat()"></app-fixed-eligiblity>
 </div>
-<div id="home" class="relative z-40">
+<div id="home" class="relative z-30">
   <app-home (toggleChatEvent)="changeChatState($event)"></app-home>
 </div>
-<div id="prizes" class="relative z-40">
+<div id="prizes" class="relative z-30">
   <app-prizes></app-prizes>
 </div>
 <!-- <div id="project" class="relative z-40">
@@ -83,17 +83,18 @@
   <app-workshop></app-workshop>
 </div> -->
 
-<div id="organizers" class="relative z-40">
+<div id="organizers" class="relative z-30">
   <app-organizers></app-organizers>
+  </div>
 <!-- </div>
 <div id="judges" class="relative z-40">
   <app-judges></app-judges>
 </div> -->
 
-<div id="about-us" class="relative z-40">
+<div id="about-us" class="relative z-30">
   <app-about-us></app-about-us>
 </div>
-<div id="partners" class="relative z-40">
+<div id="partners" class="relative z-30">
   <app-potential-partners></app-potential-partners>
 </div>
 
@@ -120,9 +121,9 @@
   *ngIf="!modalOpen"
   class="fixed {{
     showChat ? 'h-5/6 w-1/3' : 'h-auto w-auto'
-  }} bottom-4 z-50 h-5/6 w-1/3 gap-y-4 px-5  right-4 flex flex-col  items-end  justify-end"
+  }} bottom-4 z-50 h-5/6 w-1/3 gap-y-4 px-5  right-4 flex flex-col  items-end  justify-end  "
 >
-  <div *ngIf="showChat" class="mx-4 h-full w-full">
+  <div *ngIf="showChat" class="mx-4 pt-5 h-full w-full ">
     <app-bot (closeChatEvent)="toggleChatBtn()"></app-bot>
   </div>
   <button
@@ -166,6 +167,8 @@
     </svg>
   </button>
 
+  </div>
+
   <button
     onClick="register_modal.showModal()"
     *ngIf="
@@ -175,7 +178,7 @@
   >
     Register
   </button>
-</div>
+
 <!-- <app-registration
   [showModal]="showModal"
   (closeModalEvent)="onHideModal()"
