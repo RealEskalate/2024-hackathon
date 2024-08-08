@@ -1,4 +1,4 @@
-<header class="fixed text-white inset-x-0 top-0 z-50">
+<header class="fixed text-white inset-x-0 top-0">
   <nav
     class="flex gap-x-4 backdrop-blur-lg bg-black bg-opacity-30 items-center justify-between border-b border-gray-600 border-spacing-0.5 max-md:p-2 p-4 lg:px-16"
     aria-label="Global"
@@ -47,6 +47,16 @@
       > -->
 
       <a
+        (click)="scrollToSection('quarter')"
+        class="text-sm max-xl:text-[0.75rem] cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item {{
+          currentSection.toString() == 'quarter'
+            ? 'text-indigo-600'
+            : 'text-gray-200'
+        }}"
+        >Quarterfinals</a
+      >
+
+      <a
         (click)="scrollToSection('workshops')"
         class="text-sm max-xl:text-[0.75rem] cursor-pointer  font-semibold leading-6 hover:text-indigo-600 nav-item {{
           currentSection.toString() == 'workshops'
@@ -55,6 +65,7 @@
         }} "
         >Workshop
       </a>
+
       <a
         (click)="scrollToSection('info')"
         class="text-sm max-xl:text-[0.75rem] cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item {{
@@ -82,6 +93,7 @@
         }}"
         >Organizers</a
       >
+
       <a
         (click)="scrollToSection('about-us')"
         class="text-sm max-xl:text-[0.75rem] cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item {{
@@ -90,15 +102,6 @@
             : 'text-gray-200'
         }}"
         >About Us</a
-      >
-      <a
-        (click)="scrollToSection('partners')"
-        class="text-sm max-xl:text-[0.75rem] cursor-pointer font-semibold leading-6  hover:text-indigo-600 nav-item {{
-          currentSection.toString() == 'partners'
-            ? 'text-indigo-600'
-            : 'text-gray-200'
-        }}"
-        >Interview Partners</a
       >
     </div>
     <!-- <button
@@ -383,7 +386,7 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
 
   <div
     *ngIf="showWaitlistBanner"
-    class="text-white bg-yellow-600 text-center w-full fixed z-50 shadow-md custom-banner relative"
+    class="text-white bg-yellow-600 text-center w-full shadow-md custom-banner relative"
   >
     <div
       class="font-bold text-[12xl] absolute right-4 top-1"
@@ -426,9 +429,9 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
     aria-modal="true"
   >
     <!-- Background backdrop, show/hide based on slide-over state. -->
-    <div class="fixed inset-0 z-50"></div>
+    <!-- <div class="fixed inset-0 z-50"></div> -->
     <div
-      class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+      class="fixed inset-y-0 right-0 w-full overflow-y-auto bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
     >
       <div class="flex items-center justify-between">
         <button
@@ -499,14 +502,14 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
               >Organizers</a
             >
             <a
+              (click)="scrollToSection('quarter'); toggleMenu()"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
+              >Quarterfinals</a
+            >
+            <a
               (click)="scrollToSection('about-us'); toggleMenu()"
               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
               >About Us</a
-            >
-            <a
-              (click)="scrollToSection('partners'); toggleMenu()"
-              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
-              >A2SV Interview Partners</a
             >
           </div>
         </div>
