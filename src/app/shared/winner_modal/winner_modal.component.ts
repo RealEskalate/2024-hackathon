@@ -14,7 +14,6 @@ export class WinnerModal {
   constructor(private sanitizer: DomSanitizer) {}
 
   getSanitizedUrl(url: string): SafeUrl {
-    console.log("the linkedin url is ", url);
     
     return this.sanitizer.bypassSecurityTrustUrl(url);
   }
@@ -24,7 +23,6 @@ export class WinnerModal {
   }
 
   closeModal() {
-    console.log('datas',this.modalData)
     this.closeModalEvent.emit(true);
   }
 }

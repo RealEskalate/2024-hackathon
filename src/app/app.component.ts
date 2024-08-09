@@ -209,11 +209,10 @@ export class AppComponent implements OnInit, OnDestroy  {
   onScroll(event: any) {
     let currentSection = '';
     const children = this._el.nativeElement.children;
-    console.log("children",children);
     
     const top = event.target.scrollTop;
     const parentRect = event.target.getBoundingClientRect(); // Get the container's position relative to the viewport
-    console.log("parentRect",parentRect);
+    
     
     for (let i = 0; i < children.length; i++) {
       const element = children[i];
@@ -227,7 +226,7 @@ export class AppComponent implements OnInit, OnDestroy  {
       }
     }
 
-    console.log("currentSection calculated before if clause",currentSection);
+    
     if (currentSection !== this.currentSection) {
       if (currentSection !== '') this.currentSection = currentSection;
     }
