@@ -9,6 +9,7 @@ import { years,timeline } from '../../static/years';
 })
 export class TimelineComponent implements OnInit {
   years: any[] = [];
+  currentDate: Date = new Date();
   
   ngOnInit(): void {
     this.years = timeline ;
@@ -16,5 +17,20 @@ export class TimelineComponent implements OnInit {
 
   closeTimelineModal() {
     // Emit event or handle modal close
+  }
+  
+
+  isPastEndDate(endDate: string): boolean {
+    const currentDate = new Date();
+    const end = new Date(endDate);
+    return currentDate > end;
+  }
+
+  // Helper function to check if the current date is between the start and end dates
+  isBetweenDates(startDate: string, endDate: string): boolean {
+    const currentDate = new Date();
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    return currentDate >= start && currentDate <= end;
   }
 }

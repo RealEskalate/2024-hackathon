@@ -98,6 +98,8 @@ export const timeline = [
     title: "Registration",
     desc: "Students to register for the African-wide hackathon focused on AI.",
     year: "1 June - 15 July, 2024",
+    startDate: "June 1, 2024",
+    endDate: "June 15, 2024",
     final: false,
   },
   {
@@ -106,6 +108,8 @@ export const timeline = [
     title: "Project Idea Submission and Filtration",
     desc: "During this phase, participants submit their project ideas for consideration. Ideas undergo thorough evaluation and filtering to ensure alignment with hackathon objectives and feasibility for development.",
     year: "8-16 July, 2024",
+    startDate: "July 8, 2024",
+    endDate: "July 16, 2024",
     final: false,
   },
   {
@@ -114,6 +118,8 @@ export const timeline = [
     title: "Workshops",
     desc: "Our initial workshops provide participants with an in-depth understanding of AI, hackathon dynamics, and idea generation.",
     year: "13-17 July, 2024",
+    startDate: "July 13, 2024",
+    endDate: "July 17, 2024",
     final: false,
   },
   {
@@ -122,6 +128,8 @@ export const timeline = [
     title: "Quarterfinals",
     desc: "Participants undertake a virtual hackathon, competing for a place among the top 30 projects and receiving expert mentorship along the way.",
     year: "19-21 July, 2024",
+    startDate: "July 19, 2024",
+    endDate: "July 21, 2024",
     final: false,
   },
   {
@@ -130,6 +138,8 @@ export const timeline = [
     title: "Semifinals",
     desc: "Continued guidance from advisors help refine and optimize the projects of the remaining teams. This phase is marked by iterative feedback and project refinement.",
     year: "July 28 - September 6, 2024",
+    startDate: "July 28, 2024",
+    endDate: "September 15, 2024",
     final: false,
   },
   {
@@ -138,6 +148,8 @@ export const timeline = [
     title: "Grand Finale",
     desc: " The top 8 teams are flown to Ethiopia for an all-expense-paid in-person event. They’ll compete for a total prize pool of $30,000, presenting their projects to a distinguished jury.",
     year: "21-26 , September 2024",
+    startDate: "September 21, 2024",
+    endDate: "September 26, 2024",
   },
   // {number: '6', title: "Grand Finale",desc: "The top 8 teams were flown to Ethiopia for an all-expense-paid 2-day in-person event. They competed for a total prize pool of $30,000, presenting their projects to a distinguished jury.",  date: '21-26 September, 2024', final: false},
 ];

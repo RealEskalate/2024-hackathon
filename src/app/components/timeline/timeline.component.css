@@ -77,7 +77,7 @@ h1 {
   }
   
   /* circle */
-  ul li .date::after {
+  /* ul li .date::after {
     content: '';
     position: absolute;
     width: 2rem;
@@ -89,7 +89,7 @@ h1 {
   
     transform: translate(50%, -50%);
     right: calc(100% + var(--col-gap) + var(--line-w) / 2);
-  }
+  } */
   
   /* title descr */
   ul li .title,
