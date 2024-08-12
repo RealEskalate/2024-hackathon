@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, ViewChild, ElementRef } from "@angular/core";
 import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 
 export interface Workshop {
@@ -13,6 +13,7 @@ export interface Workshop {
   styleUrls: ["./workshop.component.css"],
 })
 export class WorkshopComponent {
+  @ViewChild('cardsSection') cardsSection!: ElementRef;
   @Input() workshop: Workshop | undefined;
   showCards = false; // Initialize as true
 
@@ -30,5 +31,16 @@ export class WorkshopComponent {
 
   toggleCards() {
     this.showCards = !this.showCards; // Toggle the visibility
+    if (this.showCards) {
+      setTimeout(() => {
+        this.scrollToCardsSection();
+      }, 0);
+    }
+  }
+
+  scrollToCardsSection() {
+    console.log("scrool to section");
+    
+    this.cardsSection.nativeElement.scrollIntoView({ behavior: 'smooth' });
   }
 }

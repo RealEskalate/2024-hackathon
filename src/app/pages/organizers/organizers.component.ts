@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild, ElementRef } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
 export interface Organizers {
@@ -15,6 +15,8 @@ export interface Organizers {
   styleUrl: "./organizers.component.css",
 })
 export class OrganizersComponent {
+  @ViewChild('organizerSection') organizerSection!: ElementRef;
+
   showCards = true;
   organizers = [
     {
@@ -31,7 +33,7 @@ export class OrganizersComponent {
         "Yordanos, a first-gen Ethiopian-American, brings a global perspective to her roles in community organizing, talent recruiting, and scaling companies. Passionate about breaking barriers, she collaborates with dreamers to foster inclusive teams. Outside of work, Yordanos enjoys warm weather, chocolate, music, soccer, and delving into philosophy and poetry.",
       image:
         "https://res.cloudinary.com/eskalate/image/upload/v1721895905/team/yordanos.jpg",
-      contact: "https://www.linkedin.com/in/emre-varol/",
+      contact: "https://www.linkedin.com/in/yordanost",
     },
     {
       name: "Beimnet Bekele",
@@ -63,7 +65,7 @@ export class OrganizersComponent {
         "Paulos Dessie finds software engineering to be the most exciting field, offering endless opportunities for learning and growth. He enjoys the challenges and innovations at the forefront of technology. In his free time, Paulos loves playing basketball for the teamwork and strategy, and watching movies for the storytelling. These activities provide a perfect balance to his work, helping him relax and recharge.",
       image:
         "https://res.cloudinary.com/eskalate/image/upload/v1721895905/team/paulos4.png",
-      contact: "#",
+      contact: "https://www.linkedin.com/in/paulos-nedaw-a22207235/",
     },
     {
       name: "Nathnael Dereje",
@@ -90,6 +92,17 @@ export class OrganizersComponent {
 
   toggleCards() {
     this.showCards = !this.showCards; // Toggle the visibility
+    if (this.showCards) {
+      setTimeout(() => {
+        this.scrollToCardsSection();
+      }, 0);
+    }
+  }
+
+  scrollToCardsSection() {
+    console.log("scrool to section");
+    
+    this.organizerSection.nativeElement.scrollIntoView({ behavior: 'smooth' });
   }
 }
 
