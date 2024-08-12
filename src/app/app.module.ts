@@ -53,6 +53,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SharedModule } from './shared/shared.module';
 import {FixedEligiblityComponent} from './pages/fixed-eligiblity/fixed-eligiblity.component'
 import { OrganizersComponent } from './pages/organizers/organizers.component';
+import { ChatBotComponent } from './shared/chat-bot/chat-bot.component';
 // import { ShareButton } from 'ngx-sharebuttons/button';
 
 @NgModule({
@@ -114,7 +115,8 @@ import { OrganizersComponent } from './pages/organizers/organizers.component';
     RegisterModalComponent,
     SharedModule,
     FixedEligiblityComponent,
-    OrganizersComponent
+    OrganizersComponent,
+    ChatBotComponent
     
     
   ],

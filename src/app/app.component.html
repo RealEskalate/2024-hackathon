@@ -18,7 +18,7 @@
 </div>
 <div
   *ngIf="isWinnerModalOpen"
-  class="fixed h-full w-full border-red-500 pt-2 z-50"
+  class="fixed h-full w-full  pt-2 z-50"
 >
   <app-winner_modal
     [showModal]="isModalOpen"
@@ -125,6 +125,7 @@
 >
   <div *ngIf="showChat" class="mx-4 pt-5 h-full w-full ">
     <app-bot (closeChatEvent)="toggleChatBtn()"></app-bot>
+    <!-- <app-chat-bot (closeChatEvent)="toggleChatBtn()"></app-chat-bot> -->
   </div>
   <button
     *ngIf="!isButtonAtBottom || showChat"
