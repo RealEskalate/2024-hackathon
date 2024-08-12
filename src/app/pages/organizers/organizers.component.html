@@ -4,10 +4,10 @@
 >
   <div class="container py-16 mx-auto flex flex-col justify-center items-center">
     <div class="container flex items-center justify-center">
-      <button
-        class="mt-2 border border-gray-700 flex justify-between items-center px-10 py-2 rounded-full mb-12 transition-transform transform-all hover:scale-105"
-        (click)="toggleCards()"
-      >
+      <div
+      class="mt-2 w-full md:w-4/5 border-b border-gray-700 flex justify-between items-center cursor-pointer mb-12 transition-transform transform-all hover:scale-105"
+      (click)="toggleCards()"
+    >
         <span class="flex items-center mr-10">
           <p
             class="sm:text-4xl text-2xl text-center font-bold text-transparent bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text"
@@ -48,7 +48,7 @@
             />
           </svg>
         </span>
-      </button>
+      </div>
     </div>
 
     <p
@@ -61,6 +61,7 @@
       everything runs smoothly.
     </p>
     <div
+      #organizerSection
       *ngIf="showCards"
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5"
     >
