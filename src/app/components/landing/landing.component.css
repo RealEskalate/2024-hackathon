@@ -37,14 +37,13 @@
   background: yellow; /* Color of the scrollbar handle */
 }
 .bg_svg{
- /* Set your desired height */
-  background-image: url('https://res.cloudinary.com/eskalate/video/upload/v1716272816/Hackathon/Hackathon_2023_Highlights_RAW_V1.mp4');
-
-  background-size: cover; /* Adjust as needed */
-  background-repeat: no-repeat; 
-  background-position: center;
-  
-}
+  /* Set your desired height */
+   background-image: url('/assets/back.svg');
+   background-size: contain; /* Adjust as needed */
+   background-repeat: repeat; 
+   background-position: top;
+   
+ }
 .vid{
   z-index: -6;
 }
