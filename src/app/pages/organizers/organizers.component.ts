@@ -20,12 +20,12 @@ export class OrganizersComponent {
   showCards = true;
   organizers = [
     {
-      name: "Emre Varol",
+      name: "Beimnet Bekele",
       description:
-        "Emre, the distinguished CEO of A2SV, has a rich background including tenures at industry giants like Palantir and Google. He fervently strives to make a difference by bridging the gap between high-potential African students and transformative opportunities. His focus lies in fostering the next generation of African tech leaders.",
+        "Meet Beimnet Bekele, an Aspiring Machine Learning Researcher and accomplished Software Engineer. With a keen interest in Machine Learning, Beimnet dedicates his time to exploring and advancing this cutting-edge field. His expertise spans across software engineering and machine learning, where he continually strives to innovate and contribute to the ever-evolving world of technology.",
       image:
-        "https://res.cloudinary.com/eskalate/image/upload/v1700745290/Hackathon/emre.png",
-      contact: "https://www.linkedin.com/in/emre-varol/",
+        "https://res.cloudinary.com/eskalate/image/upload/v1722869427/team/bemni_hack.png",
+      contact: "https://www.linkedin.com/in/beimnet-guta/",
     },
     {
       name: "Yordanos Asmare",
@@ -36,12 +36,12 @@ export class OrganizersComponent {
       contact: "https://www.linkedin.com/in/yordanost",
     },
     {
-      name: "Beimnet Bekele",
+      name: "Emre Varol",
       description:
-        "Meet Beimnet Bekele, an Aspiring Machine Learning Researcher and accomplished Software Engineer. With a keen interest in Machine Learning, Beimnet dedicates his time to exploring and advancing this cutting-edge field. His expertise spans across software engineering and machine learning, where he continually strives to innovate and contribute to the ever-evolving world of technology.",
+        "Emre, the distinguished CEO of A2SV, has a rich background including tenures at industry giants like Palantir and Google. He fervently strives to make a difference by bridging the gap between high-potential African students and transformative opportunities. His focus lies in fostering the next generation of African tech leaders.",
       image:
-        "https://res.cloudinary.com/eskalate/image/upload/v1722869427/team/bemni_hack.png",
-      contact: "https://www.linkedin.com/in/beimnet-guta/",
+        "https://res.cloudinary.com/eskalate/image/upload/v1700745290/Hackathon/emre.png",
+      contact: "https://www.linkedin.com/in/emre-varol/",
     },
     {
       name: "Rediet Ferew",
