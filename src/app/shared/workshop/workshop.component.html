@@ -1,10 +1,11 @@
 <section
   id="workshops"
-  class="m-auto md:px-20 py-5 px-4 flex flex-col items-center"
+  class="m-auto  py-5 px-5 flex flex-col items-center justify-center"
 >
-  <div class="container flex items-center justify-center">
+<div class="max-w-6xl flex flex-col items-center">
+  <div class=" container flex items-center justify-center">
     <div
-      class="mt-2 w-full md:w-4/5 border-b border-gray-700 flex justify-between items-center cursor-pointer mb-12 transition-transform transform-all hover:scale-105"
+      class="mt-2 w-full  border-b border-gray-700 flex justify-between items-center cursor-pointer mb-12 transition-transform transform-all hover:scale-105"
       (click)="toggleCards()"
     >
       <span class="flex items-center mr-10">
@@ -51,7 +52,7 @@
   </div>
 
   <p
-    class="lg:w-4/5 mx-auto leading-relaxed text-base text-white text-justify justify-between"
+    class=" mx-auto leading-relaxed text-base text-white text-justify justify-between"
   >
     Our hackathon featured a series of insightful workshops designed to equip
     participants with essential skills for success. Topics included preparing
@@ -64,7 +65,7 @@
 
   <div *ngIf="showCards" #cardsSection>
     <div
-      class="grid grid-cols-1 max-sm:px-0 px-12 lg:grid-cols-3 sm:grid-cols-2 gap-2"
+      class="grid grid-cols-1 md:grid-cols-2 max-sm:px-0 px-12 lg:grid-cols-3  gap-2"
     >
       <div
         *ngFor="let workshop of workshops_lists; let i = index"
@@ -87,4 +88,5 @@
       </div>
     </div>
   </div>
+</div>
 </section>

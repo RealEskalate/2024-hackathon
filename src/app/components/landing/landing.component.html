@@ -1,6 +1,6 @@
 <div
   id="landing"
-  class="bg_svg min-h-screen pt-[50px] bg-opacity-60 relative flex flex-col justify-center"
+  class="bg_svg min-h-screen px-3 md:px-5 w-full  pt-[50px] bg-opacity-60 relative flex flex-col justify-center items-center"
 >
   <app-mentors-registration
     [registrationLink]="mentorsRegistrationLink"
@@ -15,7 +15,7 @@
   <app-register-modal></app-register-modal>
 
   <div
-    class="bg_svg px-5  flex flex-col md:flex-row justify-center items-end drop-shadow-2xl"
+    class="bg_svg  max-w-7xl mb-10  flex flex-col md:flex-row justify-center items-end drop-shadow-2xl"
   >
     <div
       class="order-2 md:order-1 text-white max-md:mb-5 flex-1 flex flex-col justify-end max-md:items-center"
@@ -24,7 +24,7 @@
         <img
           src="assets/newLogo.png"
           alt="star"
-          class="h-[150px] object-contain"
+          class="max-lg:h-[150px] lg:h-[200px] object-contain"
         />
       </div>
       <section
@@ -114,7 +114,7 @@
     <div class="order-1 md:order-2 flex-1 flex items-end relative w-full">
       <div class="stack w-full" id="bigVideo">
         <div
-          class="text-center aspect-[96/65] w-full md:w-[90%] max-sm:w-full card bg-black border border-red-500"
+          class="text-center aspect-[96/65] w-full md:w-[95%] max-sm:w-full card bg-black border border-red-500"
         >
           <div
             class="absolute -inset-[2px] mx-auto bg-gradient-to-r from-yellow-400 to-indigo-600 rounded-2xl"
@@ -160,7 +160,7 @@
         />
         Your browser does not support the video tag.
       </video> -->
-    </div>
+    </div> 
   </div>
   <div
     (click)="scrollDown()"
