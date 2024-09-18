@@ -3,46 +3,70 @@
   class="bg_svg min-h-screen px-3 md:px-5 w-full pt-[50px] bg-opacity-60 relative flex flex-col justify-center items-center"
 >
   <div
-    class="text-white pt-10 px-20 max-sm:px-4 body-font snap-start snap-always ease-in-out flex flex-col justify-center items-center"
+    class="text-white py-10 max-sm:px-4 body-font snap-start snap-always ease-in-out flex flex-col justify-center items-center max-w-6xl"
   >
     <div class="container mx-auto px-4">
       <p class="text-center text-2xl sm:text-4xl pb-6 font-bold text-white">
         Get Tickets
       </p>
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-items-center"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 place-items-center"
       >
         <div
           *ngFor="let ticket of tickets"
-          class="h-full w-full bg_svg transition-transform duration-300 ease-in-out hover:scale-105"
+          class="ticket-card h-full w-full bg_svg transition-transform duration-300 ease-in-out hover:scale-105"
         >
           <div
-            class="bg-blue-950 h-full w-full bg-opacity-50 flex flex-col items-center shadow-lg rounded-lg p-4"
+            class="ticket-content bg-[#1C2547] h-full w-full bg-opacity-50 flex flex-col justify-between items-start shadow-lg rounded-lg p-4"
           >
-            <h4
-              class="text-lg font-semibold border border-white rounded-full px-6 py-2"
-            >
-              {{ ticket.title }}
-            </h4>
-            <p class="text-sm text-gray-500">Available tickets for</p>
-            <div class="price mt-2">
-              <h2 class="text-xl font-bold">{{ ticket.price }}</h2>
-            </div>
+            <section>
+              <div class="ticket-header flex justify-start items-start mb-5">
+                <div class="icon-container w-8 h-6 mt-1 mr-3">
+                  <img
+                    src="assets/tickets.png"
+                    alt="Ticket Icon"
+                    class="object-cover h-full w-full"
+                  />
+                </div>
+                <p class="ticket-title text-left text-lg whitespace-nowrap font-semibold rounded-full">
+                  {{ ticket.title }}
+                </p>
+              </div>
+              <p class="ticket-description text-left mb-5">What You’ll Get</p>
 
-            <div class="button mt-4">
-              <a
-                href="javascript:void(0)"
-                class="bg-gradient-to-r from-gold to-yellow-400 text-white px-4 py-2 rounded-full transform transition-all hover:scale-110 duration-300 ease-in-out"
-                >Get Ticket</a
-              >
-            </div>
-            <div class="table-content mt-8 w-full">
-              <ul class="pl-5 w-full flex flex-col items-center list-none">
-                <li *ngFor="let feature of ticket.features">
-                  <p class="text-center">- {{ feature }}</p>
-                </li>
-              </ul>
-            </div>
+              <div class="features-list w-full">
+                <ul class="w-full flex flex-col list-none">
+                  <li *ngFor="let feature of ticket.features">
+                    <div class="feature-item flex items-start justify-start">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="feature-icon w-8 h-6 text-[#AC6AFF] flex-none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                      <p class="feature-text ml-3 font-extralight">{{ feature }}</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="price-section mt-6 w-full">
+              <h2 class="price text-xl font-bold">{{ ticket.price }}</h2>
+              <a (click)="setLinks(ticket.ticket_link)" >
+                <button
+                  class="buy-button w-full rounded-xl bg-white mt-6 text-black px-5 py-3"
+                >
+                  Get Ticket
+                </button>
+              </a>
+            </section>
           </div>
         </div>
       </div>
