@@ -84,26 +84,26 @@
           <div class="mt-auto p-4 flex justify-center items-center space-x-3">
           <a (click)="setLinks(projects.webUrl)" target="_blank">
             <img
-            class="w-8 h-8 object-contain"
+            class="w-6 h-6 object-contain"
               [src]="projects.logoSrc" 
               
             />
           </a>
           <a *ngIf="projects.playStore_logo" (click)="setLinks(projects.playStore_url)" target="_blank">
             <img
-            class="w-9 h-9 object-contain"
+            class="w-7 h-7 object-contain"
               [src]="projects.playStore_logo"
             />
           </a>
           <a *ngIf="projects.apple_logo" (click)="setLinks(projects.apple_url)" target="_blank">
             <img
-            class="w-9 h-9 object-contain"
+            class="w-7 h-7 object-contain"
               [src]="projects.apple_logo"
             />
           </a>
           <a (click)="setLinks(projects.telegram_url)" target="_blank">
             <img
-            class="w-9 h-9 object-contain"
+            class="w-7 h-7 object-contain"
               [src]="projects.telegram_logo" 
               
             />
