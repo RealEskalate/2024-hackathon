@@ -32,6 +32,8 @@ export class ContactUsComponent {
     });
   }
 
+  loading = false;
+
   countries = [
     { name: "Albania", code: "AL" },
     { name: "Åland Islands", code: "AX" },
@@ -288,6 +290,7 @@ export class ContactUsComponent {
 
   onSubmit() {
     if (this.contactForm.valid) {
+      this.loading = true;
       const emailParams = {
         from_name: `${this.contactForm.value.firstName} ${this.contactForm.value.lastName}`,
         email: this.contactForm.value.email,
@@ -300,9 +303,11 @@ export class ContactUsComponent {
       this.emailService.sendEmail(emailParams).subscribe({
         next: (response) => {
           this.contactForm.reset();
+          this.loading = false;
         },
         error: (error) => {
           console.error("Error sending email", error);
+          this.loading = false;
         },
       });
     } else {
