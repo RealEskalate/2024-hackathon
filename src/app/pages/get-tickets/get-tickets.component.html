@@ -28,7 +28,9 @@
                     class="object-cover h-full w-full"
                   />
                 </div>
-                <p class="ticket-title text-left text-lg whitespace-nowrap font-semibold rounded-full">
+                <p
+                  class="ticket-title text-left text-lg whitespace-nowrap font-semibold rounded-full"
+                >
                   {{ ticket.title }}
                 </p>
               </div>
@@ -50,7 +52,9 @@
                           clip-rule="evenodd"
                         />
                       </svg>
-                      <p class="feature-text ml-3 font-extralight">{{ feature }}</p>
+                      <p class="feature-text ml-3 font-extralight">
+                        {{ feature }}
+                      </p>
                     </div>
                   </li>
                 </ul>
@@ -59,7 +63,7 @@
 
             <section class="price-section mt-6 w-full">
               <h2 class="price text-xl font-bold">{{ ticket.price }}</h2>
-              <a (click)="setLinks(ticket.ticket_link)" >
+              <a (click)="setLinks(ticket.ticket_link)">
                 <button
                   class="buy-button w-full rounded-xl bg-white mt-6 text-black px-5 py-3"
                 >
