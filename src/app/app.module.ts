@@ -63,9 +63,12 @@ import { ExpoPresentersComponent } from "./pages/expo-presenters/expo-presenters
 import { AboutUsComponent } from "./pages/about-us/about-us.component";
 import { SemiFinalistsComponent } from "./pages/semi-finalists/semi-finalists.component";
 import { CoreDevComponent } from "./pages/core-dev/core-dev.component";
+import { DonateCardComponent } from "./components/donate-card/donate-card.component";
+import { ContactUsComponent } from "./components/contact-us/contact-us.component";
+import { DonationCardComponent } from "./components/donation-card/donation-card.component";
+
 // import AboutUsComponent from './pages/about-us/about-us.component'
 // import { ShareButton } from 'ngx-sharebuttons/button';
-
 
 @NgModule({
   declarations: [
@@ -111,8 +114,6 @@ import { CoreDevComponent } from "./pages/core-dev/core-dev.component";
     LandingComponent,
     TimelineComponent,
     AboutUsComponent,
-    
-
     // RegistrationComponent,
     // ShareButton
     // PrivacyConsentComponent,
@@ -135,7 +136,11 @@ import { CoreDevComponent } from "./pages/core-dev/core-dev.component";
     OrganizersComponent,
     ChatBotComponent,
     SemiFinalistsComponent,
-    CoreDevComponent
+    CoreDevComponent,
+    DonateCardComponent,
+    ContactUsComponent,
+    DonationCardComponent,
+    ReactiveFormsModule,
   ],
   providers: [ConsentService, TermsPluginLoaderService],
   bootstrap: [AppComponent],
