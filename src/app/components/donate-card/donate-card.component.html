@@ -1,0 +1,18 @@
+<div #donateCard>
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+  >
+    <div
+      *ngFor="let cardDetail of cardDetails"
+      class="border border-gray-400 rounded-lg transform transition-all hover:scale-110 duration-300 ease-in-out cursor-default"
+    >
+      <img
+        class="w-full h-48 object-cover rounded-t-lg"
+        src="{{ cardDetail.image }}"
+        alt="{{ cardDetail.donateId }}"
+        srcset=""
+      />
+      <a href="#XLKCSNLM" style="display: none"></a>
+    </div>
+  </div>
+</div>
