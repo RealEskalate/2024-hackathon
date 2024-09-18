@@ -1,45 +1,40 @@
-import {
-  Component,
+import {  Component,
   ElementRef,
   EventEmitter,
   HostListener,
   Output,
  OnInit,
- OnDestroy
-} from '@angular/core';
-
-import { LocalStorageService } from './shared/local-storage.service';
-// import { PrivacyConsentService } from './privacy_consent/privacy-consent.service';
+ OnDestroy } from '@angular/core';
+ import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { Cloudinary, CloudinaryImage } from '@cloudinary/url-gen';
-import {fill} from "@cloudinary/url-gen/actions/resize";
-import { TermsPluginLoaderService } from './privacy_consent/terms-plugin-loader.service'
-import { ModalService } from './modal.service';
+import { ModalService } from 'src/app/modal.service';
 import { Subscription } from 'rxjs';
-// import { WinnerModalService } from './shared/winner-modal.service';
+import { WinnerModalService } from 'src/app/shared/winner-modal.service';
 
 declare var loadPrivacyPlugin: any;
-// import { PrivacyConsentService } from './privacy-consent.service';
+
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-hackathon-home',
+  // standalone: false,
+  // imports: [CommonModule],
+  templateUrl: './hackathon-home.component.html',
+  styleUrl: './hackathon-home.component.css'
 })
-export class AppComponent implements OnInit, OnDestroy  {
-  // constructor(private privacyConsentService: PrivacyConsentService) {}
-  // showPartnerButton: boolean = false;
+export class HackathonHomeComponent {
+  showPartnerButton: boolean = false;
   isWinnerModalOpen = false;
   modalData: any = {};
   modalSubscription: Subscription | undefined;
   constructor(
     private _el: ElementRef,
-    private localStorage: LocalStorageService,
-    private termsPluginLoaderService: TermsPluginLoaderService,
     private modalService: ModalService,
-    // private winnerModalService: WinnerModalService
+    private winnerModalService: WinnerModalService,
+    private activatedRoute: ActivatedRoute
     // private privacyConsentService: PrivacyConsentService // Add the PrivacyConsentService here
   ) {
-    this.localStorage.resetWaitingStatus();
+    
   }
   openButton(buttonName: string, link: string) {
     window.open(link, '_blank');
@@ -48,11 +43,11 @@ export class AppComponent implements OnInit, OnDestroy  {
 
 
   @HostListener('document:click', ['$event'])
-  // onDocumentClick(event: MouseEvent) {
-  //   if (!this.isClickWithinModal(event) && this.modalService.isModalOpen) {
-  //     this.modalService.closeModal();
-  //   }
-  // }
+  onDocumentClick(event: MouseEvent) {
+    if (!this.isClickWithinModal(event) && this.modalService.isModalOpen) {
+      this.modalService.closeModal();
+    }
+  }
 
   isClickWithinModal(event: MouseEvent): boolean {
     // Add logic to determine if the click is within the modal element
@@ -63,6 +58,7 @@ export class AppComponent implements OnInit, OnDestroy  {
   get isModalOpen(): boolean {
     return this.modalService.isModalOpen;
   }
+
   img!: CloudinaryImage;
   title = 'A2SV-Hackathon';
   showChat = false;
@@ -71,30 +67,33 @@ export class AppComponent implements OnInit, OnDestroy  {
   isStickRegisterButtonVisible = false;
   @Output() toggleChatEvent = new EventEmitter<boolean>();
   showModal: boolean = false;
-  // showTeamRegistrationModal = false;
-  // showIndividualRegistrationModal = false;
-  // showRegistrationModal = true;
-  // registrationDeadline = new Date(2023, 7, 31, 23, 59, 59);
-  // registrationButtonVisible = true;
-  // countDownVisible = true;
-  // countDownDate = new Date(2023, 8, 3, 17, 0, 0);
+  showTeamRegistrationModal = false;
+  showIndividualRegistrationModal = false;
+  showRegistrationModal = true;
+  registrationDeadline = new Date(2023, 7, 31, 23, 59, 59);
+  registrationButtonVisible = true;
+  countDownVisible = true;
+  countDownDate = new Date(2023, 8, 3, 17, 0, 0);
 
   ngOnInit(): void {
 
-    // this.modalSubscription = this.winnerModalService.isModalOpen$.subscribe((isOpen) => {
-    //   this.isWinnerModalOpen = isOpen;
-    // });
+    this.modalSubscription = this.winnerModalService.isModalOpen$.subscribe((isOpen) => {
+      this.isWinnerModalOpen = isOpen;
+    });
 
-    // this.winnerModalService.modalData$.subscribe((data) => {
-    //   this.modalData = data;
-    // });
+    this.winnerModalService.modalData$.subscribe((data) => {
+      this.modalData = data;
+    });
     
-    const hasConsent = localStorage.getItem('consentGiven');
-    this.termsPluginLoaderService.loadPlugin();
-
+    this.activatedRoute.fragment.subscribe(fragment => {
+      if (fragment) {
+        const element = document.getElementById(fragment);
+        if (element) {
+          setTimeout(() => element.scrollIntoView({ behavior: 'smooth' }), 100);
+        }
+      }
+    });
    
-    
-
     const cld = new Cloudinary({
       cloud: {
         cloudName: 'eskalate',
@@ -103,42 +102,42 @@ export class AppComponent implements OnInit, OnDestroy  {
       },
     });
 
-    // setInterval(() => {
-    //   this.updateRegistrationButtonVisibility();
-    // }, 1000);
+    setInterval(() => {
+      this.updateRegistrationButtonVisibility();
+    }, 1000);
     
     
   }
   ngOnDestroy() {
-    if (this.modalSubscription) {
-      this.modalSubscription.unsubscribe();
-    }
+    // if (this.modalSubscription) {
+    //   this.modalSubscription.unsubscribe();
+    // }
   }
 
-  // closeModal() {
-  //   this.winnerModalService.toggleModal(false);
-  // }
-  closeJoinModal(){
-    this.modalService.closeModal()
+  closeModal() {
+    this.winnerModalService.toggleModal(false);
   }
+  // closeJoinModal(){
+  //   this.modalService.closeModal()
+  // }
   
   
-  // updateCountDownVisibility() {
-  //   const now = new Date();
-  //   this.countDownVisible = now < this.countDownDate;
-  // }
-  // updateRegistrationButtonVisibility() {
-  //   const now = new Date();
-  //   this.registrationButtonVisible = now < this.registrationDeadline;
-  // }
-  // onRegisterTeam() {
-  //   this.toggleChatEvent.emit(false);
-  //   this.showIndividualRegistrationModal = true;
-  //   this.showRegistrationModal = false;
-  //   document.body.classList.add('overflow-hidden', 'z-0');
-  //   document.getElementById('prizes')?.classList.add('z-0');
-  //   document.getElementById('prizes')?.classList.remove('z-40');
-  // }
+  updateCountDownVisibility() {
+    const now = new Date();
+    this.countDownVisible = now < this.countDownDate;
+  }
+  updateRegistrationButtonVisibility() {
+    const now = new Date();
+    this.registrationButtonVisible = now < this.registrationDeadline;
+  }
+  onRegisterTeam() {
+    this.toggleChatEvent.emit(false);
+    this.showIndividualRegistrationModal = true;
+    this.showRegistrationModal = false;
+    document.body.classList.add('overflow-hidden', 'z-0');
+    document.getElementById('prizes')?.classList.add('z-0');
+    document.getElementById('prizes')?.classList.remove('z-40');
+  }
 
   decreaseZIndex() {
     document.getElementById('prizes')?.classList.add('z-0');
@@ -174,13 +173,7 @@ export class AppComponent implements OnInit, OnDestroy  {
     document.body.classList.remove('overflow-hidden');
   }
 
-  openChat() {
-    this.showChat = true;
-  }
-
-  toggleChatBtn() {
-    this.showChat = !this.showChat;
-  }
+ 
 
   changeChatState(state: boolean) {
     this.modalOpen = !state;
@@ -233,15 +226,14 @@ export class AppComponent implements OnInit, OnDestroy  {
 
 
     // For Partner button logic 
-    // const landingElement = this._el.nativeElement.querySelector('#landing');
-    // const landingOffsetTop = landingElement.offsetTop;
-    // const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    // const landingHeight = landingElement.offsetHeight;
+    const landingElement = this._el.nativeElement.querySelector('#landing');
+    const landingOffsetTop = landingElement.offsetTop;
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const landingHeight = landingElement.offsetHeight;
 
-    // // Adjust the value based on your requirement
-    // const triggerPosition = landingOffsetTop + landingHeight - 100;
+    // Adjust the value based on your requirement
+    const triggerPosition = landingOffsetTop + landingHeight - 100;
 
-    // this.showPartnerButton = scrollPosition > triggerPosition;
+    this.showPartnerButton = scrollPosition > triggerPosition;
   }
-  
 }

@@ -17,7 +17,123 @@
       />
     </a>
     <!-- nav-text-->
-    <div class="hidden justify-between gap-x-4 lg:flex">
+    <div class="hidden lg:flex justify-between gap-x-4">
+      <!-- Home link with dropdown -->
+      <div class="relative group">
+        <button
+          routerLink="/hackathon-home"
+          class="text-sm cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item text-gray-200"
+        >
+          Home
+        </button>
+        <!-- Dropdown Menu -->
+        <div
+          class="absolute -ml-20 hidden group-hover:block w-48 flex-col bg-gray-800 rounded-lg justify-center items-start gap-10  text-white"
+        >
+         
+            <button
+              (click)="scrollToSection('/hackathon-home#landing')"
+              class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+            >
+              Landing
+            </button>
+            <button
+              (click)="scrollToSection('/hackathon-home#prize2024')"
+              class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+            >
+              🏆 $30K Prize
+            </button>
+            <button
+              (click)="scrollToSection('/hackathon-home#quarter')"
+              class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+            >
+              Quarterfinals
+            </button>
+         
+            <!-- Column 2 -->
+            <button
+              (click)="scrollToSection('/hackathon-home#workshops')"
+              class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+            >
+              Workshops
+            </button>
+            <button
+              (click)="scrollToSection('/hackathon-home#info')"
+              class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+            >
+              Timeline
+            </button>
+            <button
+              (click)="scrollToSection('/hackathon-home#organizers')"
+              class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+            >
+              Organizers
+            </button>
+        
+        </div>
+      </div>
+      <div class="relative group">
+        <button
+          routerLink="/hackathon-home"
+          class="text-sm cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item text-gray-200"
+        >
+        Expo Presenters
+        </button>
+        <!-- Dropdown Menu -->
+        <div
+          class="absolute -ml-20 hidden group-hover:block w-48 flex-col bg-gray-800 rounded-lg justify-center items-start gap-10  text-white"
+        >
+         
+            <button
+              (click)="scrollToSection('/hackathon-home#semi-finalists')"
+              class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+            >
+              Finalists
+            </button>
+            <button
+              (click)="scrollToSection('/hackathon-home#core-dev')"
+              class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+            >
+            Core-Dev
+            </button>           
+        
+        </div>
+      </div>
+
+      <!-- Other main links -->
+      <!-- <a
+        href="/get-tickets"
+        class="text-sm cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item text-gray-200"
+      >
+        Get Tickets
+      </a> -->
+      <button
+        routerLink="/get-tickets"
+        class="text-sm cursor-pointer font-semibold leading-6 nav-item text-gray-200 hover:text-indigo-600"
+      >
+        Get Tickets
+      </button>
+      <a
+        href="/be-a-sponsor"
+        class="text-sm cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item text-gray-200"
+      >
+        Be A Sponsor
+      </a>
+      <button
+        routerLink="/about-us"
+        class="text-sm cursor-pointer font-semibold leading-6 nav-item text-gray-200 hover:text-indigo-600"
+      >
+        About Us
+      </button>
+      <a
+        href="/donate"
+        class="text-sm cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item text-gray-200"
+      >
+        Donate
+      </a>
+    </div>
+
+    <!-- <div class="hidden justify-between gap-x-4 lg:flex">
       <a
         (click)="scrollToSection('landing')"
         class="text-sm max-xl:text-[0.75rem] cursor-pointer  font-semibold leading-6 hover:text-indigo-600 nav-item {{
@@ -36,15 +152,7 @@
         }}"
         >🏆 $30K Prize</a
       >
-      <!-- <a
-        (click)="scrollToSection('project')"
-        class="text-sm max-xl:text-[0.75rem] cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item {{
-          currentSection.toString() == 'project'
-            ? 'text-indigo-600'
-            : 'text-gray-200'
-        }}"
-        >Projects</a
-      > -->
+  
 
       <a
         (click)="scrollToSection('quarter')"
@@ -75,15 +183,7 @@
         }}"
         >Timeline</a
       >
-      <!-- <a
-        (click)="scrollToSection('judges')"
-        class="text-sm max-xl:text-[0.75rem] cursor-pointer font-semibold leading-6  hover:text-indigo-600 nav-item {{
-          currentSection.toString() == 'judges'
-            ? 'text-indigo-600'
-            : 'text-gray-200'
-        }}"
-        >Judges</a
-      > -->
+    
       <a
         (click)="scrollToSection('organizers')"
         class="text-sm max-xl:text-[0.75rem] cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item {{
@@ -103,46 +203,7 @@
         }}"
         >About Us</a
       >
-    </div>
-    <!-- <button
-      (click)="openModal()"
-      class=" text-sm max-xl:text-[0.75rem] bg-purple-700 hover:bg-purple-500 text-white py-2 px-4 rounded-full cursor-pointer transition duration-300 ease-in-out ml-2 hidden lg:block"
-    >
-      Join A2SV
-  </button> -->
-    <!-- <button
-  (click)="openModal($event)"
-  class="text-sm  bg-purple-700 hover:bg-purple-500 text-white py-2 px-4 rounded-full cursor-pointer transition duration-300 ease-in-out ml-2"
->
-  Join A2SV
-</button> -->
-    <!-- <button
-     (click)="openRegisterModal()"
-      class="flex text-sm bg-purple-700 hover:bg-purple-500 text-white py-2 px-4 rounded-full cursor-pointer transition duration-300 ease-in-out ml-2"
-    >
-      Register <span class="hidden lg:flex ml-1">Now</span>
-    </button> -->
-    <!-- <button (click)="openRegisterModal()" class="register-button">RNow</button> -->
-
-    <!-- <button
-onClick="document.getElementById('register_modal').showModal()"
-class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer transition duration-300 ease-in-out ml-2"
->
-<img src="assets/registerWhite.png" class="w-6 h-6 flex  " />
-</button> -->
-    <!-- <ng-container>
-        <div
-          *ngIf="isModalOpenArray"
-          class="fixed inset-0 m-auto z-50 mt-4 ml-4 w-full  flex items-center justify-center pt-3"
-        >
-          <div class="modal-overlay "></div>
-          <div
-            class="modal-container modal-box w-11/12 max-sm:w-full max-sm:mx-2 max-w-5xl bg-gray-900 text-center flex flex-col mt-4 shadow-lg m-auto "
-          >
-            <app-what-we-provide></app-what-we-provide>
-          </div>
-        </div>
-      </ng-container> -->
+    </div> -->
 
     <div class="px-3 hidden sm:flex">
       <span
@@ -249,7 +310,7 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
       </span>
     </div>
 
-    <div class="block sm:hidden relative">
+    <div class=" sm:hidden relative">
       <button
         (click)="toggleDropdown()"
         class="text-gray-100 hover:text-indigo-600"
@@ -384,42 +445,6 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
     </div>
   </nav>
 
-  <!-- Waitlist -->
-  <!-- <div
-    *ngIf="showWaitlistBanner"
-    class="text-white bg-yellow-600 text-center w-full shadow-md custom-banner relative"
-  >
-    <div
-      class="font-bold text-[12xl] absolute right-4 top-1"
-      (click)="onHideWaitlistBanner()"
-    >
-      <button> <svg
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="white"
-        aria-hidden="true"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M6 18L18 6M6 6l12 12"
-        />
-      </svg></button>
-    </div>
-    <div class="flex justify-center items-center py-2 px-2 md:px-4">
-      <span class="text-left">
-        🎉 A2SV Hackathon 2024 brought together 4,928 innovators! Don’t miss out on next year’s excitement—join our waitlist. 🚀
-      </span>
-      <button
-        (click)="onShowMentorsModal()"
-        class="ml-3 text-sm rounded-full px-8 py-2 text-white transition-all border border-white cursor-pointer ease-out duration-300 hover:bg-gradient-to-r from-purple-700 to-pink-500 custom-button"
-      >
-        <span>Waitlist </span>
-      </button>
-    </div>
-  </div> -->
   <div class="pt-10"></div>
 
   <!--   Mobile menu, show/hide based on menu open state.-->
@@ -464,52 +489,53 @@ class="md:hidden text-sm   text-white py-2 px-4 rounded-full cursor-pointer tran
           <div class="space-y-2 py-6">
             <a
               (click)="scrollToSection('landing'); toggleMenu()"
-              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
+              class="-mx-3  rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
               >Home</a
             >
             <a
               (click)="scrollToSection('prize2024'); toggleMenu()"
-              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
+              class="-mx-3  rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
               >🏆 $30K Prize</a
             >
             <!-- <a
               (click)="scrollToSection('partners'); toggleMenu()"
-              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
+              class="-mx-3  rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
               >A2SV Interview Partners</a
             > -->
             <a
               (click)="scrollToSection('workshops'); toggleMenu()"
-              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
+              class="-mx-3  rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
               >Workshops
             </a>
+            
             <a
               (click)="scrollToSection('info'); toggleMenu()"
-              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
+              class="-mx-3  rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
               >Timeline</a
             >
             <!-- <a
               (click)="scrollToSection('judges'); toggleMenu()"
-              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
+              class="-mx-3  rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
               >Judges</a -->
 
             <!-- <a
               (click)="scrollToSection('eligibility'); toggleMenu()"
-              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
+              class="-mx-3  rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
               >Eligibility</a
             > -->
             <a
               (click)="scrollToSection('organizers'); toggleMenu()"
-              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
+              class="-mx-3  rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
               >Organizers</a
             >
             <a
               (click)="scrollToSection('quarter'); toggleMenu()"
-              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
+              class="-mx-3  rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
               >Quarterfinals</a
             >
             <a
               (click)="scrollToSection('about-us'); toggleMenu()"
-              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
+              class="-mx-3  rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
               >About Us</a
             >
           </div>
