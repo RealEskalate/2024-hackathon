@@ -4,7 +4,7 @@
   <div class="sm:basis-[53%] xl:pr-6">
     <img src="assets/fund.png" alt="fund image" srcset="" class="w-20 m-auto" />
     <h2 class="!text-3xl text-center !my-6">Make a Difference Today!</h2>
-    <p class="leading-relaxed text-justify text-base">
+    <p class="text-justify text-base">
       Together, we can create lasting change for Africa's future. Every
       contribution, no matter the size, brings us closer to our shared vision.
       Join us in shaping a brighter tomorrow.
@@ -111,17 +111,17 @@
       </div>
       <div class="flex flex-col gap-1.5">
         <label for="country">Country*</label>
-        <div class="custom-dropdown-wrapper">
+        <div class="container">
           <select
             id="country"
             formControlName="country"
-            class="custom-select bg-gray-800 shadow-lg"
+            class="custom-select shadow-lg"
           >
-            <option class="bg-gray-800" value="" disabled>
+            <option class="bg-gray-800 !w-10" value="" disabled>
               Select a country
             </option>
             <option
-              class="bg-gray-800"
+              class="bg-gray-800 !w-10"
               *ngFor="let country of countries"
               [value]="country.name"
             >
@@ -157,7 +157,7 @@
         type="submit"
         (click)="onSubmit()"
       >
-        Submit
+        {{ loading ? "..." : "Submit" }}
       </button>
     </form>
   </div>
