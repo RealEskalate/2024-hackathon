@@ -61,8 +61,11 @@ import { GetTicketsComponent } from "./pages/get-tickets/get-tickets.component";
 import { EventProgramComponent } from "./pages/event-program/event-program.component";
 import { ExpoPresentersComponent } from "./pages/expo-presenters/expo-presenters.component";
 import { AboutUsComponent } from "./pages/about-us/about-us.component";
+import { SemiFinalistsComponent } from "./pages/semi-finalists/semi-finalists.component";
+import { CoreDevComponent } from "./pages/core-dev/core-dev.component";
 // import AboutUsComponent from './pages/about-us/about-us.component'
 // import { ShareButton } from 'ngx-sharebuttons/button';
+
 
 @NgModule({
   declarations: [
@@ -108,6 +111,7 @@ import { AboutUsComponent } from "./pages/about-us/about-us.component";
     LandingComponent,
     TimelineComponent,
     AboutUsComponent,
+    
 
     // RegistrationComponent,
     // ShareButton
@@ -130,6 +134,8 @@ import { AboutUsComponent } from "./pages/about-us/about-us.component";
     FixedEligiblityComponent,
     OrganizersComponent,
     ChatBotComponent,
+    SemiFinalistsComponent,
+    CoreDevComponent
   ],
   providers: [ConsentService, TermsPluginLoaderService],
   bootstrap: [AppComponent],

@@ -72,6 +72,33 @@
         
         </div>
       </div>
+      <div class="relative group">
+        <button
+          routerLink="/hackathon-home"
+          class="text-sm cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item text-gray-200"
+        >
+        Expo Presenters
+        </button>
+        <!-- Dropdown Menu -->
+        <div
+          class="absolute -ml-20 hidden group-hover:block w-48 flex-col bg-gray-800 rounded-lg justify-center items-start gap-10  text-white"
+        >
+         
+            <button
+              (click)="scrollToSection('/hackathon-home#semi-finalists')"
+              class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+            >
+              Finalists
+            </button>
+            <button
+              (click)="scrollToSection('/hackathon-home#core-dev')"
+              class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+            >
+            Core-Dev
+            </button>           
+        
+        </div>
+      </div>
 
       <!-- Other main links -->
       <!-- <a
@@ -87,17 +114,11 @@
         Get Tickets
       </button>
       <a
-        routerLink="/be-a-sponsor"
+        href="/be-a-sponsor"
         class="text-sm cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item text-gray-200"
       >
         Be A Sponsor
       </a>
-      <button
-        routerLink="/event-program"
-        class="text-sm cursor-pointer font-semibold leading-6 nav-item text-gray-200 hover:text-indigo-600"
-      >
-        Event Program
-      </button>
       <button
         routerLink="/about-us"
         class="text-sm cursor-pointer font-semibold leading-6 nav-item text-gray-200 hover:text-indigo-600"
@@ -105,7 +126,7 @@
         About Us
       </button>
       <a
-        routerLink="/donate"
+        href="/donate"
         class="text-sm cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item text-gray-200"
       >
         Donate
@@ -486,6 +507,7 @@
               class="-mx-3  rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
               >Workshops
             </a>
+            
             <a
               (click)="scrollToSection('info'); toggleMenu()"
               class="-mx-3  rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
