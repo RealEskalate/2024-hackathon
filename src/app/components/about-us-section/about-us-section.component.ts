@@ -12,7 +12,7 @@ export interface AboutUsContent {
 }
 
 @Component({
-  selector: 'app-about-us',
+  selector: 'app-about-us-section',
   templateUrl: './about-us-section.component.html',
   styleUrls: ['./about-us-section.component.css']
 })
@@ -25,5 +25,6 @@ export class AboutUsSectionComponent {
   setActiveButton(buttonName: string, link: string) {
     window.open(link, '_blank');
   }
+  
 
 }
