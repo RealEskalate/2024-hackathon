@@ -15,8 +15,7 @@ export class DonateCardComponent {
 
   cardDetails = [
     {
-      image:
-        "https://res.cloudinary.com/eskalate/image/upload/v1722869427/team/bemni_hack.png",
+      image: "/assets/remote_student.JPG",
       donateId: "#XLKCSNLM",
     },
     {
@@ -25,14 +24,21 @@ export class DonateCardComponent {
       donateId: "#XTMHQMCT",
     },
     {
-      image:
-        "https://res.cloudinary.com/eskalate/image/upload/v1718630355/activities/python_lecture.jpg",
+      image: "assets/remote_group.jpg",
       donateId: "#XFRFHFHY",
     },
     {
       image:
         "https://res.cloudinary.com/eskalate/image/upload/v1709715574/gallery/members/group.jpg",
       donateId: "#XHRSSPWL",
+    },
+    {
+      image: "assets/remote.jpg",
+      donateId: "#XRQDBVSE",
+    },
+    {
+      image: "assets/in-person.JPG",
+      donateId: "#XSBEEHQD",
     },
   ];
 
