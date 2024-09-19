@@ -61,6 +61,7 @@ import { GetTicketsComponent } from "./pages/get-tickets/get-tickets.component";
 import { EventProgramComponent } from "./pages/event-program/event-program.component";
 import { ExpoPresentersComponent } from "./pages/expo-presenters/expo-presenters.component";
 import { AboutUsComponent } from "./pages/about-us/about-us.component";
+import { SponsorContactComponent } from "./components/sponsor-contact/sponsor-contact.component";
 // import AboutUsComponent from './pages/about-us/about-us.component'
 // import { ShareButton } from 'ngx-sharebuttons/button';
 
@@ -130,6 +131,7 @@ import { AboutUsComponent } from "./pages/about-us/about-us.component";
     FixedEligiblityComponent,
     OrganizersComponent,
     ChatBotComponent,
+    SponsorContactComponent
   ],
   providers: [ConsentService, TermsPluginLoaderService],
   bootstrap: [AppComponent],
