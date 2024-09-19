@@ -61,8 +61,10 @@ import { GetTicketsComponent } from "./pages/get-tickets/get-tickets.component";
 import { EventProgramComponent } from "./pages/event-program/event-program.component";
 import { ExpoPresentersComponent } from "./pages/expo-presenters/expo-presenters.component";
 import { AboutUsComponent } from "./pages/about-us/about-us.component";
-import { SemiFinalistsComponent } from "./pages/semi-finalists/semi-finalists.component";
-import { CoreDevComponent } from "./pages/core-dev/core-dev.component";
+import { SponsorContactComponent } from "./components/sponsor-contact/sponsor-contact.component";
+
+import { SemiFinalistsComponent } from "./components/semi-finalists/semi-finalists.component";
+import { CoreDevComponent } from "./components/core-dev/core-dev.component";
 import { DonateCardComponent } from "./components/donate-card/donate-card.component";
 import { ContactUsComponent } from "./components/contact-us/contact-us.component";
 import { DonationCardComponent } from "./components/donation-card/donation-card.component";
@@ -114,6 +116,7 @@ import { DonationCardComponent } from "./components/donation-card/donation-card.
     LandingComponent,
     TimelineComponent,
     AboutUsComponent,
+     // NgxMatIntlTelInputComponent
     // RegistrationComponent,
     // ShareButton
     // PrivacyConsentComponent,
@@ -135,6 +138,9 @@ import { DonationCardComponent } from "./components/donation-card/donation-card.
     FixedEligiblityComponent,
     OrganizersComponent,
     ChatBotComponent,
+    SponsorContactComponent,
+    // MatInputModule,
+    // NgxMatIntlTelInputComponent
     SemiFinalistsComponent,
     CoreDevComponent,
     DonateCardComponent,

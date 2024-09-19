@@ -24,6 +24,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/intl-tel-input/build/css/intlTelInput.css",
+              "./node_modules/intl-tel-input/build/css/intlTelInput.min.css",
               "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css",
               "node_modules/slick-carousel/slick/slick.scss",
@@ -32,6 +34,7 @@
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css"
             ],
             "scripts": [
+              "./node_modules/intl-tel-input/build/js/utils.js",
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/slick-carousel/slick/slick.min.js"
             ]
@@ -46,7 +49,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1mb",
-                  "maximumError": "1.2mb"
+                  "maximumError": "1.5mb"
                 },
                 {
                   "type": "anyComponentStyle",

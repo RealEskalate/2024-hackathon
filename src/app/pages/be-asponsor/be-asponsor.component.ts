@@ -11,20 +11,22 @@ import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 export class BeASponsorComponent {
 
 
-  @ViewChild('cardsSection') cardsSection!: ElementRef;
- 
+  @ViewChild('submitSection') submitSection!: ElementRef; // Corrected reference name
+  currentSection: string = 'be-asponsor';
   showCards = false; // Initialize as true
 
   constructor(private sanitizer: DomSanitizer) {
   }
 
+  selectedSponsorType: string = '';
+  selectedAmount : number = 0;
+
   workshops_lists: any[] = [
-    { title: "UI Design and Styling ", description: "Join us and understand the principles of user experience (UX) design and learn how to create user-friendly interfaces while staying updated with the latest trends in UI design. This workshop will focus on designing with the user in mind to enhance usability and satisfaction, and provide insights into modern visual design practices, including color theory, typography, and responsive design.", src: this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/t7WsFtUGTqE?si=OMPabAqBPqphZUTX") },
-    { title: "Project Management Tools", description: "Join us as this workshop will introduce essential tools and techniques for effective collaboration. Learn about project management tools that can streamline teamwork and enhance productivity.", src:this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/TS61L2gXb68?si=bVgw6gwzJfM7DDat") },
-    { title: "Generative AI and its Applications", description: "Join us and explore the various application areas of Large Language Models (LLMs) in different sectors such as environment, commerce, health, education, and more. This comprehensive workshop will delve into real-world examples and case studies demonstrating the transformative impact of LLMs across various industries.",src: this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/gYxDZ3N7uwA?si=xgO1wkqORkLhlbdO") },
-    { title: "Pitching and Presentation Skills", description: "Learn how to craft compelling pitches that attract investment, including storytelling techniques and presentation skills. This workshop will help you refine your pitch to make a memorable impact on your audience.", src : this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/fjar3OI2HJs?si=wLFzGbgst8yhg1bE") },
-    { title: "Hackathon Dynamics", description: "Join us and learn strategies for building strong, collaborative teams and managing team dynamics during a hackathon. This workshop will cover best practices for teamwork, communication, conflict resolution, and maximizing productivity.", src : this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/prTJSU2kqzI?si=1B9sItjD-hNZbwJA")},
-    { title: "Project Idea Submission", description: "Join us and learn about the Project Idea Submission Phase and what is expected from you. This workshop is a great opportunity to learn, ask questions, and get feedback on your project ideas from experienced mentors.", src : this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/XNTJpjX8i00?si=1B9sItjD-hNZbwJA.")}
+    { title: "Platinum Sponsor (Innovator)",subtitle: "$25,000+ (1 available)", amount: 25000 , description: "Enhance your brand with exclusive naming rights, keynote opportunities, and prominent event exposure. Network and recruit at our prime booth space, with VIP access to all sessions and the awards dinner. Post-event, secure first-choice recruitment and priority sponsorship for next year's Tech Summit." , src: "assets/prize_logos/Platinum_level.png"},
+    { title: "Gold Sponsor (Trailblazer)", subtitle: "$15,000+ (2 available)",amount: 15000, description: "Enhance your brand with premier logo placement, naming rights, and a speaking slot at the closing ceremony. Network effectively with a large booth, an awards dinner table, and 10 hackathon tickets. Post-event, gain recruitment priority, promotional media access, and early consideration for next year’s Tech Summit.", src: "assets/prize_logos/gold_level.png"},
+    { title: "Silver Sponsor (Catalyst)", subtitle: "$10,000+ (5 available)", amount: 10000, description: "Enhance your brand with prominent logo placement, social media mentions, and the chance to lead a workshop. Benefit from medium booth space, five complimentary tickets, and inclusion in event communications. Post-event, gain access to the talent pool, use of event media, and priority consideration for next year's African Tech Leadership Summit. ", src: "assets/prize_logos/silver_level.png"},
+    { title: "Bronze Sponsor (Pioneer) ", subtitle: "$5,000+", amount: 5000, description: "Increase your brand's exposure with logo placement on the event landing page and social media mentions. Engage attendees from your booth space and with two complimentary hackathon tickets. Post-event, benefit from access to our talent pool and use of event media for promotions.", src: "assets/prize_logos/bronze_level.png"},
+    // { title: "Hackathon Dynamics", description: "Join us and learn strategies for building strong, collaborative teams and managing team dynamics during a hackathon. This workshop will cover best practices for teamwork, communication, conflict resolution, and maximizing productivity.", src: 'assets/prize_logos/Platinum_level.png'}
   ];
 
   toggleCards() {
@@ -37,9 +39,24 @@ export class BeASponsorComponent {
   }
 
   scrollToCardsSection() {
-    console.log("scrool to section");
-    
-    this.cardsSection.nativeElement.scrollIntoView({ behavior: 'smooth' });
+    console.log("scroll to section");
+    this.submitSection.nativeElement.scrollIntoView({ behavior: 'smooth' }); // Corrected reference
+  }
+  scrollToSection(sectionId: string): void {
+    this.currentSection = sectionId;
+    const canNavigate: boolean =
+      !document.body.classList.contains('overflow-hidden');
+    const element = document.getElementById(sectionId);
+    if (element != null && canNavigate) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  setSponsorType(type: string, amount: number) {
+    this.selectedSponsorType = type;
+    this.selectedAmount = amount;
+    console.log("this.selectedSponsorType", this.selectedSponsorType);
+    this.scrollToSection('submitSection');
   }
 }
 

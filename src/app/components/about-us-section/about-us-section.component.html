@@ -1,5 +1,5 @@
 <section id="about-us" class="text-gray-400 bg-black body-font pt-24 px-5 max-md:px-4 flex flex-col justify-center items-center">
-    <div class="  max-w-6xl">
+    <div class=" max-w-6xl">
       <div *ngFor="let content of contents;let i = index " class="{{i % 2 == 0 ? 'bg-gradient-to-r from-indigo-950 to-black ' : 'bg-gradient-to-l from-indigo-950 to-black'}} container my-12  rounded-3xl mx-auto flex flex-col md:flex-row py-5 px -3" >
         <div class="{{i % 2 == 0 ? 'order-1 max-md:order-2': 'order-2 max-md:order-2'}}   w-full md:w-1/2  ml-3">
           <img class="object-cover object-center rounded-3xl aspect-[720/600] " alt="a2sv students photo" src="{{content.image}}">

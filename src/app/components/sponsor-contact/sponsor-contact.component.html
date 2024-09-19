@@ -1,0 +1,242 @@
+<div class="bg-black rounded-2xl text-white p-10 mt-10 w-full">
+  <h1 class="!text-4xl text-center !font-bold !mb-6">Contact Us</h1>
+  <form
+    [formGroup]="contactForm"
+    (ngSubmit)="onSubmit()"
+    novalidate
+    id="contactForm"
+    class="flex flex-col gap-4"
+  >
+    <div class="flex flex-col gap-1.5">
+      <label class="text-gray-300"  for="fullName">Full Name*</label>
+      <input
+        id="fullName"
+        formControlName="fullName"
+        type="text"
+        class="block w-full p-2.5 text-sm bg-gray-800 rounded-lg shadow-lg focus:outline-none focus:ring-0"
+      />
+      <div
+        *ngIf="
+          contactForm.get('fullName')?.touched &&
+          contactForm.get('fullName')?.invalid
+        "
+        class="text-red-500 text-sm"
+      >
+        <div *ngIf="contactForm.get('fullName')?.errors?.['required']">
+          Full Name is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-1.5">
+      <label class="text-gray-300" for="email">Email*</label>
+      <input
+        id="email"
+        formControlName="email"
+        type="email"
+        class="block w-full p-2.5 text-sm bg-gray-800 rounded-lg shadow-lg focus:outline-none focus:ring-0"
+      />
+      <div
+        *ngIf="
+          contactForm.get('email')?.touched && contactForm.get('email')?.invalid
+        "
+        class="text-red-500 text-sm"
+      >
+        <div *ngIf="contactForm.get('email')?.errors?.['required']">
+          Email is required.
+        </div>
+        <div *ngIf="contactForm.get('email')?.errors?.['email']">
+          Enter a valid email address.
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-1.5">
+      <label class="text-gray-300" for="linkedin">LinkedIn</label>
+      <input
+        id="linkedin"
+        formControlName="linkedin"
+        type="text"
+        class="block w-full p-2.5 text-sm bg-gray-800 rounded-lg shadow-lg focus:outline-none focus:ring-0"
+      />
+    </div>
+
+    <div class="flex flex-col gap-1.5">
+      <label class="text-gray-300" for="phone">Phone Number*</label>
+      <div class="flex gap-2">
+        <!-- Country Code Dropdown -->
+        <select
+          formControlName="countryCode"
+          class="w-20 p-2.5 text-sm bg-gray-800 rounded-lg shadow-lg focus:outline-none"
+        >
+          <option class="bg-gray-800 !w-10" value="" disabled>
+            Select a country
+          </option>
+          <option *ngFor="let country of countryCodes" [value]="country.dialCode">
+            {{ country.name }} ({{ country.dialCode }})
+          </option>
+        </select>
+    
+        <!-- Phone Number Input -->
+        <input
+          id="phone"
+          formControlName="phone"
+          type="text"
+          placeholder="Enter phone number"
+          class="block w-full p-2.5 text-sm bg-gray-800 rounded-lg shadow-lg focus:outline-none"
+          pattern="[0-9]*"
+        />
+      </div>
+      <div
+        *ngIf="contactForm.get('countryCode')?.touched && contactForm.get('countryCode')?.invalid"
+        class="text-red-500 text-sm"
+      >
+        <div *ngIf="contactForm.get('countryCode')?.errors?.['required']">
+          Country code is required.
+        </div>
+      </div>
+      <div
+        *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.invalid"
+        class="text-red-500 text-sm"
+      >
+        <div *ngIf="contactForm.get('phone')?.errors?.['required']">
+          Phone number is required.
+        </div>
+        <div *ngIf="contactForm.get('phone')?.errors?.['pattern']">
+          Enter a valid phone number.
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-1.5">
+      <label class="text-gray-300" for="type">Individual/Organization*</label>
+      <select
+        id="type"
+        formControlName="type"
+        class="block w-full p-2.5 text-sm bg-gray-800 rounded-lg shadow-lg focus:outline-none focus:ring-0"
+        (change)="onTypeChange()"
+      >
+        <option value="" disabled>Select type</option>
+        <option value="individual">Individual</option>
+        <option value="organization">Organization</option>
+      </select>
+      <div
+        *ngIf="
+          contactForm.get('type')?.touched && contactForm.get('type')?.invalid
+        "
+        class="text-red-500 text-sm"
+      >
+        <div *ngIf="contactForm.get('type')?.errors?.['required']">
+          Type is required.
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="isOrganization" class="flex flex-col gap-1.5">
+      <label class="text-gray-300" for="businessName">Business Name*</label>
+      <input
+        id="businessName"
+        formControlName="businessName"
+        type="text"
+        class="block w-full p-2.5 text-sm bg-gray-800 rounded-lg shadow-lg focus:outline-none focus:ring-0"
+      />
+      <div
+        *ngIf="
+          contactForm.get('businessName')?.touched &&
+          contactForm.get('businessName')?.invalid
+        "
+        class="text-red-500 text-sm"
+      >
+        <div *ngIf="contactForm.get('businessName')?.errors?.['required']">
+          Business Name is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-1.5">
+      <label class="text-gray-300" for="amount">Amount*</label>
+      <input
+        id="amount"
+        formControlName="amount"
+        type="number"
+        class="block w-full p-2.5 text-sm bg-gray-800 rounded-lg shadow-lg focus:outline-none focus:ring-0"
+      />
+      <div
+        *ngIf="
+          contactForm.get('amount')?.touched &&
+          contactForm.get('amount')?.invalid
+        "
+        class="text-red-500 text-sm"
+      >
+        <div *ngIf="contactForm.get('amount')?.errors?.['minAmount']">
+          The minimum amount should be 5000.
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-1.5">
+      <label class="text-gray-300" for="sponsorLevel">Sponsor Level*</label>
+      <select
+        id="sponsorLevel"
+        formControlName="sponsorLevel"
+        class="block w-full p-2.5 text-sm bg-gray-800 rounded-lg shadow-lg focus:outline-none focus:ring-0"
+      >
+        <option value="" disabled>Select sponsor level</option>
+        <option disabled *ngFor="let level of sponsorLevels" [value]="level">
+          {{ level }}
+        </option>
+      </select>
+      <div
+        *ngIf="
+          contactForm.get('sponsorLevel')?.touched &&
+          contactForm.get('sponsorLevel')?.invalid
+        "
+        class="text-red-500 text-sm"
+      >
+        <div *ngIf="contactForm.get('sponsorLevel')?.errors?.['required']">
+          The minimum amount should be 5000.
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-1.5">
+      <label class="text-gray-300" for="message">Message*</label>
+      <textarea
+        id="message"
+        formControlName="message"
+        cols="30"
+        rows="5"
+        placeholder="Describe your issue or inquiry..."
+        class="block w-full p-2.5 text-sm bg-gray-800 rounded-lg shadow-lg focus:outline-none focus:ring-0"
+      ></textarea>
+      <div
+        *ngIf="
+          contactForm?.get('message')?.touched &&
+          contactForm?.get('message')?.invalid
+        "
+        class="text-red-500 text-sm"
+      >
+        <div *ngIf="contactForm?.get('message')?.errors?.['required']">
+          Message is required.
+        </div>
+      </div>
+    </div>
+
+    <button
+      class="bg-white mt-3 py-3 px-6 w-fit rounded-lg text-black"
+      (click)="onSubmit()"
+      [disabled]="contactForm.invalid || loading"
+      [ngClass]="{
+        'bg-white/30': contactForm.invalid || loading,
+        'bg-white': !(contactForm.invalid || loading)
+      }"
+      [title]="
+        contactForm.invalid
+          ? 'Please fill out all required fields correctly.'
+          : ''
+      "
+    >
+      {{ loading ? "..." : "Submit" }}
+    </button>
+  </form>
+</div>
