@@ -77,7 +77,7 @@
       </div>
       <div class="relative group">
         <button
-          routerLink="/hackathon-home"
+          routerLink="/expo-presenters"
           [ngClass]="{
             'text-indigo-600': activeTab === 'expo-presenters',
             'text-gray-200': activeTab !== 'expo-presenters'
@@ -91,18 +91,22 @@
         <div
           class="absolute -ml-20 hidden group-hover:block w-48 flex-col bg-gray-800 rounded-lg justify-center items-start gap-10 text-white"
         >
-          <button
-            (click)="scrollToSection('/hackathon-home#semi-finalists')"
-            class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
-          >
-            Finalists
-          </button>
-          <button
-            (click)="scrollToSection('/hackathon-home#core-dev')"
-            class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
-          >
+         
+            <button
+              (click)="scrollToSection('/expo-presenters#core-dev')"
+              
+              class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+            >
             Core-Dev
-          </button>
+            </button> 
+            <button
+              
+              (click)="scrollToSection('/expo-presenters#semi-finalists')"
+              class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+            >
+              Finalists
+            </button>          
+        
         </div>
       </div>
 

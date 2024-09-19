@@ -64,7 +64,7 @@ import { AboutUsComponent } from "./pages/about-us/about-us.component";
 import { SponsorContactComponent } from "./components/sponsor-contact/sponsor-contact.component";
 
 import { SemiFinalistsComponent } from "./components/semi-finalists/semi-finalists.component";
-import { CoreDevComponent } from "./pages/core-dev/core-dev.component";
+import { CoreDevComponent } from "./components/core-dev/core-dev.component";
 import { DonateCardComponent } from "./components/donate-card/donate-card.component";
 import { ContactUsComponent } from "./components/contact-us/contact-us.component";
 import { DonationCardComponent } from "./components/donation-card/donation-card.component";
