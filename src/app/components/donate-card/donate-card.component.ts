@@ -16,29 +16,29 @@ export class DonateCardComponent {
   cardDetails = [
     {
       image: "/assets/remote_student.JPG",
-      donateId: "#XLKCSNLM",
+      donateId: "#XSDYQVKY",
     },
     {
       image:
         "https://res.cloudinary.com/eskalate/image/upload/v1718608239/Hackathon/hackathon_coding.jpg",
-      donateId: "#XTMHQMCT",
+      donateId: "#XNSRFSLX",
     },
     {
       image: "assets/remote_group.jpg",
-      donateId: "#XFRFHFHY",
+      donateId: "#XNYWDDCD",
     },
     {
       image:
         "https://res.cloudinary.com/eskalate/image/upload/v1709715574/gallery/members/group.jpg",
-      donateId: "#XHRSSPWL",
+      donateId: "#XPSYEUYV",
     },
     {
       image: "assets/remote.jpg",
-      donateId: "#XRQDBVSE",
+      donateId: "#XYFQWXDF",
     },
     {
       image: "assets/in-person.JPG",
-      donateId: "#XSBEEHQD",
+      donateId: "#XBNDCMLW",
     },
   ];
 
