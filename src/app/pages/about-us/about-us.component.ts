@@ -9,5 +9,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './about-us.component.css'
 })
 export class AboutUsComponent {
-
+  scrollDown(): void {
+    const canNavigate: boolean = !document.body.classList.contains('overflow-hidden');
+    const element = document.getElementById('organizers');
+    if (element != null && canNavigate) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

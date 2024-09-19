@@ -137,6 +137,17 @@
         Be A Sponsor
       </button>
       <button
+        routerLink="/event-program"
+        [ngClass]="{
+          'text-indigo-500': activeTab === 'event-program',
+          'text-gray-200': activeTab !== 'event-program'
+        }"
+        (click)="setActiveTab('event-program')"
+        class="text-sm cursor-pointer font-semibold leading-6 nav-item text-gray-200 hover:text-indigo-600"
+      >
+        Event Program
+      </button>
+      <button
         routerLink="/about-us"
         [ngClass]="{
           'text-indigo-600': activeTab === 'about-us',
@@ -629,6 +640,17 @@
               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
             >
               Be A Sponsor
+            </button>
+            <button
+              routerLink="/event-program"
+              [ngClass]="{
+                'text-indigo-500': activeTab === 'event-program',
+                'text-gray-200': activeTab !== 'event-program'
+              }"
+              (click)="setActiveTab('event-program'); toggleMenu()"
+              class="text-sm cursor-pointer font-semibold leading-6 nav-item text-gray-200 hover:text-indigo-600"
+            >
+              Event Program
             </button>
             <button
               routerLink="/about-us"

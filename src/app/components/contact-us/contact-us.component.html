@@ -1,7 +1,7 @@
 <section
-  class="flex flex-col lg:flex-row gap-12 bg-gray-800 rounded-2xl py-16 px-6 sm:px-16 lg:px-6 xl:px-16 mb-20 xl:mb-32"
+  class="flex flex-col lg:flex-row gap-12 bg-gray-800 rounded-2xl py-16 px-6 xl:px-16 mb-20 xl:mb-32"
 >
-  <div class="sm:basis-[53%] xl:pr-6">
+  <div class="sm:basis-[53%] xl:pr-6 max-w-2xl mx-auto">
     <img src="assets/fund.png" alt="fund image" srcset="" class="w-20 m-auto" />
     <h2 class="!text-3xl text-center !my-6">Make a Difference Today!</h2>
     <p class="text-justify text-base">
@@ -15,7 +15,9 @@
       class="w-[34rem] h-96 object-cover mx-auto"
     />
   </div>
-  <div class="bg-black rounded-2xl text-white p-10 sm:basis-[47%]">
+  <div
+    class="bg-black rounded-2xl mx-auto max-w-xl text-white p-10 sm:basis-[47%]"
+  >
     <h1 class="!text-4xl text-center !font-bold !mb-6">Contact Us</h1>
     <form
       [formGroup]="contactForm"
