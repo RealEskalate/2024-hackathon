@@ -1,5 +1,5 @@
 import { RegistrationComponent } from './registration/registration.component';
-import { EligibilityComponent } from '../pages/eligibility/eligibility.component';
+import { EligibilityComponent } from '../components/eligibility/eligibility.component';
 // import { FixedEligiblityComponent } from '../pages/fixed-eligiblity/fixed-eligiblity.component';
 // import {}
 // shared.module.ts

@@ -1,0 +1,46 @@
+<div
+  id="event-program"
+  class="min-h-screen px-3 md:px-5 w-full pt-[50px] bg-opacity-60 relative flex flex-col justify-center items-center"
+>
+  <!-- Title and Description Section -->
+  <div
+    class="text-white py-10 max-sm:px-4 body-font snap-start snap-always ease-in-out flex flex-col justify-center items-center w-full max-w-6xl"
+  >
+  
+    <p class="text-center text-2xl sm:text-4xl pb-6 font-bold  text-transparent bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text">
+      Grand Finale Events
+    </p>
+    <p class="text-center ">
+      Step into the Expo Hall at the Grand Finale, where innovation takes the
+      spotlight. Join over 4,900 participants from across the continent as
+      finalists from the AI for Impact Hackathon showcase their AI solutions
+      designed to revolutionize sectors like healthcare, education, agriculture,
+      and finance. Engage with the innovators, explore live demos, and discover
+      technologies shaping Africa’s digital future. Additionally, witness the
+      launch of A2SV's Startup Incubation projects, developed with expert
+      guidance to enhance Africa’s tech presence globally. Don’t miss this
+      chance to connect and see the future of African AI innovation up close!
+    </p>
+    <div
+      *ngFor="let event of eventData"
+      class="event-card h-full w-full transition-transform duration-300 ease-in-out hover:scale-105"
+    >
+      <div
+        class="flex flex-col md:flex-row w-full justify-between items-start my-3 p-2 bg-[#272E3B] rounded-xl"
+      >
+        <div
+          class="bg-white max-md:w-full max-md:mb-4 flex flex-col justify-center items-center m-auto rounded-xl p-5 md:mr-5 text-black"
+        >
+          <span class="text-sm">{{ event.date }}</span>
+          <span class=" font-semibold">{{ event.time }}</span>
+        </div>
+        <div class="flex flex-grow flex-col">
+          <p class="text-xl font-bold">{{ event.title }}</p>
+          <p class="font-extralight text-sm max-md:text-center">{{ event.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Interactive Section -->
+</div>

@@ -1,0 +1,18 @@
+<div #donateCard>
+  <div
+    class="grid grid-cols-1 place-items-center md:grid-cols-2 lg:grid-cols-3 gap-10"
+  >
+    <div
+      *ngFor="let cardDetail of cardDetails"
+      class="border border-gray-700 rounded-lg transform transition-all hover:scale-110 duration-300 ease-in-out cursor-default"
+    >
+      <img
+        class="w-[20rem] h-48 object-cover rounded-t-lg"
+        src="{{ cardDetail.image }}"
+        alt="{{ cardDetail.donateId }}"
+        srcset=""
+      />
+      <a href="{{ cardDetail.donateId }}" style="display: none"></a>
+    </div>
+  </div>
+</div>

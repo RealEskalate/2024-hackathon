@@ -15,7 +15,7 @@ import {fill} from "@cloudinary/url-gen/actions/resize";
 import { TermsPluginLoaderService } from './privacy_consent/terms-plugin-loader.service'
 import { ModalService } from './modal.service';
 import { Subscription } from 'rxjs';
-import { WinnerModalService } from './shared/winner-modal.service';
+// import { WinnerModalService } from './shared/winner-modal.service';
 
 declare var loadPrivacyPlugin: any;
 // import { PrivacyConsentService } from './privacy-consent.service';
@@ -27,7 +27,7 @@ declare var loadPrivacyPlugin: any;
 })
 export class AppComponent implements OnInit, OnDestroy  {
   // constructor(private privacyConsentService: PrivacyConsentService) {}
-  showPartnerButton: boolean = false;
+  // showPartnerButton: boolean = false;
   isWinnerModalOpen = false;
   modalData: any = {};
   modalSubscription: Subscription | undefined;
@@ -36,7 +36,7 @@ export class AppComponent implements OnInit, OnDestroy  {
     private localStorage: LocalStorageService,
     private termsPluginLoaderService: TermsPluginLoaderService,
     private modalService: ModalService,
-    private winnerModalService: WinnerModalService
+    // private winnerModalService: WinnerModalService
     // private privacyConsentService: PrivacyConsentService // Add the PrivacyConsentService here
   ) {
     this.localStorage.resetWaitingStatus();
@@ -71,23 +71,23 @@ export class AppComponent implements OnInit, OnDestroy  {
   isStickRegisterButtonVisible = false;
   @Output() toggleChatEvent = new EventEmitter<boolean>();
   showModal: boolean = false;
-  showTeamRegistrationModal = false;
-  showIndividualRegistrationModal = false;
-  showRegistrationModal = true;
-  registrationDeadline = new Date(2023, 7, 31, 23, 59, 59);
-  registrationButtonVisible = true;
-  countDownVisible = true;
-  countDownDate = new Date(2023, 8, 3, 17, 0, 0);
+  // showTeamRegistrationModal = false;
+  // showIndividualRegistrationModal = false;
+  // showRegistrationModal = true;
+  // registrationDeadline = new Date(2023, 7, 31, 23, 59, 59);
+  // registrationButtonVisible = true;
+  // countDownVisible = true;
+  // countDownDate = new Date(2023, 8, 3, 17, 0, 0);
 
   ngOnInit(): void {
 
-    this.modalSubscription = this.winnerModalService.isModalOpen$.subscribe((isOpen) => {
-      this.isWinnerModalOpen = isOpen;
-    });
+    // this.modalSubscription = this.winnerModalService.isModalOpen$.subscribe((isOpen) => {
+    //   this.isWinnerModalOpen = isOpen;
+    // });
 
-    this.winnerModalService.modalData$.subscribe((data) => {
-      this.modalData = data;
-    });
+    // this.winnerModalService.modalData$.subscribe((data) => {
+    //   this.modalData = data;
+    // });
     
     const hasConsent = localStorage.getItem('consentGiven');
     this.termsPluginLoaderService.loadPlugin();
@@ -103,9 +103,9 @@ export class AppComponent implements OnInit, OnDestroy  {
       },
     });
 
-    setInterval(() => {
-      this.updateRegistrationButtonVisibility();
-    }, 1000);
+    // setInterval(() => {
+    //   this.updateRegistrationButtonVisibility();
+    // }, 1000);
     
     
   }
@@ -115,30 +115,30 @@ export class AppComponent implements OnInit, OnDestroy  {
     }
   }
 
-  closeModal() {
-    this.winnerModalService.toggleModal(false);
-  }
+  // closeModal() {
+  //   this.winnerModalService.toggleModal(false);
+  // }
   closeJoinModal(){
     this.modalService.closeModal()
   }
   
   
-  updateCountDownVisibility() {
-    const now = new Date();
-    this.countDownVisible = now < this.countDownDate;
-  }
-  updateRegistrationButtonVisibility() {
-    const now = new Date();
-    this.registrationButtonVisible = now < this.registrationDeadline;
-  }
-  onRegisterTeam() {
-    this.toggleChatEvent.emit(false);
-    this.showIndividualRegistrationModal = true;
-    this.showRegistrationModal = false;
-    document.body.classList.add('overflow-hidden', 'z-0');
-    document.getElementById('prizes')?.classList.add('z-0');
-    document.getElementById('prizes')?.classList.remove('z-40');
-  }
+  // updateCountDownVisibility() {
+  //   const now = new Date();
+  //   this.countDownVisible = now < this.countDownDate;
+  // }
+  // updateRegistrationButtonVisibility() {
+  //   const now = new Date();
+  //   this.registrationButtonVisible = now < this.registrationDeadline;
+  // }
+  // onRegisterTeam() {
+  //   this.toggleChatEvent.emit(false);
+  //   this.showIndividualRegistrationModal = true;
+  //   this.showRegistrationModal = false;
+  //   document.body.classList.add('overflow-hidden', 'z-0');
+  //   document.getElementById('prizes')?.classList.add('z-0');
+  //   document.getElementById('prizes')?.classList.remove('z-40');
+  // }
 
   decreaseZIndex() {
     document.getElementById('prizes')?.classList.add('z-0');
@@ -233,15 +233,15 @@ export class AppComponent implements OnInit, OnDestroy  {
 
 
     // For Partner button logic 
-    const landingElement = this._el.nativeElement.querySelector('#landing');
-    const landingOffsetTop = landingElement.offsetTop;
-    const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    const landingHeight = landingElement.offsetHeight;
+    // const landingElement = this._el.nativeElement.querySelector('#landing');
+    // const landingOffsetTop = landingElement.offsetTop;
+    // const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    // const landingHeight = landingElement.offsetHeight;
 
-    // Adjust the value based on your requirement
-    const triggerPosition = landingOffsetTop + landingHeight - 100;
+    // // Adjust the value based on your requirement
+    // const triggerPosition = landingOffsetTop + landingHeight - 100;
 
-    this.showPartnerButton = scrollPosition > triggerPosition;
+    // this.showPartnerButton = scrollPosition > triggerPosition;
   }
   
 }

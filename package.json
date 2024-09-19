@@ -31,6 +31,7 @@
     "crypto-js": "^4.1.1",
     "gsap": "^3.12.1",
     "intersection-observer": "^0.12.2",
+    "intl-tel-input": "^17.0.21",
     "jquery": "^3.7.1",
     "ngx-owl-carousel-o": "^17.0.0",
     "ngx-sharebuttons": "^15.0.0",
