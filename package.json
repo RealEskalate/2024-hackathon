@@ -34,7 +34,6 @@
     "intl-tel-input": "^17.0.21",
     "jquery": "^3.7.1",
     "ngx-owl-carousel-o": "^17.0.0",
-    "ngx-sharebuttons": "^15.0.0",
     "rxjs": "^7.8.1",
     "share-menu": "^5.1.0",
     "slick-carousel": "^1.6.40",
