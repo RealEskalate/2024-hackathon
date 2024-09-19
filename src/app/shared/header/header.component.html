@@ -74,7 +74,7 @@
       </div>
       <div class="relative group">
         <button
-          routerLink="/hackathon-home"
+          routerLink="/expo-presenters"
           class="text-sm cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item text-gray-200"
         >
         Expo Presenters
@@ -85,17 +85,19 @@
         >
          
             <button
-              (click)="scrollToSection('/hackathon-home#semi-finalists')"
-              class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
-            >
-              Finalists
-            </button>
-            <button
-              (click)="scrollToSection('/hackathon-home#core-dev')"
+              (click)="scrollToSection('/expo-presenters#core-dev')"
+              
               class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
             >
             Core-Dev
-            </button>           
+            </button> 
+            <button
+              
+              (click)="scrollToSection('/expo-presenters#semi-finalists')"
+              class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+            >
+              Finalists
+            </button>          
         
         </div>
       </div>
