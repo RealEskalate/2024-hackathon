@@ -22,54 +22,87 @@
       <div class="relative group">
         <button
           routerLink="/hackathon-home"
+          [ngClass]="{
+            'text-indigo-600': activeTab === 'home',
+            'text-gray-200': activeTab !== 'home'
+          }"
+          (click)="setActiveTab('home')"
           class="text-sm cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item text-gray-200"
         >
           Home
         </button>
         <!-- Dropdown Menu -->
         <div
-          class="absolute -ml-20 hidden group-hover:block w-48 flex-col bg-gray-800 rounded-lg justify-center items-start gap-10  text-white"
+          class="absolute -ml-20 hidden group-hover:block w-48 flex-col bg-gray-800 rounded-lg justify-center items-start gap-10 text-white"
         >
-         
-            <button
-              (click)="scrollToSection('/hackathon-home#landing')"
-              class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
-            >
-              Landing
-            </button>
-            <button
-              (click)="scrollToSection('/hackathon-home#prize2024')"
-              class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
-            >
-              🏆 $30K Prize
-            </button>
-            <button
-              (click)="scrollToSection('/hackathon-home#quarter')"
-              class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
-            >
-              Quarterfinals
-            </button>
-         
-            <!-- Column 2 -->
-            <button
-              (click)="scrollToSection('/hackathon-home#workshops')"
-              class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
-            >
-              Workshops
-            </button>
-            <button
-              (click)="scrollToSection('/hackathon-home#info')"
-              class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
-            >
-              Timeline
-            </button>
-            <button
-              (click)="scrollToSection('/hackathon-home#organizers')"
-              class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
-            >
-              Organizers
-            </button>
-        
+          <button
+            (click)="scrollToSection('/hackathon-home#landing')"
+            class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+          >
+            Landing
+          </button>
+          <button
+            (click)="scrollToSection('/hackathon-home#prize2024')"
+            class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+          >
+            🏆 $30K Prize
+          </button>
+          <button
+            (click)="scrollToSection('/hackathon-home#quarter')"
+            class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+          >
+            Quarterfinals
+          </button>
+
+          <!-- Column 2 -->
+          <button
+            (click)="scrollToSection('/hackathon-home#workshops')"
+            class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+          >
+            Workshops
+          </button>
+          <button
+            (click)="scrollToSection('/hackathon-home#info')"
+            class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+          >
+            Timeline
+          </button>
+          <button
+            (click)="scrollToSection('/hackathon-home#organizers')"
+            class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+          >
+            Organizers
+          </button>
+        </div>
+      </div>
+      <div class="relative group">
+        <button
+          routerLink="/hackathon-home"
+          [ngClass]="{
+            'text-indigo-600': activeTab === 'expo-presenters',
+            'text-gray-200': activeTab !== 'expo-presenters'
+          }"
+          (click)="setActiveTab('expo-presenters')"
+          class="text-sm cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item text-gray-200"
+        >
+          Expo Presenters
+        </button>
+        <!-- Dropdown Menu -->
+        <div
+          class="absolute -ml-20 hidden group-hover:block w-48 flex-col bg-gray-800 rounded-lg justify-center items-start gap-10 text-white"
+        >
+          <button
+            (click)="scrollToSection('/hackathon-home#semi-finalists')"
+            class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+          >
+            Finalists
+          </button>
+          <button
+            (click)="scrollToSection('/hackathon-home#core-dev')"
+            class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+          >
+            Core-Dev
+          </button>
         </div>
       </div>
 
@@ -82,34 +115,49 @@
       </a> -->
       <button
         routerLink="/get-tickets"
+        [ngClass]="{
+          'text-indigo-600': activeTab === 'get-tickets',
+          'text-gray-200': activeTab !== 'get-tickets'
+        }"
+        (click)="setActiveTab('get-tickets')"
         class="text-sm cursor-pointer font-semibold leading-6 nav-item text-gray-200 hover:text-indigo-600"
       >
         Get Tickets
       </button>
-      <a
+      <button
         routerLink="/be-a-sponsor"
+        class="text-sm cursor-pointer font-semibold leading-6 nav-item"
+        [ngClass]="{
+          'text-indigo-600': activeTab === 'be-asponsor',
+          'text-gray-200': activeTab !== 'be-asponsor'
+        }"
+        (click)="setActiveTab('be-asponsor')"
         class="text-sm cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item text-gray-200"
       >
         Be A Sponsor
-      </a>
-      <button
-        routerLink="/event-program"
-        class="text-sm cursor-pointer font-semibold leading-6 nav-item text-gray-200 hover:text-indigo-600"
-      >
-        Event Program
       </button>
       <button
         routerLink="/about-us"
+        [ngClass]="{
+          'text-indigo-600': activeTab === 'about-us',
+          'text-gray-200': activeTab !== 'about-us'
+        }"
+        (click)="setActiveTab('about-us')"
         class="text-sm cursor-pointer font-semibold leading-6 nav-item text-gray-200 hover:text-indigo-600"
       >
         About Us
       </button>
-      <a
+      <button
         routerLink="/donate"
+        [ngClass]="{
+          'text-indigo-600': activeTab === 'donate',
+          'text-gray-200': activeTab !== 'donate'
+        }"
+        (click)="setActiveTab('donate')"
         class="text-sm cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item text-gray-200"
       >
         Donate
-      </a>
+      </button>
     </div>
 
     <!-- <div class="hidden justify-between gap-x-4 lg:flex">
@@ -289,7 +337,7 @@
       </span>
     </div>
 
-    <div class=" sm:hidden relative">
+    <div class="sm:hidden relative">
       <button
         (click)="toggleDropdown()"
         class="text-gray-100 hover:text-indigo-600"
@@ -433,8 +481,6 @@
     role="dialog"
     aria-modal="true"
   >
-    <!-- Background backdrop, show/hide based on slide-over state. -->
-    <!-- <div class="fixed inset-0 z-50"></div> -->
     <div
       class="fixed inset-y-0 right-0 w-full overflow-y-auto bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
     >
@@ -466,56 +512,146 @@
       <div class="mt-6 flow-root">
         <div class="-my-6 divide-y divide-gray-500/10">
           <div class="space-y-2 py-6">
-            <a
-              (click)="scrollToSection('landing'); toggleMenu()"
-              class="-mx-3  rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
-              >Home</a
-            >
-            <a
-              (click)="scrollToSection('prize2024'); toggleMenu()"
-              class="-mx-3  rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
-              >🏆 $30K Prize</a
-            >
-            <!-- <a
-              (click)="scrollToSection('partners'); toggleMenu()"
-              class="-mx-3  rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
-              >A2SV Interview Partners</a
-            > -->
-            <a
-              (click)="scrollToSection('workshops'); toggleMenu()"
-              class="-mx-3  rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
-              >Workshops
-            </a>
-            <a
-              (click)="scrollToSection('info'); toggleMenu()"
-              class="-mx-3  rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
-              >Timeline</a
-            >
-            <!-- <a
-              (click)="scrollToSection('judges'); toggleMenu()"
-              class="-mx-3  rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
-              >Judges</a -->
+            <!-- Home Dropdown -->
+            <div class="relative">
+              <button
+                (click)="toggleMobileDropdown('home')"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
+              >
+                Home
+              </button>
+              <div
+                *ngIf="activeDropdown === 'home'"
+                class="flex flex-col w-3/4 bg-gray-800 rounded-lg mt-2"
+              >
+                <button
+                  (click)="
+                    scrollToSection('/hackathon-home#landing'); toggleMenu()
+                  "
+                  class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+                >
+                  Landing
+                </button>
+                <button
+                  (click)="
+                    scrollToSection('/hackathon-home#prize2024'); toggleMenu()
+                  "
+                  class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+                >
+                  🏆 $30K Prize
+                </button>
+                <button
+                  (click)="
+                    scrollToSection('/hackathon-home#quarter'); toggleMenu()
+                  "
+                  class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+                >
+                  Quarterfinals
+                </button>
+                <button
+                  (click)="
+                    scrollToSection('/hackathon-home#workshops'); toggleMenu()
+                  "
+                  class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+                >
+                  Workshops
+                </button>
+                <button
+                  (click)="
+                    scrollToSection('/hackathon-home#info'); toggleMenu()
+                  "
+                  class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+                >
+                  Timeline
+                </button>
+                <button
+                  (click)="
+                    scrollToSection('/hackathon-home#organizers'); toggleMenu()
+                  "
+                  class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+                >
+                  Organizers
+                </button>
+              </div>
+            </div>
 
-            <!-- <a
-              (click)="scrollToSection('eligibility'); toggleMenu()"
-              class="-mx-3  rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
-              >Eligibility</a
-            > -->
-            <a
-              (click)="scrollToSection('organizers'); toggleMenu()"
-              class="-mx-3  rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
-              >Organizers</a
+            <!-- Expo Presenters Dropdown -->
+            <div class="relative">
+              <button
+                (click)="toggleMobileDropdown('expo-presenters')"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
+              >
+                Expo Presenters
+              </button>
+              <div
+                *ngIf="activeDropdown === 'expo-presenters'"
+                class="flex flex-col w-3/4 bg-gray-800 rounded-lg mt-2"
+              >
+                <button
+                  (click)="
+                    scrollToSection('/hackathon-home#semi-finalists');
+                    toggleMenu()
+                  "
+                  class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+                >
+                  Finalists
+                </button>
+                <button
+                  (click)="
+                    scrollToSection('/hackathon-home#core-dev'); toggleMenu()
+                  "
+                  class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+                >
+                  Core-Dev
+                </button>
+              </div>
+            </div>
+
+            <!-- Other main links -->
+            <button
+              routerLink="/get-tickets"
+              [ngClass]="{
+                'text-indigo-500': activeTab === 'get-tickets',
+                'text-gray-200': activeTab !== 'get-tickets'
+              }"
+              (click)="setActiveTab('get-tickets'); toggleMenu()"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
             >
-            <a
-              (click)="scrollToSection('quarter'); toggleMenu()"
-              class="-mx-3  rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
-              >Quarterfinals</a
+              Get Tickets
+            </button>
+            <button
+              routerLink="/be-a-sponsor"
+              [ngClass]="{
+                'text-indigo-500': activeTab === 'be-asponsor',
+                'text-gray-200': activeTab !== 'be-asponsor'
+              }"
+              (click)="setActiveTab('be-asponsor'); toggleMenu()"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
             >
-            <a
-              (click)="scrollToSection('about-us'); toggleMenu()"
-              class="-mx-3  rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
-              >About Us</a
+              Be A Sponsor
+            </button>
+            <button
+              routerLink="/about-us"
+              [ngClass]="{
+                'text-indigo-500': activeTab === 'about-us',
+                'text-gray-200': activeTab !== 'about-us'
+              }"
+              (click)="setActiveTab('about-us'); toggleMenu()"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
             >
+              About Us
+            </button>
+            <button
+              routerLink="/donate"
+              [ngClass]="{
+                'text-indigo-500': activeTab === 'donate',
+                'text-gray-200': activeTab !== 'donate'
+              }"
+              (click)="setActiveTab('donate'); toggleMenu()"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
+            >
+              Donate
+            </button>
           </div>
         </div>
       </div>

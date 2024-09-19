@@ -16,6 +16,8 @@ import { RegisterService } from "src/app/services/register.service";
   styleUrls: ["./header.component.css"],
 })
 export class HeaderComponent {
+  activeTab: string = '';
+  activeDropdown: string | null = null;
   showMenu: boolean = false;
   isModalOpenArray: boolean = false;
   @Input() currentSection: string = "landing";
@@ -44,6 +46,12 @@ export class HeaderComponent {
   showGetInvolvedModal = true;
   @Output() toggleChatEvent = new EventEmitter<boolean>();
   showWaitlistBanner: boolean = true;
+
+
+  setActiveTab(tab: string) {
+    this.activeTab = tab;
+  }
+
 
   toggleMenu() {
     this.showMenu = !this.showMenu;
@@ -121,6 +129,9 @@ export class HeaderComponent {
   }
   toggleDropdown() {
     this.dropdownVisible = !this.dropdownVisible;
+  }
+  toggleMobileDropdown(dropdown: string) {
+    this.activeDropdown = this.activeDropdown === dropdown ? null : dropdown;
   }
   onHideWaitlistBanner() {
     this.showWaitlistBanner = false;

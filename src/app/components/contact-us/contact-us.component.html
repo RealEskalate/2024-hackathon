@@ -1,0 +1,164 @@
+<section
+  class="flex flex-col lg:flex-row gap-12 bg-gray-800 rounded-2xl py-16 px-6 sm:px-16 lg:px-6 xl:px-16 mb-20 xl:mb-32"
+>
+  <div class="sm:basis-[53%] xl:pr-6">
+    <img src="assets/fund.png" alt="fund image" srcset="" class="w-20 m-auto" />
+    <h2 class="!text-3xl text-center !my-6">Make a Difference Today!</h2>
+    <p class="text-justify text-base">
+      Together, we can create lasting change for Africa's future. Every
+      contribution, no matter the size, brings us closer to our shared vision.
+      Join us in shaping a brighter tomorrow.
+    </p>
+    <img
+      src="https://res.cloudinary.com/eskalate/image/upload/f_auto,q_auto/v1/gallery/donate_btn"
+      alt="difference image"
+      class="w-[34rem] h-96 object-cover mx-auto"
+    />
+  </div>
+  <div class="bg-black rounded-2xl text-white p-10 sm:basis-[47%]">
+    <h1 class="!text-4xl text-center !font-bold !mb-6">Contact Us</h1>
+    <form
+      [formGroup]="contactForm"
+      (ngSubmit)="onSubmit()"
+      novalidate
+      id="contactForm"
+      class="flex flex-col gap-4"
+    >
+      <div class="flex flex-col sm:flex-row gap-6">
+        <div class="flex w-full flex-col gap-1.5">
+          <label for="firstName">First Name*</label>
+          <input
+            id="firstName"
+            formControlName="firstName"
+            type="text"
+            class="block w-full p-2.5 text-sm bg-gray-800 rounded-lg shadow-lg focus:outline-none focus:ring-0"
+          />
+          <div
+            *ngIf="
+              contactForm?.get('firstName')?.touched &&
+              contactForm?.get('firstName')?.invalid
+            "
+            class="text-red-500 text-sm"
+          >
+            <div *ngIf="contactForm.get('firstName')?.errors?.['required']">
+              First Name is required.
+            </div>
+          </div>
+        </div>
+        <div class="flex w-full flex-col gap-1.5">
+          <label for="lastName">Last Name*</label>
+          <input
+            id="lastName"
+            formControlName="lastName"
+            type="text"
+            class="block w-full p-2.5 text-sm bg-gray-800 rounded-lg shadow-lg focus:outline-none focus:ring-0"
+          />
+          <div
+            *ngIf="
+              contactForm?.get('lastName')?.touched &&
+              contactForm?.get('lastName')?.invalid
+            "
+            class="text-red-500 text-sm"
+          >
+            <div *ngIf="contactForm?.get('lastName')?.errors?.['required']">
+              Last Name is required.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-1.5">
+        <label for="email">Email*</label>
+        <input
+          id="email"
+          formControlName="email"
+          type="email"
+          placeholder="name@domanin.com"
+          class="block w-full p-2.5 text-sm bg-gray-800 rounded-lg shadow-lg focus:outline-none focus:ring-0"
+        />
+        <div
+          *ngIf="
+            contactForm?.get('email')?.touched &&
+            contactForm?.get('email')?.invalid
+          "
+          class="text-red-500 text-sm"
+        >
+          <div *ngIf="contactForm?.get('email')?.errors?.['required']">
+            Email is required.
+          </div>
+          <div *ngIf="contactForm?.get('email')?.errors?.['email']">
+            Enter a valid email address.
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-1.5">
+        <label for="linkedin">LinkedIn</label>
+        <input
+          id="linkedin"
+          formControlName="linkedin"
+          type="text"
+          placeholder="https://linkedin.com/in/yourprofile"
+          class="block w-full p-2.5 text-sm bg-gray-800 rounded-lg shadow-lg focus:outline-none focus:ring-0"
+        />
+      </div>
+      <div class="flex flex-col gap-1.5">
+        <label for="companyName">Company</label>
+        <input
+          id="companyName"
+          formControlName="companyName"
+          type="text"
+          class="block p-2.5 text-sm bg-gray-800 rounded-lg shadow-lg focus:outline-none focus:ring-0"
+        />
+      </div>
+      <div class="flex flex-col gap-1.5">
+        <label for="country">Country*</label>
+        <div class="container">
+          <select
+            id="country"
+            formControlName="country"
+            class="custom-select shadow-lg"
+          >
+            <option class="bg-gray-800 !w-10" value="" disabled>
+              Select a country
+            </option>
+            <option
+              class="bg-gray-800 !w-10"
+              *ngFor="let country of countries"
+              [value]="country.name"
+            >
+              {{ country.name }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="flex flex-col gap-1.5">
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          formControlName="message"
+          cols="30"
+          rows="5"
+          placeholder="Describe your issue or inquiry..."
+          class="block w-full p-2.5 text-sm bg-gray-800 rounded-lg shadow-lg focus:outline-none focus:ring-0"
+        ></textarea>
+        <div
+          *ngIf="
+            contactForm?.get('message')?.touched &&
+            contactForm?.get('message')?.invalid
+          "
+          class="text-red-500 text-sm"
+        >
+          <div *ngIf="contactForm?.get('message')?.errors?.['required']">
+            Message is required.
+          </div>
+        </div>
+      </div>
+      <button
+        class="bg-blue-600 py-3 px-6 w-fit rounded-full text-white"
+        type="submit"
+        (click)="onSubmit()"
+      >
+        {{ loading ? "..." : "Submit" }}
+      </button>
+    </form>
+  </div>
+</section>

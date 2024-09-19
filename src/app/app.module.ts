@@ -63,6 +63,12 @@ import { ExpoPresentersComponent } from "./pages/expo-presenters/expo-presenters
 import { AboutUsComponent } from "./pages/about-us/about-us.component";
 import { SponsorContactComponent } from "./components/sponsor-contact/sponsor-contact.component";
 
+import { SemiFinalistsComponent } from "./components/semi-finalists/semi-finalists.component";
+import { CoreDevComponent } from "./pages/core-dev/core-dev.component";
+import { DonateCardComponent } from "./components/donate-card/donate-card.component";
+import { ContactUsComponent } from "./components/contact-us/contact-us.component";
+import { DonationCardComponent } from "./components/donation-card/donation-card.component";
+
 // import AboutUsComponent from './pages/about-us/about-us.component'
 // import { ShareButton } from 'ngx-sharebuttons/button';
 
@@ -110,8 +116,7 @@ import { SponsorContactComponent } from "./components/sponsor-contact/sponsor-co
     LandingComponent,
     TimelineComponent,
     AboutUsComponent,
- 
-    // NgxMatIntlTelInputComponent
+     // NgxMatIntlTelInputComponent
     // RegistrationComponent,
     // ShareButton
     // PrivacyConsentComponent,
@@ -133,9 +138,15 @@ import { SponsorContactComponent } from "./components/sponsor-contact/sponsor-co
     FixedEligiblityComponent,
     OrganizersComponent,
     ChatBotComponent,
-    SponsorContactComponent
+    SponsorContactComponent,
     // MatInputModule,
     // NgxMatIntlTelInputComponent
+    SemiFinalistsComponent,
+    CoreDevComponent,
+    DonateCardComponent,
+    ContactUsComponent,
+    DonationCardComponent,
+    ReactiveFormsModule,
   ],
   providers: [ConsentService, TermsPluginLoaderService],
   bootstrap: [AppComponent],
