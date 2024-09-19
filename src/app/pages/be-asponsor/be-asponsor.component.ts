@@ -11,15 +11,15 @@ import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 export class BeASponsorComponent {
 
 
-  @ViewChild('cardsSection') cardsSection!: ElementRef;
- 
+  @ViewChild('submitSection') submitSection!: ElementRef; // Corrected reference name
+  currentSection: string = 'be-asponsor';
   showCards = false; // Initialize as true
 
   constructor(private sanitizer: DomSanitizer) {
   }
 
   selectedSponsorType: string = '';
-  amount : number = 0;
+  selectedAmount : number = 0;
 
   workshops_lists: any[] = [
     { title: "Platinum Sponsor (Innovator)",subtitle: "$25,000+ (1 available)", amount: 25000 , description: "Enhance your brand with exclusive naming rights, keynote opportunities, and prominent event exposure. Network and recruit at our prime booth space, with VIP access to all sessions and the awards dinner. Post-event, secure first-choice recruitment and priority sponsorship for next year's Tech Summit." , src: "assets/prize_logos/Platinum_level.png"},
@@ -39,16 +39,24 @@ export class BeASponsorComponent {
   }
 
   scrollToCardsSection() {
-    console.log("scrool to section");
-    
-    this.cardsSection.nativeElement.scrollIntoView({ behavior: 'smooth' });
+    console.log("scroll to section");
+    this.submitSection.nativeElement.scrollIntoView({ behavior: 'smooth' }); // Corrected reference
+  }
+  scrollToSection(sectionId: string): void {
+    this.currentSection = sectionId;
+    const canNavigate: boolean =
+      !document.body.classList.contains('overflow-hidden');
+    const element = document.getElementById(sectionId);
+    if (element != null && canNavigate) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
-  setSponsorType(type: string, amount:number) {
+  setSponsorType(type: string, amount: number) {
     this.selectedSponsorType = type;
-    this.amount = amount
-    console.log("this.selectedSponsorType",this.selectedSponsorType);
-    
+    this.selectedAmount = amount;
+    console.log("this.selectedSponsorType", this.selectedSponsorType);
+    this.scrollToSection('submitSection');
   }
 }
 

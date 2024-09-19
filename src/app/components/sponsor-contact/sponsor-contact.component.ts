@@ -1,7 +1,8 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, AbstractControl, ValidationErrors } from '@angular/forms';
 import { EmailService } from 'src/app/services/sponsor_email_service';// Ensure this path is correct
+import { countryCodes } from 'src/app/static/countryCodes';
 
 @Component({
   selector: 'app-sponsor-contact',
@@ -11,7 +12,7 @@ import { EmailService } from 'src/app/services/sponsor_email_service';// Ensure 
   styleUrls: ['./sponsor-contact.component.css']
 })
 export class SponsorContactComponent implements OnInit, OnChanges { // Add OnChanges here
-
+  countryCodes = countryCodes;
   sponsorLevels: string[] = [
     'Platinum Sponsor (Innovator)',
     'Gold Sponsor (Trailblazer)',
@@ -27,15 +28,22 @@ export class SponsorContactComponent implements OnInit, OnChanges { // Add OnCha
 
   constructor(private fb: FormBuilder, public emailService: EmailService) {}
 
+  minimumAmountValidator(control: AbstractControl): ValidationErrors | null {
+    const value = control.value;
+    return value >= 5000 ? null : { minAmount: true };
+  }
+
   ngOnInit(): void {
     this.contactForm = this.fb.group({
+      countryCode: ['', Validators.required],
+      phone : ['', Validators.required],
       fullName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       linkedin: [''],
       type: ['', Validators.required],
       businessName: [''],
       sponsorLevel: [this.sponsorType || '', Validators.required], // Default value is empty
-      amount: [this.amount, Validators.required], // Initialize amount
+      amount: [this.amount, [Validators.required, this.minimumAmountValidator]], // Initialize amount
       message: ['', Validators.required] // Initialize message
     });
 
@@ -47,6 +55,20 @@ export class SponsorContactComponent implements OnInit, OnChanges { // Add OnCha
         this.contactForm.get('businessName')?.clearValidators();
       }
       this.contactForm.get('businessName')?.updateValueAndValidity();
+    });
+
+    this.contactForm.get('amount')?.valueChanges.subscribe(value => {
+      if (value < 5000) {
+        this.contactForm.get('sponsorLevel')?.setValue('');
+      } else if (value >= 5000 && value < 10000) {
+        this.contactForm.get('sponsorLevel')?.setValue('Bronze Sponsor (Pioneer)');
+      } else if (value >= 10000 && value < 15000) {
+        this.contactForm.get('sponsorLevel')?.setValue('Silver Sponsor (Catalyst)');
+      } else if (value >= 15000 && value < 25000) {
+        this.contactForm.get('sponsorLevel')?.setValue('Gold Sponsor (Trailblazer)');
+      } else if (value >= 25000) {
+        this.contactForm.get('sponsorLevel')?.setValue('Platinum Sponsor (Innovator)');
+      }
     });
   }
   
@@ -69,12 +91,14 @@ export class SponsorContactComponent implements OnInit, OnChanges { // Add OnCha
   }
 
   onSubmit(): void {
-    this.loading = true;
+    console.log("Form submitted", this.contactForm.value);
+    
     if (this.contactForm.valid) {
-      this.loading = true;
+      this.loading = true; // Move this line here
       const emailParams = {
-        fullName: this.contactForm.value.email,
+        fullName: this.contactForm.value.fullName,
         email: this.contactForm.value.email,
+        phone: `${this.contactForm.value.countryCode}${this.contactForm.value.phone}`, // Combine country code and phone number
         businessName: this.contactForm.value.businessName,
         linkedin: this.contactForm.value.linkedin,
         type: this.contactForm.value.type,
@@ -82,7 +106,7 @@ export class SponsorContactComponent implements OnInit, OnChanges { // Add OnCha
         message: this.contactForm.value.message,
         amount: this.contactForm.value.amount
       };
-
+  
       this.emailService.sendEmail(emailParams).subscribe({
         next: (response) => {
           this.contactForm.reset();

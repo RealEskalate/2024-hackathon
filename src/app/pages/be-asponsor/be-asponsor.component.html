@@ -1,10 +1,8 @@
 <section
   id="be-asponsor"
-  class="min-h-screen px-3 md:px-5 w-full pt-[50px]  relative flex flex-col justify-center items-center"
+  class="min-h-screen px-3 md:px-5 w-full pt-[50px] relative flex flex-col justify-center items-center"
 >
   <div class="max-w-6xl py-10 flex flex-col items-center mb-5">
-   
-
     <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-5">
       <!-- Box 1 -->
       <div *ngFor="let workshop of workshops_lists">
@@ -13,23 +11,30 @@
         >
           <div class="flex items-start justify-center">
             <div
-              class="w-[100px] h-[100px] rounded-full  transform-gpu hover:scale-105 hover:bg-gray-400"
+              class="w-[100px] h-[100px] rounded-full transform-gpu hover:scale-105 hover:bg-gray-400"
             >
               <img
                 alt="team"
                 class="w-full h-full bg-gradient-to-r from-blue-400 to-green-300 object-cover object-center rounded-full"
-                src="{{workshop.src}}"
+                src="{{ workshop.src }}"
               />
             </div>
             <div class="ml-8 flex-1">
-              <h2 class="!text-2xl !font-bold text-white">{{workshop.title}}</h2>
-              <h3 class="!text-xl !font-semibold  text-white">{{workshop.subtitle}}</h3>
-              <p class=" text-sm">
-                {{workshop.description}}
+              <h2 class="!text-2xl !font-bold text-white">
+                {{ workshop.title }}
+              </h2>
+              <h3 class="!text-xl !font-semibold text-white">
+                {{ workshop.subtitle }}
+              </h3>
+              <p class="text-sm">
+                {{ workshop.description }}
               </p>
             </div>
           </div>
-          <button (click)="setSponsorType(workshop.title, workshop.amount)"  class="w-full mt-4 px-5 py-5 rounded-xl bg-white text-black">
+          <button
+            (click)="setSponsorType(workshop.title, workshop.amount)"
+            class="w-full mt-4 px-5 py-5 rounded-xl bg-white text-black"
+          >
             Be a Sponsor
           </button>
         </div>
@@ -90,6 +95,11 @@
       </div>
 
     </div> -->
-    <div id="submitSection" class=" w-full md:w-3/4"><app-sponsor-contact [sponsorType]="selectedSponsorType"></app-sponsor-contact></div>
+    <div id="submitSection" class="w-full md:w-3/4">
+      <app-sponsor-contact
+        [sponsorType]="selectedSponsorType"
+        [amount]="selectedAmount"
+      ></app-sponsor-contact>
+    </div>
   </div>
 </section>

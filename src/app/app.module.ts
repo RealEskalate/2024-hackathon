@@ -62,6 +62,7 @@ import { EventProgramComponent } from "./pages/event-program/event-program.compo
 import { ExpoPresentersComponent } from "./pages/expo-presenters/expo-presenters.component";
 import { AboutUsComponent } from "./pages/about-us/about-us.component";
 import { SponsorContactComponent } from "./components/sponsor-contact/sponsor-contact.component";
+
 // import AboutUsComponent from './pages/about-us/about-us.component'
 // import { ShareButton } from 'ngx-sharebuttons/button';
 
@@ -109,7 +110,8 @@ import { SponsorContactComponent } from "./components/sponsor-contact/sponsor-co
     LandingComponent,
     TimelineComponent,
     AboutUsComponent,
-
+ 
+    // NgxMatIntlTelInputComponent
     // RegistrationComponent,
     // ShareButton
     // PrivacyConsentComponent,
@@ -132,6 +134,8 @@ import { SponsorContactComponent } from "./components/sponsor-contact/sponsor-co
     OrganizersComponent,
     ChatBotComponent,
     SponsorContactComponent
+    // MatInputModule,
+    // NgxMatIntlTelInputComponent
   ],
   providers: [ConsentService, TermsPluginLoaderService],
   bootstrap: [AppComponent],
