@@ -13,9 +13,9 @@
         <div
           class="flex flex-col justify-between h-full items-center bg-[#272E3B] border border-gray-700 p-8 rounded-lg relative"
         >
-          <div class="flex items-start justify-center">
+          <div class="flex flex-col md:flex-row  items-start justify-center">
             <div
-              class="w-[100px] h-[100px] rounded-full transform-gpu hover:scale-105 hover:bg-gray-400"
+              class="w-[100px] h-[100px] max-md:mb-4 rounded-full transform-gpu hover:scale-105 hover:bg-gray-400"
             >
               <img
                 alt="team"
@@ -23,7 +23,7 @@
                 src="{{ workshop.src }}"
               />
             </div>
-            <div class="ml-8 flex-1">
+            <div class="md:ml-8 flex-1">
               <h2 class="!text-2xl !font-bold text-white">
                 {{ workshop.title }}
               </h2>

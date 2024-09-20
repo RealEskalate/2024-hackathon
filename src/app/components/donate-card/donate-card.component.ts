@@ -15,7 +15,7 @@ export class DonateCardComponent {
 
   cardDetails = [
     {
-      image: "/assets/remote_student.JPG",
+      image: "https://res.cloudinary.com/eskalate/image/upload/v1726819102/gallery/med_remote_student.jpg",
       donateId: "#XSDYQVKY",
     },
     {
@@ -24,7 +24,7 @@ export class DonateCardComponent {
       donateId: "#XNSRFSLX",
     },
     {
-      image: "assets/remote_group.jpg",
+      image: "https://res.cloudinary.com/eskalate/image/upload/v1726818344/gallery/remote_group.jpg",
       donateId: "#XNYWDDCD",
     },
     {
@@ -33,11 +33,11 @@ export class DonateCardComponent {
       donateId: "#XPSYEUYV",
     },
     {
-      image: "assets/remote.jpg",
+      image: "https://res.cloudinary.com/eskalate/image/upload/v1726819102/gallery/med_remote.jpg",
       donateId: "#XYFQWXDF",
     },
     {
-      image: "assets/in-person.JPG",
+      image: "https://res.cloudinary.com/eskalate/image/upload/v1726819102/gallery/med_inperson.jpg",
       donateId: "#XBNDCMLW",
     },
   ];
