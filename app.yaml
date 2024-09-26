@@ -12,9 +12,17 @@ handlers:
     upload: dist/hacks-website/(.*\.js)
     mime_type: application/javascript
 
+  - url: /(.*\.css)
+    static_files: dist/hacks-website/\1
+    upload: dist/hacks-website/(.*\.css)
+    mime_type: text/css
+
+  - url: /(.*\.(png|jpg|gif|ico))
+    static_files: dist/hacks-website/\1
+    upload: dist/hacks-website/(.*\.(png|jpg|gif|ico))
+    mime_type: image/png
+
   - url: /(.*)
     static_files: dist/hacks-website/index.html
     upload: dist/hacks-website/index.html
     secure: always
-
- 
