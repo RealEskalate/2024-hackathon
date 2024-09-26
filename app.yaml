@@ -7,12 +7,14 @@ handlers:
   - url: /assets
     static_dir: dist/hacks-website/assets
 
+   - url: /(.*\.js)
+    static_files: dist/hacks-website/\1
+    upload: dist/hacks-website/(.*\.js)
+    mime_type: application/javascript
+    
   - url: /(.*)
     static_files: dist/hacks-website/index.html
     upload: dist/hacks-website/index.html
     secure: always
 
-  - url: /(.*\.js)
-    static_files: dist/hacks-website/\1
-    upload: dist/hacks-website/(.*\.js)
-    mime_type: application/javascript
+ 
