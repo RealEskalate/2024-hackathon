@@ -22,6 +22,16 @@ handlers:
     upload: dist/hacks-website/(.*\.(png|jpg|gif|ico))
     mime_type: image/png
 
+  - url: /(.*\.(ttf|woff|woff2|eot))
+    static_files: dist/hacks-website/\1
+    upload: dist/hacks-website/(.*\.(ttf|woff|woff2|eot))
+    mime_type: application/font-woff
+
+  - url: /(.*\.svg)
+    static_files: dist/hacks-website/\1
+    upload: dist/hacks-website/(.*\.svg)
+    mime_type: image/svg+xml
+
   - url: /(.*)
     static_files: dist/hacks-website/index.html
     upload: dist/hacks-website/index.html
