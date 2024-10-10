@@ -70,18 +70,16 @@
         class="container px-5 py-5 mx-auto"
       >
         <div class="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
-          <iframe
-            class="lg:h-48 md:h-36 w-full object-cover object-center"
-            [src]="finalist.src"
-          ></iframe>
-          <div class="p-6">
-            <h1 class="title-font text-lg font-medium text-white mb-3">
-              {{ finalist.title }}
-            </h1>
-            <p class="leading-relaxed mb-3 text-gray-400">
-              {{ finalist.description }}
-            </p>
-          </div>
+          <ng-container *ngIf="finalist.src; else showImage">
+          <iframe class="lg:h-48 md:h-36 w-full object-cover object-center" [src]="finalist.src"></iframe>
+        </ng-container>
+        <ng-template #showImage>
+          <img class="lg:h-48 md:h-36 w-full object-cover object-center" [src]="'assets/' + finalist.image" alt="Image for {{finalist.title}}">
+        </ng-template>
+        <div class="p-6">
+          <h1 class="title-font text-lg font-medium text-white mb-3">{{ finalist.title }}</h1>
+          <p class="leading-relaxed mb-3 text-gray-400">{{ finalist.description }}</p>
+        </div>
         </div>
       </div>
     </div>
