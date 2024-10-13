@@ -70,10 +70,10 @@
         class="container px-5 py-5 mx-auto"
       >
         <div class="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
-          <iframe
-            class="lg:h-48 md:h-36 w-full object-cover object-center"
-            [src]="finalist.src"
-          ></iframe>
+          <img
+          class="w-full h-auto object-contain lg:h-48 md:h-40 sm:h-32"
+          [src]="finalist.src"
+        />
           <div class="p-6">
             <h1 class="title-font text-lg font-medium text-white mb-3">
               {{ finalist.title }}
