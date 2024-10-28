@@ -36,19 +36,19 @@
           class="absolute -ml-20 hidden group-hover:block w-48 flex-col bg-gray-800 rounded-lg justify-center items-start gap-10 text-white"
         >
           <button
-            (click)="scrollToSection('/hackathon-home#landing')"
+            (click)="scrollToSection('/hackathon-home#prize2024')"
             class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
           >
             2024 Winners 🏆
           </button>
           <button
-            (click)="scrollToSection('/hackathon-home#prize2024')"
+            (click)="scrollToSection('/hackathon-home#grandfinalists')"
             class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
           >
             Grand Finale
           </button>
           <button
-            (click)="scrollToSection('/hackathon-home#quarter')"
+            (click)="scrollToSection('/hackathon-home#semifinalists')"
             class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
           >
             Semifinals 
@@ -56,13 +56,13 @@
 
           <!-- Column 2 -->
           <button
-            (click)="scrollToSection('/hackathon-home#workshops')"
+            (click)="scrollToSection('/hackathon-home#quarter')"
             class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
           >
             Quarterfinals
           </button>
           <button
-            (click)="scrollToSection('/hackathon-home#info')"
+            (click)="scrollToSection('/hackathon-home#workshop')"
             class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
           >
             Workshops
@@ -547,7 +547,7 @@
                   "
                   class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
                 >
-                  2024 Winners 🏆
+                  Summary
                 </button>
                 <button
                   (click)="
@@ -555,11 +555,19 @@
                   "
                   class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
                 >
+                  2024 Winners 🏆
+                </button>
+                <button
+                  (click)="
+                    scrollToSection('/hackathon-home#grandfinalists'); toggleMenu()
+                  "
+                  class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+                >
                   Grand Finale
                 </button>
                 <button
                   (click)="
-                    scrollToSection('/hackathon-home#quarter'); toggleMenu()
+                    scrollToSection('/hackathon-home#semifinalists'); toggleMenu()
                   "
                   class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
                 >
@@ -567,7 +575,7 @@
                 </button>
                 <button
                   (click)="
-                    scrollToSection('/hackathon-home#workshops'); toggleMenu()
+                    scrollToSection('/hackathon-home#quarter'); toggleMenu()
                   "
                   class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
                 >
@@ -575,7 +583,7 @@
                 </button>
                 <button
                   (click)="
-                    scrollToSection('/hackathon-home#info'); toggleMenu()
+                    scrollToSection('/hackathon-home#workshop'); toggleMenu()
                   "
                   class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
                 >
