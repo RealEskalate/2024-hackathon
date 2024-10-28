@@ -19,6 +19,7 @@ export class Winners implements OnInit {
   architect_img!: CloudinaryImage;
   cognipath!: CloudinaryImage;
   yyeni!: CloudinaryImage;
+  buttonOn: boolean = true;
 
   constructor(
     private cloudinaryService: CloudinaryService,

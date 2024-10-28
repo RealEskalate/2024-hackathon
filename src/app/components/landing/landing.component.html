@@ -113,25 +113,25 @@
               </div>
             </div>
             <p>In case you missed the Grand Finale: 
-              <span class="bg-purple-500  text-white rounded bg-opacity-50 rounded-2xl p-2 hover:bg-gradient-to-r from-purple-700 to-pink-500 hover:cursor-pointer hover:text-white">
+              <!-- <span class="bg-purple-500  text-white rounded bg-opacity-50 rounded-2xl p-2 hover:bg-gradient-to-r from-purple-700 to-pink-500 hover:cursor-pointer hover:text-white">
                 <a class="font-bold " (click)="setActiveButton('stream', 'https://www.youtube.com/live/f6zPchafc9Y?si=RGTQYSuzagCXf1qk
                 ')">
                   <b> Find the live stream here</b>
                 </a>
-              </span>
+              </span> -->
             </p>
           </div>
 
-          <!-- <div
+          <div
             class="flex flex-col md:flex-row max-md:items-center justify-start"
           >
             <button
-              (click)="onShowAdvisorsModal()"
+            (click)="setActiveButton('stream', 'https://www.youtube.com/live/f6zPchafc9Y?si=RGTQYSuzagCXf1qk')"
               class="max-md:mt-5 text-sm rounded-full px-8 py-3 text-white transition-all bg-purple-500 cursor-pointer ease-out duration-300 left-1/2 hover:bg-gradient-to-r from-purple-700 to-pink-500"
             >
-              <span>Partner with us</span>
+              <span>Find the live stream here</span>
             </button>
-          </div> -->
+          </div>
         </div>
       </section>
     </div>
@@ -151,18 +151,14 @@
             aria-hidden="true"
           >
             <div class="relative h-full w-full">
-              <video
-                autoplay
-                [muted]="isMuted"
-                loop
-                class="w-full object-cover h-full"
-              >
-                <source
-                  src="https://res.cloudinary.com/eskalate/video/upload/v1729275428/Hackathon-2024/Biggest_Tech_Competition_in_Africa_Ever_-_A2SV_Hackathon.mp4"
-                  type="video/mp4"
-                />
-                Your browser does not support the video tag.
-              </video>
+              <iframe
+              id="videoIframe"
+              class="h-full w-full absolute bg-black inset-0 object-center object-contain rounded-2xl"
+              src="https://www.youtube.com/embed/-pqUq5bFu3E?si=BDBKqeDBNnOfOFdY"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+            ></iframe>
             </div>
           </div>
         </div>

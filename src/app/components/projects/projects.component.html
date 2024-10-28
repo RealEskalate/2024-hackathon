@@ -1,43 +1,47 @@
 <!-- Project Section (Dark Mode) -->
 <section id="project" class="bg-black py-12 md:px-5 px-4 flex flex-col justify-center items-center">
   <div class="container mx-auto  flex flex-col justify-center items-center  max-w-6xl">
-    <div class="text-center mb-10 mx-auto sm:mx-0 sm:w-full">
-      <h2
+    <div class="text-center mb-10 mx-auto sm:mx-0  sm:w-full">
+      <p
         class="text-4xl font-bold text-transparent bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text"
       >
-        2023 Grand Finale Projects
-      </h2>
-      <div class="flex my-10 md:mx-20 flex-col lg:flex-col">
-        <div class="flex-1">
-          <p
-            class="lg:w-3/4 mx-auto leading-relaxed text-base text-white text-justify justify-between mb-6"
-          >
-            The A2SV Generative AI Hackathon for Africa, Grand Finale unfolded
+        2024 Grand Finale Summary
+    </p>
+    <p class=" mx-auto leading-relaxed text-base text-white text-justify justify-between">
+            The A2SV AI for Impact Hackathon for Africa, Grand Finale unfolded
             from
             <strong
               class="font-bold text-transparent bg-gradient-to-r from-indigo-600 to to-pink-500 bg-clip-text"
-              >November 11-13, 2023.</strong
+              >October 12-17, 2024.</strong
             >
             The experience was an awe-inspiring evolution from an initial
             <strong
               class="font-bold text-transparent bg-gradient-to-r from-indigo-600 to to-pink-500 bg-clip-text"
-              >866 teams</strong
+              >1,118 teams</strong
             >
             to the top
             <strong
               class="font-bold text-transparent bg-gradient-to-r from-indigo-600 to to-pink-500 bg-clip-text"
-              >9 finalists</strong
-            >, proudly representing 5 African countries. Get ready for the
-            showcase of the best and brightest of African tech. Witness the
+              >8 finalists</strong
+            >, proudly representing 7 African countries. Witness the
             showcase of the best and brightest in African tech. These passionate
             minds from African universities rewrote the narrative of technology
-            on the continent. Experience the craft of the top 9 projects below.
+            on the continent. Experience the craft of the top 8 projects.
           </p>
-        </div>
-      </div>
+        
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 m-auto mb-20">
+    <div class="grid grid-cols-1 gap-4 m-auto mb-6">
+      <div
+      class="flex flex-col md:flex-row max-md:items-center justify-center"
+    >
+      <button
+      (click)="setActiveButton('stream', 'https://hackathon.a2sv.org/expo-presenters')"
+        class="max-md:mt-5 text-sm rounded-full px-8 py-3 text-white transition-all bg-purple-500 cursor-pointer ease-out duration-300 left-1/2 hover:bg-gradient-to-r from-purple-700 to-pink-500"
+      >
+        <span>Checkout Finalist Projects</span>
+      </button>
+    </div>
       <div
         *ngFor="let project of final_projects; let j = index"
         class="text-center flex flex-col justify-between md:flex-1 h-full"
@@ -47,7 +51,7 @@
           <div
             class="h-full text-gray-300 border-2 border-gray-800 rounded-lg overflow-hidden flex flex-col justify-between text-center group hover:bg-gray-700 hover:shadow-md hover:border transition duration-300 hover:border-solid p-2 transform hover:scale-105 hover:text-white"
           >
-            <div class="rounded-t-lg overflow-hidden">
+            <!-- <div class="rounded-t-lg overflow-hidden">
               <iframe
                 allowfullscr
                 class="lg:h-48 md:h-36 w-full object-cover object-center"
@@ -61,10 +65,10 @@
                   by Team
                   <strong class="font-bold text-2xl">{{ project.team }}</strong>
                 </h1>
-                <!-- <h1 class="title-font text-xl font-semibold mb-3 text-left">
+                <h1 class="title-font text-xl font-semibold mb-3 text-left">
                   Pitch
                   <span>by {{ project.team }}</span>
-                </h1> -->
+                </h1>
                 <p class="leading-relaxed text-left mb-3 text-gray-300">
                   {{ project.description }}
                 </p>
@@ -81,25 +85,26 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <div class="flex flex-row justify-center items-center mb-5">
-              <button>
+             
+              <!-- <button>
                 <a
                   [href]="project.demo"
                   target="_blank"
                   class="px-4 py-2 m-2 border rounded-full group transition-transform duration-300 transform hover:scale-110 hover:border-none hover:bg-purple-700"
                   >Demo</a
                 >
-              </button>
-              <button *ngIf="project.webUrl">
+              </button> -->
+              <!-- <button *ngIf="project.webUrl">
                 <a
                   [href]="project.webUrl"
                   target="_blank"
                   class="px-4 py-2 m-2 border rounded-full group transition-transform duration-300 transform hover:scale-110 hover:border-none hover:bg-purple-700"
                   >Website</a
                 >
-              </button>
-              <button *ngIf="project.mobileUrl">
+              </button> -->
+              <!-- <button *ngIf="project.mobileUrl">
                 <a
                   [href]="project.mobileUrl"
                   target="_blank"
@@ -114,7 +119,7 @@
                   class="px-4 py-2 m-2 border rounded-full group transition-transform duration-300 transform hover:scale-110 hover:border-none hover:bg-purple-700"
                   >Slack</a
                 >
-              </button>
+              </button> -->
               <!-- <button
               *ngIf="project.webUrl"
               class="rounded-full m-2 group transition-transform duration-300 transform hover:scale-110 hover:border-none hover:text-white"
@@ -306,24 +311,21 @@
       </div>
     </div>
 
-    <!-- <div class="text-center my-16 mx-auto mt-10 sm:mx-0 sm:w-full">
-      <h2
+    <div class="text-center my-16 mx-auto mt-10 sm:mx-0 sm:w-full">
+      <p
         class="text-4xl font-bold text-transparent bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text"
       >
         Semifinals Summary
-      </h2>
+    </p>
       <div class="flex my-10 md:mx-20 flex-col lg:flex-col">
-        <div class="flex-1">
-          <p
-            class="lg:w-3/4 mx-auto leading-relaxed text-base text-white text-justify justify-between mb-6"
-          >
+        <p class=" mx-auto leading-relaxed text-base text-white text-justify justify-between">
             The Semifinals featured 40 teams of talented African students from
             across the continent, each with innovative solutions that
             demonstrate their commitment to transforming tech education in
             Africa. These bright minds are shaping a future where African
             solutions are created, designed, and used by Africans.
           </p>
-        </div>
+        
 
         <div class="flex-1">
           
@@ -340,31 +342,31 @@
               <tbody>
                 <tr>
                   <td class="border border-slate-700 ...">Total Teams</td>
-                  <td class="border border-slate-700 ...">40</td>
+                  <td class="border border-slate-700 ...">32</td>
                 </tr>
                 <tr>
                   <td class="border border-slate-700 ...">
                     Countries Represented
                   </td>
-                  <td class="border border-slate-700 ...">20</td>
+                  <td class="border border-slate-700 ...">15</td>
                 </tr>
                 <tr>
                   <td class="border border-slate-700 ...">
                     Schools Represented
                   </td>
-                  <td class="border border-slate-700 ...">60</td>
+                  <td class="border border-slate-700 ...">45</td>
                 </tr>
                 <tr>
-                  <td class="border border-slate-700 ...">Mentors</td>
-                  <td class="border border-slate-700 ...">34</td>
+                  <td class="border border-slate-700 ...">Coordinators</td>
+                  <td class="border border-slate-700 ...">24</td>
                 </tr>
-                <tr>
+                <!-- <tr>
                   <td class="border border-slate-700 ...">Experts</td>
                   <td class="border border-slate-700 ...">9</td>
-                </tr>
+                </tr> -->
                 <tr>
                   <td class="border border-slate-700 ...">Advisors</td>
-                  <td class="border border-slate-700 ...">14</td>
+                  <td class="border border-slate-700 ...">26</td>
                 </tr>
               </tbody>
             </table>
@@ -383,25 +385,25 @@
               <tbody>
                 <tr>
                   <td class="border border-slate-700 ...">
-                    AI Driven Artistry and Innovation
+                    Agriculture and Farming
                   </td>
-                  <td class="border border-slate-700 ...">4</td>
+                  <td class="border border-slate-700 ...">8</td>
                 </tr>
                 <tr>
-                  <td class="border border-slate-700 ...">Legal</td>
+                  <td class="border border-slate-700 ...">Data Analysis and Decision Making</td>
                   <td class="border border-slate-700 ...">3</td>
                 </tr>
                 <tr>
                   <td class="border border-slate-700 ...">
                     Communication and Accessibility
                   </td>
-                  <td class="border border-slate-700 ...">4</td>
+                  <td class="border border-slate-700 ...">3</td>
                 </tr>
                 <tr>
                   <td class="border border-slate-700 ...">
-                    Data Analysis and Decision making
+                    Education and Learning
                   </td>
-                  <td class="border border-slate-700 ...">3</td>
+                  <td class="border border-slate-700 ...">6</td>
                 </tr>
                 <tr>
                   <td class="border border-slate-700 ...">Healthcare</td>
@@ -409,28 +411,17 @@
                 </tr>
                 <tr>
                   <td class="border border-slate-700 ...">
-                    Agriculture and Farming
-                  </td>
-                  <td class="border border-slate-700 ...">4</td>
-                </tr>
-                <tr>
-                  <td class="border border-slate-700 ...">
-                    Education and Learning
-                  </td>
-                  <td class="border border-slate-700 ...">10</td>
-                </tr>
-                <tr>
-                  <td class="border border-slate-700 ...">
-                    Personalized Assistance
+                    Other Sectors
                   </td>
                   <td class="border border-slate-700 ...">6</td>
                 </tr>
+                
               </tbody>
             </table>
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
 
     <!-- Project Grid -->
     <!-- Project Cards -->

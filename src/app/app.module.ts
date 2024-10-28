@@ -68,10 +68,10 @@ import { CoreDevComponent } from "./components/core-dev/core-dev.component";
 import { DonateCardComponent } from "./components/donate-card/donate-card.component";
 import { ContactUsComponent } from "./components/contact-us/contact-us.component";
 import { DonationCardComponent } from "./components/donation-card/donation-card.component";
-
+import { Winners2024Component } from "./components/winners-2024/winners-2024.component";
 // import AboutUsComponent from './pages/about-us/about-us.component'
 // import { ShareButton } from 'ngx-sharebuttons/button';
-
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -116,6 +116,8 @@ import { DonationCardComponent } from "./components/donation-card/donation-card.
     LandingComponent,
     TimelineComponent,
     AboutUsComponent,
+    Winners2024Component
+  
      // NgxMatIntlTelInputComponent
     // RegistrationComponent,
     // ShareButton

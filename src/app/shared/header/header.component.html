@@ -39,19 +39,19 @@
             (click)="scrollToSection('/hackathon-home#landing')"
             class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
           >
-            Landing
+            2024 Winners 🏆
           </button>
           <button
             (click)="scrollToSection('/hackathon-home#prize2024')"
             class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
           >
-            🏆 $30K Prize
+            Grand Finale
           </button>
           <button
             (click)="scrollToSection('/hackathon-home#quarter')"
             class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
           >
-            Quarterfinals
+            Semifinals 
           </button>
 
           <!-- Column 2 -->
@@ -59,13 +59,13 @@
             (click)="scrollToSection('/hackathon-home#workshops')"
             class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
           >
-            Workshops
+            Quarterfinals
           </button>
           <button
             (click)="scrollToSection('/hackathon-home#info')"
             class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
           >
-            Timeline
+            Workshops
           </button>
           <!-- <button
             (click)="scrollToSection('/hackathon-home#organizers')"
@@ -75,6 +75,18 @@
           </button> -->
         </div>
       </div>
+      <!-- <button
+        routerLink="/be-a-sponsor"
+        class="text-sm cursor-pointer font-semibold leading-6 nav-item"
+        [ngClass]="{
+          'text-indigo-600': activeTab === 'be-asponsor',
+          'text-gray-200': activeTab !== 'be-asponsor'
+        }"
+        (click)="setActiveTab('be-asponsor')"
+        class="text-sm cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item text-gray-200"
+      >
+      Highlights 
+      </button>-->
       <div class="relative group">
         <button
           routerLink="/expo-presenters"
@@ -85,27 +97,28 @@
           (click)="setActiveTab('expo-presenters')"
           class="text-sm cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item text-gray-200"
         >
-          Expo Presenters
+        Projects
         </button>
         <!-- Dropdown Menu -->
         <div
           class="absolute -ml-20 hidden group-hover:block w-48 flex-col bg-gray-800 rounded-lg justify-center items-start gap-10 text-white"
         >
          
-            <button
-              (click)="scrollToSection('/expo-presenters#core-dev')"
-              
-              class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
-            >
-            Core-Dev
-            </button> 
+            
             <button
               
               (click)="scrollToSection('/expo-presenters#semi-finalists')"
               class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
             >
               Finalists
-            </button>          
+            </button>   
+            <button
+              (click)="scrollToSection('/expo-presenters#core-dev')"
+              
+              class=" w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
+            >
+            Core-Dev
+            </button>        
         
         </div>
       </div>
@@ -128,18 +141,7 @@
       >
         Get Tickets
       </button> -->
-      <!-- <button
-        routerLink="/be-a-sponsor"
-        class="text-sm cursor-pointer font-semibold leading-6 nav-item"
-        [ngClass]="{
-          'text-indigo-600': activeTab === 'be-asponsor',
-          'text-gray-200': activeTab !== 'be-asponsor'
-        }"
-        (click)="setActiveTab('be-asponsor')"
-        class="text-sm cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item text-gray-200"
-      >
-        Be A Sponsor
-      </button> -->
+      
       <button
         routerLink="/event-program"
         [ngClass]="{
@@ -149,7 +151,7 @@
         (click)="setActiveTab('event-program')"
         class="text-sm cursor-pointer font-semibold leading-6 nav-item text-gray-200 hover:text-indigo-600"
       >
-        Event Program
+      Grand Finale Overview
       </button>
       <button
         routerLink="/about-us"
@@ -162,7 +164,7 @@
       >
         About Us
       </button>
-      <button
+      <!-- <button
         routerLink="/donate"
         [ngClass]="{
           'text-indigo-600': activeTab === 'donate',
@@ -172,7 +174,7 @@
         class="text-sm cursor-pointer font-semibold leading-6 hover:text-indigo-600 nav-item text-gray-200"
       >
         Donate
-      </button>
+      </button> -->
     </div>
 
     <!-- <div class="hidden justify-between gap-x-4 lg:flex">
@@ -545,7 +547,7 @@
                   "
                   class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
                 >
-                  Landing
+                  2024 Winners 🏆
                 </button>
                 <button
                   (click)="
@@ -553,7 +555,7 @@
                   "
                   class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
                 >
-                  🏆 $30K Prize
+                  Grand Finale
                 </button>
                 <button
                   (click)="
@@ -561,7 +563,7 @@
                   "
                   class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
                 >
-                  Quarterfinals
+                  Semifinals
                 </button>
                 <button
                   (click)="
@@ -569,7 +571,7 @@
                   "
                   class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
                 >
-                  Workshops
+                  Quarterfinals
                 </button>
                 <button
                   (click)="
@@ -577,18 +579,30 @@
                   "
                   class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
                 >
-                  Timeline
+                  Workshops
                 </button>
-                <button
+                <!-- <button
                   (click)="
                     scrollToSection('/hackathon-home#organizers'); toggleMenu()
                   "
                   class="w-full text-center px-4 py-2 text-sm hover:text-indigo-600"
                 >
                   Organizers
-                </button>
+                </button> -->
               </div>
             </div>
+
+            <!-- <button
+              routerLink="/highlights"
+              [ngClass]="{
+                'text-indigo-500': activeTab === 'be-asponsor',
+                'text-gray-200': activeTab !== 'be-asponsor'
+              }"
+              (click)="setActiveTab('be-asponsor'); toggleMenu()"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
+            >
+              Highlights
+            </button> -->
 
             <!-- Expo Presenters Dropdown -->
             <div class="relative">
@@ -596,7 +610,7 @@
                 (click)="toggleMobileDropdown('expo-presenters')"
                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
               >
-                Expo Presenters
+                Projects
               </button>
               <div
                 *ngIf="activeDropdown === 'expo-presenters'"
@@ -623,7 +637,7 @@
             </div>
 
             <!-- Other main links -->
-            <button
+            <!-- <button
               routerLink="/get-tickets"
               [ngClass]="{
                 'text-indigo-500': activeTab === 'get-tickets',
@@ -633,18 +647,8 @@
               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
             >
               Get Tickets
-            </button>
-            <button
-              routerLink="/be-a-sponsor"
-              [ngClass]="{
-                'text-indigo-500': activeTab === 'be-asponsor',
-                'text-gray-200': activeTab !== 'be-asponsor'
-              }"
-              (click)="setActiveTab('be-asponsor'); toggleMenu()"
-              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
-            >
-              Be A Sponsor
-            </button>
+            </button> -->
+            
             <button
               routerLink="/event-program"
               [ngClass]="{
@@ -654,7 +658,7 @@
               (click)="setActiveTab('event-program'); toggleMenu()"
               class="text-sm cursor-pointer font-semibold leading-6 nav-item text-gray-200 hover:text-indigo-600"
             >
-              Event Program
+            Grand Finale Overview
             </button>
             <button
               routerLink="/about-us"
@@ -667,7 +671,7 @@
             >
               About Us
             </button>
-            <button
+            <!-- <button
               routerLink="/donate"
               [ngClass]="{
                 'text-indigo-500': activeTab === 'donate',
@@ -677,7 +681,7 @@
               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800"
             >
               Donate
-            </button>
+            </button> -->
           </div>
         </div>
       </div>

@@ -11,7 +11,8 @@ export class TrackWinners  {
 
   @Input() title: string = "";
   @Input() winners: any[] = [];
-  @Input() descr: string = ""
+  @Input() descr: string = "";
+  @Input() buttonOn: boolean = false;
   @Output() cardTouched = new EventEmitter<any>();
 
   onMoreOptionsClick(cardData: any) {

@@ -39,6 +39,10 @@ export class ProjectsComponent {
     // Set the modal state for the clicked project to close
     this.isFinalOpenArray[projectIndex] = false;
   }  
+  setActiveButton(buttonName: string, link: string) {
+  
+    window.open(link, '_blank');
+  }
 
   // scrollToSection(sectionId: string): void {
   //   this.currentSection = sectionId;
@@ -51,88 +55,88 @@ export class ProjectsComponent {
   // }
   final_projects : any[] = [
     {
-      team: 'Brainiacs',
-      projectname: 'HealthHUB',
+      team: 'Harissa',
+      projectname: '23 Weeks',
       description:
-        'An interactive AI-powered digital platform that uses 3D brain scans to revolutionize medical education.',
+        'A file management solution with multilingual search, voice integration, AI-driven metadata generation, and enhanced security with local deployment.',
       countries: ['Tunisia'],
       category : 'Healthcare',
       demo : "https://www.youtube.com/embed/oNeyWCr0MdY?si=5SVUZFRkf-AB5bmU",
-      pitch : "https://www.youtube.com/embed/JsAqlL1mOBw?si=BdeByYyVYukNu5Wt",
-      webUrl : "http://37.187.29.19:5085/",
+      // pitch : "https://www.youtube.com/embed/JsAqlL1mOBw?si=BdeByYyVYukNu5Wt",
+      // webUrl : "http://37.187.29.19:5085/",
       
       
 
     },
     {
-      team: 'FutureX',
-      projectname: 'Kurio',
+      team: 'The Champs',
+      projectname: 'Beemo',
       description:
-        "An AI-powered app for personalized and interactive children's learning and entertainment.",
-      countries: ['Algeria'],
-      category : 'AI-driven Artistry and Innovation',
+        "A generative AI-powered toy for autistic children that detects emotions and provides companionship, educational entertainment, and progress reports for parents.",
+      countries: ['Tunisia'],
+      category : 'Education and Learning',
       demo : "https://www.youtube.com/embed/BLcX8sRU-aE?si=wYdkUaKh9Xkhr4bI",
-      pitch : "https://www.youtube.com/embed/fWRPbIW21J0?si=JdjMRhojDF052ltO",
-      mobileUrl : "https://drive.google.com/file/d/1CG6WzV7HpjxxOY_Ti6j8EgS4NJT75vpN/view?usp=drive_link"
+      // pitch : "https://www.youtube.com/embed/fWRPbIW21J0?si=JdjMRhojDF052ltO",
+      // mobileUrl : "https://drive.google.com/file/d/1CG6WzV7HpjxxOY_Ti6j8EgS4NJT75vpN/view?usp=drive_link"
        
     },
     {
-      team: 'Miiltoo',
-      projectname: ['Miiltoo'],
+      team: 'K3A',
+      projectname: ['CogniFile'],
       description:
-        'AI-enhanced learning for Ethiopian students, blending traditional teaching with interactive quizzes and personalized support.',
-      countries: ['Ethiopia'],
-      category : 'Education and Learning',
+        'A file management solution with multilingual search, voice integration, AI-driven metadata generation, and enhanced security with local deployment.',
+      countries: ['Algeria'],
+      category : 'Other',
       demo : "https://www.youtube.com/embed/LTuWkjnSR-w?si=kKmQ32TY7JZvtRoZ",
-      pitch : "https://www.youtube.com/embed/TXcBTA-3fvI?si=IhQ7QLiNe3CmM-jx",
-      webUrl : "https://miiltoo.onrender.com/"
+      // pitch : "https://www.youtube.com/embed/TXcBTA-3fvI?si=IhQ7QLiNe3CmM-jx",
+      // webUrl : "https://miiltoo.onrender.com/"
     },
     {
-      team: 'Sapphire',
-      projectname: 'StoryCraft',
+      team: 'Farmlynco',
+      projectname: 'Farmlynco',
       description:
-        'AI-powered platform that creates personalized and engaging storybooks for early readers, fostering a love for reading among children.',
-      countries: ['Kenya'],
-      category : 'AI-driven Artistry and Innovation',
+        'An AI-powered mobile app for Ghanaian rice farmers, improving market access, weather forecasting, crop health management, and language translation in local dialects.',
+      countries: ['Ghana'],
+      category : ' Agriculture and Farming',
       demo : "https://www.youtube.com/embed/YHBCz0VNjaA?si=AJHna8gKMUX8EAiR",
-      pitch : "https://www.youtube.com/embed/d5vJMWklKpM?si=DgSCAMdTxeb99GsK",
-      webUrl : "http://www.storycraftai.tech/"
+      // pitch : "https://www.youtube.com/embed/d5vJMWklKpM?si=DgSCAMdTxeb99GsK",
+      // webUrl : "http://www.storycraftai.tech/"
 
     },
     {
-      team: 'Innovate Fusion',
-      projectname: 'THE ARCHITECT AI',
+      team: 'Get Ai',
+      projectname: 'Get Ai',
       description:
-        'Virtual architectural design assistant that uses generative AI to generate customizable and sustainable skyscraper designs for architecture and construction projects in Africa.',
-      countries: ['Ethiopia'],
-      category : 'Personalized Assistance',
+      "AI-powered barcode scanning system that provides comprehensive product information, including safety guidelines, similar products, and local alternatives.",
+      countries: ['Tanzania', 'Nigeria','Ethiopia', 'Ghana'],
+      category : 'Other',
       demo : "https://www.youtube.com/embed/irHZkTfRL2c?si=1g-5WDz6Bx1L39zS",
-      pitch : "https://www.youtube.com/embed/AvpUPbTf7HE?si=7USncKJOg2-K1_8Q",
-      webUrl : "https://architect-ai-theta.vercel.app/home",
-      mobileUrl : "https://drive.google.com/file/d/1E7CKANKvaY6yh-VKgUTdcSc6QxCS8K6r/view?usp=drive_link"
+      // pitch : "https://www.youtube.com/embed/AvpUPbTf7HE?si=7USncKJOg2-K1_8Q",
+      // webUrl : "https://architect-ai-theta.vercel.app/home",
+      // mobileUrl : "https://drive.google.com/file/d/1E7CKANKvaY6yh-VKgUTdcSc6QxCS8K6r/view?usp=drive_link"
 
     },
     {
-      team: 'The Siblings',
-      projectname: 'CogniPath',
+      team: 'Si24',
+      projectname: 'Langguin',
       description:
-        'AI-powered platform creates learning materials for students with learning disorders.',
-      countries: ['Tunisia','Cameroon'],
+        'An AI-powered pronunciation coach offering real-time feedback and personalized lessons to improve speech accuracy.',
+      countries: ['South Africa'],
       category : 'Education and Learning',
       demo : "https://www.youtube.com/embed/SIjvIMWqgDs?si=ZVHTL7YUAN00sYgi",
-      pitch : "https://www.youtube.com/embed/5fKccJiX_8I?si=7TA69lVH6Ni494p8",
-      webUrl : "https://cognipath.azurewebsites.net/"
+      // pitch : "https://www.youtube.com/embed/5fKccJiX_8I?si=7TA69lVH6Ni494p8",
+      // webUrl : "https://cognipath.azurewebsites.net/"
     
     },
     {
-      team :"YYeni AI",
-      projectname : "YYeni AI",
-      description : "AI chatbot for an enhanced educational experience through inquiry-based learning and customizable content.",
+      team :"BitbyBit",
+      projectname : "Study Sphere",
+      description : "An AI-powered platform for personalized mentorship, intelligent question generation, and seamless collaboration, including video conferencing and shared whiteboards.",
       category : 'Education and Learning',
       demo : "https://www.youtube.com/embed/lhVff0IBnOY?si=S1_gEIo48Xjo-BC-",
-      pitch : "https://www.youtube.com/embed/ZoYZDrZN1SY?si=osdo2FZf28eeRa_0",
-      countries : ["Namibia"],
-      webUrl : "https://yyenichat.com/",
+      // pitch : "https://www.youtube.com/embed/ZoYZDrZN1SY?si=osdo2FZf28eeRa_0",
+      countries : ["Ethiopia"],
+      // webUrl : "https://yyenichat.com/",
       
     },
     // {
@@ -147,15 +151,15 @@ export class ProjectsComponent {
     //   slackUrl : "https://digital-dynamos-group.slack.com/join/shared_invite/zt-2609f7b1w-zVJylghjkdyDCucv_U~EXw#/shared-invite/email"
     // },
     {
-      team: 'RMaster',
-      projectname: 'Lasta',
+      team: 'The Nerds',
+      projectname: 'Konsume',
       description:
-        'A Recruitment Processing Platform powered by Generative AI, streamlining applicant tracking, CV evaluation, and soft skills assessment for efficient hiring.',
-      countries: ['Ethiopia'],
+        'An AI-powered platform for personalized meal planning, dietary management, and nutrition analysis, with restaurant recommendations and budgeting tools.',
+      countries: ['Nigeria'],
       category : 'Data Analysis and Decision making',
       demo : "https://www.youtube.com/embed/KyNLER53Kt0?si=Z-k4EtlO44VEdN_b",
-      pitch : "https://www.youtube.com/embed/2fFadfYMoVI?si=JEBPueOIqzI2o5YF",
-      webUrl : "https://rmaster.knovuslab.com/"
+      // pitch : "https://www.youtube.com/embed/2fFadfYMoVI?si=JEBPueOIqzI2o5YF",
+      // webUrl : "https://rmaster.knovuslab.com/"
 
     },
   ]
