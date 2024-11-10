@@ -4,22 +4,19 @@
 >
   <!-- Title and Description Section -->
   <div
-    class="text-white py-10 max-sm:px-4 body-font snap-start snap-always ease-in-out flex flex-col justify-center items-center w-full max-w-6xl"
+    class="text-white py-10 max-sm:px-4 body-font snap-start snap-always ease-in-out flex flex-col justify-center items-center w-full max-w-[90vw]"
   >
   
     <p class="text-center text-2xl sm:text-4xl pb-3 font-bold  text-transparent bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text">
       Grand Finale Events
     </p>
-    <p class="md:text-left ">
-      Step into the Expo Hall at the Grand Finale, where innovation takes the
-      spotlight. Join over 4,900 participants from across the continent as
-      finalists from the AI for Impact Hackathon showcase their AI solutions
-      designed to revolutionize sectors like healthcare, education, agriculture,
-      and finance. Engage with the innovators, explore live demos, and discover
-      technologies shaping Africa’s digital future. Additionally, witness the
-      launch of A2SV's Startup Incubation projects, developed with expert
-      guidance to enhance Africa’s tech presence globally. Don’t miss this
-      chance to connect and see the future of African AI innovation up close!
+    <p class="text-center">
+      The A2SV AI for Impact Hackathon, Africa’s largest tech competition, 
+      concluded its grand finale from October 12-17, 2024, in Addis Ababa, Ethiopia. 
+      Out of 1,118 original teams, the top 8 from seven countries showcased innovative projects. 
+      Highlights included an expo, investor panels, and final presentations judged by an expert jury, 
+      culminating in an awards ceremony. The event celebrated African tech talent and fostered 
+      connections between innovators and industry leaders.
     </p>
     <div
       *ngFor="let event of eventData"
@@ -29,18 +26,58 @@
         class="flex flex-col md:flex-row w-full justify-between items-start my-3 p-2 bg-[#272E3B] rounded-xl"
       >
         <div
-          class="bg-white max-md:w-full max-md:mb-4 flex flex-col justify-center items-center m-auto rounded-xl p-5 md:mr-5 text-black"
+          class="bg-gradient-to-r from-indigo-600 to-pink-500 max-md:w-full max-md:mb-4 flex flex-col justify-center items-center m-auto rounded-xl p-5 md:mr-5 text-white shadow-lg"
         >
           <span class="text-sm">{{ event.date }}</span>
-          <span class=" font-semibold">{{ event.time }}</span>
+          <span class="font-semibold">{{ event.time }}</span>
         </div>
         <div class="flex flex-grow flex-col">
-          <p class="text-xl font-bold max-md:text-center ">{{ event.title }}</p>
+          <div class="flex justify-between items-center">
+            <p class="text-xl font-bold text-center ">{{ event.title }}</p>
+            <!-- Icon to toggle carousel visibility -->
+            <button (click)="event.showCarousel = !event.showCarousel" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 rounded-full p-1">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+          </div>
           <p class="font-extralight text-sm max-md:text-center">{{ event.description }}</p>
         </div>
       </div>
+      <div *ngIf="event.showCarousel">
+        <owl-carousel-o [options]="customOptions" class="w-full my-10">
+          <ng-container *ngFor="let i of [].constructor(event.totalImages); let index = index">
+            <ng-template carouselSlide id="{{ 'slide-' + index }}" class="mx-auto flex justify-center">
+              <img 
+                src="{{ event.baseImageLink + (index + 1) + '.jpg' }}" 
+                class="w-full py-2 px-3 border-2 border-white rounded-lg"
+                style="box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);"
+                (click)="openImageModal(event.baseImageLink + (index + 1) + '.jpg')"
+              >
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
     </div>
-  </div>
+
+    <!-- Image Modal -->
+    <div *ngIf="isImageModalOpen" class="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
+      <div class="relative max-w-[70vw]">
+        <img [src]="currentImage" class="w-full rounded-lg">
+        <button (click)="closeImageModal()" class="absolute right-1 top-1 text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="url(#gradient)" class="w-8 h-8">
+            <defs>
+              <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:purple;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:pink;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    </div>
 
   <!-- Main Interactive Section -->
 </div>

@@ -1,3 +1,10 @@
+<div *ngIf="isWinnerModalOpen" class="fixed h-full w-full pt-2 z-50">
+  <app-winner_modal
+    [showModal]="isWinnerModalOpen"
+    [modalData]="modalData"
+    (closeModalEvent)="closeModal()"
+  ></app-winner_modal>
+</div>
 <div id="about-us" class="relative z-30 pt-[50px]">
  
   <div id="about-a2sv" class="relative z-30">

@@ -1,14 +1,14 @@
 <section
-  class="w-full flex flex-col justify-center items-center rounded-md m-auto px-5"
+  class="w-[90vw] flex flex-col justify-center items-center rounded-md m-auto px-5"
 >
 
-<div class=" max-w-6xl">
+<div>
   <app-track-winners [title]="title_winners" [descr] = "desc_winners" [winners]="winners" (cardTouched)="openModal($event)"></app-track-winners>
 </div> 
-<div class=" max-w-6xl">
+<div >
   <app-track-winners [title]="title_track_winners" [descr] = "desc_track_winners" [winners]="track_winners" (cardTouched)="openModal($event)"></app-track-winners>
 </div> 
 
 </section>
-
+ 
 <!--  -->
