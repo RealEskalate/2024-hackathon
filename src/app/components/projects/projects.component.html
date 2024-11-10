@@ -1,11 +1,11 @@
 <!-- Project Section (Dark Mode) -->
 <section id="project" class="bg-black py-12 md:px-5 px-4 flex flex-col justify-center items-center">
-  <div id="grandfinalists" class="container mx-auto  flex flex-col justify-center items-center  max-w-6xl">
+  <div id="grandfinalists" class="container mx-auto  flex flex-col justify-center items-center  max-w-[90vw]">
     <div class="text-center mb-10 mx-auto sm:mx-0  sm:w-full">
       <p
         class="text-4xl font-bold text-transparent bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text"
       >
-        2024 Grand Finale Summary
+        2024 Grand Finale Summary 
     </p>
     <p class=" mx-auto leading-relaxed text-base text-white text-justify justify-between">
             The A2SV AI for Impact Hackathon for Africa, Grand Finale unfolded
@@ -28,20 +28,59 @@
             minds from African universities rewrote the narrative of technology
             on the continent. Experience the craft of the top 8 projects.
           </p>
-        
+          <div class="flex flex-col md:flex-row max-md:items-center justify-center space-y-4 md:space-y-0 md:space-x-4 mb-10 mt-10">
+            <button
+              (click)="setActiveButton('stream', 'https://hackathon.a2sv.org/expo-presenters')"
+              class="max-md:mt-5 text-sm rounded-full px-8 py-3 text-white transition-all bg-purple-500 cursor-pointer ease-out duration-300 hover:bg-gradient-to-r from-purple-700 to-pink-500"
+            >
+              <span>Checkout Finalist Projects</span>
+            </button>
+            <button
+              (click)="setActiveButton('gallery', 'https://hackathon.a2sv.org/event-program')"
+              class="max-md:mt-5 text-sm rounded-full px-8 py-3 text-white transition-all bg-purple-500 cursor-pointer ease-out duration-300 hover:bg-gradient-to-r from-purple-700 to-pink-500"
+            >
+              <span>Checkout Grand Finale Gallery</span>
+            </button>
+          </div>
+          <p class="text-center text-white">Checkout below the livestream of the Grand Finale closing ceremony at Adwa Museum October 16, 2024</p>
+
+          <div class="relative w-full">
+            <div class="stack w-full relative" id="bigVideo">
+              <div class="text-center aspect-[96/54] w-4/5 max-sm:w-full card bg-black relative">
+                <div
+                  class="absolute -inset-[2px] mx-auto bg-gradient-to-r from-yellow-400 to-indigo-600 rounded-2xl"
+                  aria-hidden="true"
+                ></div>
+                <div
+                  class="absolute inset-0 mx-auto h-full w-full bg-indigo-800 rounded-2xl"
+                  aria-hidden="true"
+                >
+                  <div class="relative h-full w-full">
+                    <iframe
+                      id="videoIframe"
+                      class="h-full w-full absolute bg-black inset-0 object-center object-contain rounded-2xl"
+                      src="https://www.youtube.com/embed/nznuwgq6YBg?si=BDBKqeDBNnOfOFdY"
+                      frameborder="0"
+                      allow="autoplay; fullscreen; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+              
+              <div
+                class="text-center aspect-[94/56] card w-4/5 max-sm:w-full bg-indigo-800"
+              ></div>
+              <div
+                class="text-center aspect-[92/58] card w-4/5 max-sm:w-full bg-indigo-800"
+              ></div>
+            </div>
+          </div>
     </div>
 
     <div class="grid grid-cols-1 gap-4 m-auto mb-6">
-      <div
-      class="flex flex-col md:flex-row max-md:items-center justify-center"
-    >
-      <button
-      (click)="setActiveButton('stream', 'https://hackathon.a2sv.org/expo-presenters')"
-        class="max-md:mt-5 text-sm rounded-full px-8 py-3 text-white transition-all bg-purple-500 cursor-pointer ease-out duration-300 left-1/2 hover:bg-gradient-to-r from-purple-700 to-pink-500"
-      >
-        <span>Checkout Finalist Projects</span>
-      </button>
-    </div>
+      
+    
       <div
         *ngFor="let project of final_projects; let j = index"
         class="text-center flex flex-col justify-between md:flex-1 h-full"
@@ -319,7 +358,7 @@
     </p>
       <div class="flex my-10 md:mx-20 flex-col lg:flex-col">
         <p class=" mx-auto leading-relaxed text-base text-white text-justify justify-between">
-            The Semifinals featured 40 teams of talented African students from
+            The Semifinals featured 32 teams of talented African students from
             across the continent, each with innovative solutions that
             demonstrate their commitment to transforming tech education in
             Africa. These bright minds are shaping a future where African

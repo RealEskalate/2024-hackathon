@@ -13,12 +13,19 @@ export interface Judge {
 export class JudgesComponent {
   judges = [
     {
-      name: 'Alper Güçer',
+      name: 'Ali Gurlek',
       title:
-        'Alper is a digital marketing expert, Managing Partner at Poligon Interactive, with more than 25 years of expertise in digital marketing. His extensive roles also include serving as a consultant, Client Engagement Director, as well as acting as a strategic influencer and mentor.',
-      image: 'https://res.cloudinary.com/eskalate/image/upload/v1700743897/Hackathon/Alper.png',
-      contact: 'https://www.linkedin.com/in/alpergucer/',
+        'With over two decades of experience in driving business growth and innovation, Ali Gurlek has found his passion in the impactful world of social enterprises. As the Head of Operations at A2SV Foundation, he is dedicated to transforming the lives of talented young African students by equipping them with the skills and opportunities to thrive in the global tech industry.',
+      image: 'https://res.cloudinary.com/eskalate/image/upload/v1700743888/Hackathon/Ali.png',
+      contact: 'https://www.linkedin.com/in/aligurlek/',
     },
+    // {
+    //   name: 'Alper Güçer',
+    //   title:
+    //     'Alper is a digital marketing expert, Managing Partner at Poligon Interactive, with more than 25 years of expertise in digital marketing. His extensive roles also include serving as a consultant, Client Engagement Director, as well as acting as a strategic influencer and mentor.',
+    //   image: 'https://res.cloudinary.com/eskalate/image/upload/v1700743897/Hackathon/Alper.png',
+    //   contact: 'https://www.linkedin.com/in/alpergucer/',
+    // },
     {
       name: 'Emre Varol',
       title:
@@ -27,26 +34,40 @@ export class JudgesComponent {
       contact: 'https://www.linkedin.com/in/emre-varol/',
     },
     {
-      name: 'Jelani Nelson',
+      name: 'Akash Manilal',
       title:
-        'Jelani Nelson is an Ethiopian-American computer scientist and Professor of Electrical Engineering and Computer Sciences at the University of California, Berkeley. He is known for his work on streaming algorithms and dimensionality reduction, and is the creator of AddisCoder, a computer science summer program for Ethiopian high school students.',
-      image: 'https://res.cloudinary.com/eskalate/image/upload/v1700743933/Hackathon/Jelani.png',
-      contact: 'https://www.linkedin.com/in/minilek/',
+        'Akash Manilal is an experienced Director of Technology with a proven track record of building and scaling departments from the ground up, assembling cross-functional teams to support dynamic squads and tribes. His career spans various company stages, from pre-seed startups to large conglomerates, across industries such as IT, online food delivery, healthcare, digital media, mapping, e-commerce, and now fintech.',
+      image: 'https://res.cloudinary.com/eskalate/image/upload/v1731251464/Hackathon-2024/events/Finalists%20Jury/8.jpg',
+      contact: 'https://www.linkedin.com/in/amanilal/',
     },
+    // {
+    //   name: 'Jelani Nelson',
+    //   title:
+    //     'Jelani Nelson is an Ethiopian-American computer scientist and Professor of Electrical Engineering and Computer Sciences at the University of California, Berkeley. He is known for his work on streaming algorithms and dimensionality reduction, and is the creator of AddisCoder, a computer science summer program for Ethiopian high school students.',
+    //   image: 'https://res.cloudinary.com/eskalate/image/upload/v1700743933/Hackathon/Jelani.png',
+    //   contact: 'https://www.linkedin.com/in/minilek/',
+    // },
+    // {
+    //   name: 'Ricardo Baeza Yates',
+    //   title:
+    //     'Ricardo is a seasoned Research Director at the Institute for Experiential AI at Northeastern University, is known for his extensive contributions to the field. His past experiences include serving as the Chief Technology Officer for NTENT. Additionally, he has made significant academic contributions throughout his career as a professor.',
+    //   image: 'https://res.cloudinary.com/eskalate/image/upload/v1700743951/Hackathon/Recardo.png',
+    //   contact: 'https://www.linkedin.com/in/ricardobaezayates/',
+    // },
     {
-      name: 'Ricardo Baeza Yates',
+      name: 'Naol Duga',
       title:
-        'Ricardo is a seasoned Research Director at the Institute for Experiential AI at Northeastern University, is known for his extensive contributions to the field. His past experiences include serving as the Chief Technology Officer for NTENT. Additionally, he has made significant academic contributions throughout his career as a professor.',
-      image: 'https://res.cloudinary.com/eskalate/image/upload/v1700743951/Hackathon/Recardo.png',
-      contact: 'https://www.linkedin.com/in/ricardobaezayates/',
+        'Naol is the Founder of Synestate. He has a strong background in Software Architecture, Distributed Systems, Cryptography, and Blockchain Technologies. ased in New York, he specializes in PKI (Public Key Infrastructure), DLT (Distributed Ledger Technology), and SSI (Self-Sovereign Identity), with a vision for transformative technologies in both the U.S. and Ethiopia.',
+      image: 'https://res.cloudinary.com/eskalate/image/upload/v1731251466/Hackathon-2024/events/Finalists%20Jury/4.jpg',
+      contact: 'https://www.linkedin.com/in/naolduga/',
     },
-    {
-      name: 'Solomon Kasssa',
-      title:
-        'Founder, 1888EC | Senior Tech Strategist | Author | TV Personality | Public Speaker\n\nShort Bio:\nIn his professional career, Solomon worked as senior technology consultant & strategist at a Fortune 500 Global Firm leading multi-million-dollar large technology implementations. He worked as a software engineer prior to joining management consulting. He is also a producer and host of the popular “TechTalk With Solomon” on EBS with millions of viewers.\n\nIn 2020, he founded 1888EC, a tech startup venture studio in Addis Ababa, Ethiopia.\n\nIn 2018, Solomon published “The Wonder of SciTech” – the first-of-its-kind science & tech 400 pages book to be ever published in Amharic language with more 45,000 copies sold. \n\nSolomon is a social media influencer with more than 1.7 million followers.',
-      image: 'https://res.cloudinary.com/eskalate/image/upload/v1700845238/Hackathon/solomon_kassa.jpg',
-      contact: 'https://www.linkedin.com/in/solomonkassa/',
-    },
+    // {
+    //   name: 'Solomon Kasssa',
+    //   title:
+    //     'Founder, 1888EC | Senior Tech Strategist | Author | TV Personality | Public Speaker\n\nShort Bio:\nIn his professional career, Solomon worked as senior technology consultant & strategist at a Fortune 500 Global Firm leading multi-million-dollar large technology implementations. He worked as a software engineer prior to joining management consulting. He is also a producer and host of the popular “TechTalk With Solomon” on EBS with millions of viewers.\n\nIn 2020, he founded 1888EC, a tech startup venture studio in Addis Ababa, Ethiopia.\n\nIn 2018, Solomon published “The Wonder of SciTech” – the first-of-its-kind science & tech 400 pages book to be ever published in Amharic language with more 45,000 copies sold. \n\nSolomon is a social media influencer with more than 1.7 million followers.',
+    //   image: 'https://res.cloudinary.com/eskalate/image/upload/v1700845238/Hackathon/solomon_kassa.jpg',
+    //   contact: 'https://www.linkedin.com/in/solomonkassa/',
+    // },
 
     // {name: 'Roger Kirwin', title: 'Roger, an accomplished tech executive, board member, and angel investor, is currently contributing his expertise at Square. His impressive career history includes roles at Zendesk, Salesforce, and Sprint. He is driven by a passion to instigate positive change and empower budding entrepreneurs.', image: 'assets/Roger.jpg'},
     // {name: 'Tugrul Tekbulut', title:'Tugrul is a seasoned Chairman and Founder of Timus Networks and also holds the Chairman position at LOGO Yazılım, Southeast Europe\'s largest ISV. His previous roles include serving as the Chairman at TUBISAD. He has notable expertise in Business Planning, Enterprise Software, E-commerce, Entrepreneurship, and CRM.', image: 'assets/turgul.png'},

@@ -100,17 +100,31 @@ export class HeaderComponent {
     const [path, sectionId] = fullPath.split('#');
     const element = document.getElementById(sectionId);
     console.log("the element", element);
+    const headerOffset = 100; // Adjust this value as needed
 
     if (element) {
-      // If element exists on the current page, scroll to it
-      element.scrollIntoView({ behavior: "smooth" });
+      // If element exists on the current page, scroll to it with an offset
+      
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     } else {
       // If we're not on the correct page or the element doesn't exist, navigate and then scroll
       this.router.navigate([path], { fragment: sectionId }).then(() => {
         setTimeout(() => {  // Wait for the page to stabilize
           const element = document.getElementById(sectionId);
           if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
+            const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+            const offsetPosition = elementPosition - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+            });
           }
         }, 100);
       });

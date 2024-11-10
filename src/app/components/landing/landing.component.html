@@ -15,7 +15,7 @@
   <app-register-modal></app-register-modal>
 
   <div
-    class="bg_svg  max-w-7xl mb-10 pb-5 flex flex-col md:flex-row justify-center items-center drop-shadow-2xl"
+    class="bg_svg w-[90vw] mb-10 pb-5 flex flex-col md:flex-row justify-center items-center drop-shadow-2xl"
   >
     <div
       class="order-2 md:order-1 text-white max-md:mb-5 flex-1 flex flex-col justify-end max-md:items-center"
@@ -34,31 +34,31 @@
           class="w-full flex flex-col max-md:items-center items-start leading-relaxed mb-2"
         >
           <p
-            class="text-left w-full max-md:text-center text-xl font-bold md:text-3xl lg:text-4xl"
+            class="text-left w-full max-md:text-center text-[3vw] font-bold sm:text-xl"
           >
             A2SV Hackathon, 2024
           </p>
           <p
-            class="font-semibold text-left w-full max-md:text-center text-xl pb-3"
+            class="font-semibold text-left w-full max-md:text-center  text-[2vw] sm:text-lg pb-3"
           >
             AI for Impact - Solving Africa's Challenges
           </p>
         </div>
 
         <div
-          class="bg-blue-950 bg-opacity-50 p-3 rounded-lg flex flex-col w-full justify-center"
+          class="p-3 rounded-lg flex flex-col w-full justify-center"
         >
           <div class="flex flex-col justify-center md:items-start mb-3">
             <div class="relative">
               <p
-                class="text-xl md:mb-2 lg:inline lg:whitespace-nowrap text-center md:text-start"
+                class=" sm:text-[1vw] text-[2.1vw] md:mb-2 lg:inline lg:whitespace-nowrap text-center md:text-start"
               >
-                Hackathon Grand Finale is Concluded!
+                Africa's Largest Hackathon Grand Finale is Concluded!
               </p>
               
               <div class="flex items-start md:text-lg font-normal py-3">
                 <img src="assets/star.svg" alt="star" class="pr-5" />
-                <p class="">
+                <p class="sm:text-[1vw] text-[2.1vw]">
                   Attracted nearly
                   <strong
                     class="font-bold text-transparent bg-gradient-to-r from-indigo-600 to to-pink-500 bg-clip-text"
@@ -78,7 +78,7 @@
                   African countries.
                 </p>
               </div>
-              <div class="flex items-start text-lg font-normal pb-2">
+              <div class="flex items-start  sm:text-[1vw] text-[2.1vw] font-normal pb-2">
                 <img src="assets/star.svg" alt="star" class="pr-5" />
                 <p class="">
                   Generated
@@ -94,7 +94,7 @@
                   projects in the semi-finals.
                 </p>
               </div>
-              <div class="flex items-start md:text-lg font-normal py-3">
+              <div class="flex items-start  sm:text-[1vw] text-[2.1vw] font-normal py-3">
                 <img src="assets/star.svg" alt="star" class="pr-5" />
                 <p class="">
                   Finalized our semifinal with top
@@ -112,26 +112,25 @@
                 </p>
               </div>
             </div>
-            <p>In case you missed the Grand Finale: 
-              <!-- <span class="bg-purple-500  text-white rounded bg-opacity-50 rounded-2xl p-2 hover:bg-gradient-to-r from-purple-700 to-pink-500 hover:cursor-pointer hover:text-white">
-                <a class="font-bold " (click)="setActiveButton('stream', 'https://www.youtube.com/live/f6zPchafc9Y?si=RGTQYSuzagCXf1qk
-                ')">
-                  <b> Find the live stream here</b>
+            <p class="sm:text-[1vw] text-[2.1vw]">Would you like to support next year's hackathon 
+              <span class="bg-purple-500 text-white rounded bg-opacity-50 rounded-2xl p-2 hover:bg-gradient-to-r from-purple-700 to-pink-500 hover:cursor-pointer hover:text-white">
+                <a class="font-bold" (click)="setActiveButton('stream', 'https://a2sv.org/get-involved#FormContact')">
+                  <b> Partner with Us</b>
                 </a>
-              </span> -->
+              </span>
             </p>
           </div>
 
-          <div
+          <!-- <div
             class="flex flex-col md:flex-row max-md:items-center justify-start"
           >
             <button
-            (click)="setActiveButton('stream', 'https://www.youtube.com/live/f6zPchafc9Y?si=RGTQYSuzagCXf1qk')"
+              (click)="onShowAdvisorsModal()"
               class="max-md:mt-5 text-sm rounded-full px-8 py-3 text-white transition-all bg-purple-500 cursor-pointer ease-out duration-300 left-1/2 hover:bg-gradient-to-r from-purple-700 to-pink-500"
             >
-              <span>Find the live stream here</span>
+              <span>Partner with us</span>
             </button>
-          </div>
+          </div> -->
         </div>
       </section>
     </div>
@@ -151,14 +150,20 @@
             aria-hidden="true"
           >
             <div class="relative h-full w-full">
+              <div
+                class="w-full object-cover h-full"
+              >
+              
               <iframe
               id="videoIframe"
               class="h-full w-full absolute bg-black inset-0 object-center object-contain rounded-2xl"
-              src="https://www.youtube.com/embed/-pqUq5bFu3E?si=BDBKqeDBNnOfOFdY"
+              src="https://www.youtube.com/embed/7eYXX71SS04"
               frameborder="0"
               allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen
+               allowfullscreen
             ></iframe>
+               
+            </div>
             </div>
           </div>
         </div>

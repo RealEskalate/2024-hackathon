@@ -33,7 +33,7 @@ export class Winners implements OnInit {
   openModal(cardData: any) {
     // this.modalContent = cardData;
     // this.isModalOpen = true;
-    this.winnerModalService.toggleModal(true, cardData);
+    this.winnerModalService.toggleModal(true, cardData, "/about-us");
     // this.renderer.addClass(document.body, 'overflow-hidden');
   }
 
