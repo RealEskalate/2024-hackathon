@@ -69,6 +69,7 @@ import { DonateCardComponent } from "./components/donate-card/donate-card.compon
 import { ContactUsComponent } from "./components/contact-us/contact-us.component";
 import { DonationCardComponent } from "./components/donation-card/donation-card.component";
 import { Winners2024Component } from "./components/winners-2024/winners-2024.component";
+import { HighlightsComponent } from "./pages/highlights/highlights.component";
 // import AboutUsComponent from './pages/about-us/about-us.component'
 // import { ShareButton } from 'ngx-sharebuttons/button';
  
@@ -116,7 +117,8 @@ import { Winners2024Component } from "./components/winners-2024/winners-2024.com
     LandingComponent,
     TimelineComponent,
     AboutUsComponent,
-    Winners2024Component
+    Winners2024Component,
+    HighlightsComponent
   
      // NgxMatIntlTelInputComponent
     // RegistrationComponent,
