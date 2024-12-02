@@ -64,6 +64,10 @@ export class Winners2024Component implements OnInit {
           'Eya Ben Moulehem',
           'Nadia Trabelsi'
         ],
+        src: "https://res.cloudinary.com/eskalate/image/upload/v1728824168/Hackathon-2024/2.png",
+        meetVideo: "https://res.cloudinary.com/eskalate/video/upload/v1733120924/Hackathon-2024/meetVideos/Bit_By_Bit_1.mp4",
+        youtubeMeetVideo: "https://www.youtube.com/watch?v=oFVB5bmPlOY",
+        website: "https://23weeks.vercel.app/",
         projectname: '23 Weeks',
         team: 'Harissa',
         money: '6,000',
@@ -106,6 +110,10 @@ export class Winners2024Component implements OnInit {
         // img: this.cognipath,
         awrd_img: 'assets/gold 1 (no bg).png',
         countries: ['Tunisia'],
+        src: "https://res.cloudinary.com/eskalate/image/upload/v1728824173/Hackathon-2024/3.png",
+        meetVideo: "https://res.cloudinary.com/eskalate/video/upload/v1733120871/Hackathon-2024/meetVideos/The_Champs_Video.mp4",
+        youtubeMeetVideo: "https://www.youtube.com/watch?v=Dg0kIilF-Nw",
+        website: "https://beemodeploy-2.onrender.com/",
         description:
           'A generative AI-powered interactive toy for autistic children that detects emotions and provides companionship, advice, and educational entertainment. Using emotion recognition, it engages children with activities like storytelling and music to teach numbers and the alphabet, while also offering text-to-speech interaction. A parent dashboard provides progress reports, helping parents monitor development and adjust support strategies.',
         teamImage: [
@@ -141,6 +149,10 @@ export class Winners2024Component implements OnInit {
         rank: 3,
         awrd_img: 'assets/bronze 1.png',
         // img: this.kurio_img,
+        src: "https://res.cloudinary.com/eskalate/image/upload/v1728824209/Hackathon-2024/6.png",
+        meetVideo: "https://res.cloudinary.com/eskalate/video/upload/v1733120924/Hackathon-2024/meetVideos/Bit_By_Bit_1.mp4",
+        youtubeMeetVideo: "https://www.youtube.com/watch?v=MgTJC1BsGPw",
+        website: "https://studyspherehome.netlify.app/",
         img: 'https://res.cloudinary.com/eskalate/image/upload/v1729895393/Hackathon-2024/winners/BitbyBit.jpg',
         countries: ['Ethiopia'],
         description:
@@ -181,6 +193,10 @@ export class Winners2024Component implements OnInit {
         prize_type: 'Best Commercial Potential Award',
         projectname: 'CogniFile',
         team: 'K3A',
+        src: "https://res.cloudinary.com/eskalate/image/upload/b_rgb:FFFFFF/v1728824167/Hackathon-2024/1.png",
+        meetVideo: "https://res.cloudinary.com/eskalate/video/upload/v1733120964/Hackathon-2024/meetVideos/K3A_Done.mp4",
+        youtubeMeetVideo: "https://www.youtube.com/watch?v=DB9HrXvNhQE",
+        website: "https://www.cognifile.org/",
         prize_description:
           'Congratulations to Team K3A from Algeria! The CogniFile project effectively demonstrated outstanding commercial potential with its innovative approach and market-ready solution, making it a standout in its ability to address real-world needs and attract future customers.',
         money: '2,500',
@@ -220,6 +236,10 @@ export class Winners2024Component implements OnInit {
         team: 'Farmlynco',
         awrd_img: 'assets/gold 1 (no bg).png',
         rank: 1,
+        src: "https://res.cloudinary.com/eskalate/image/upload/v1728824193/Hackathon-2024/7.png",
+        meetVideo: "https://res.cloudinary.com/eskalate/video/upload/v1733120936/Hackathon-2024/meetVideos/Team_Farmlynco_Expo_1.mp4",
+        youtubeMeetVideo: "https://www.youtube.com/watch?v=7ioa3iekm10",
+        website: "",
         img: 'https://res.cloudinary.com/eskalate/image/upload/v1729895393/Hackathon-2024/winners/Farmlynco.jpg',
         // img : this.yyeni,
         countries: ['Ghana'],
@@ -256,6 +276,10 @@ export class Winners2024Component implements OnInit {
         img : 'https://res.cloudinary.com/eskalate/image/upload/v1729895393/Hackathon-2024/winners/BitbyBit.jpg',
         // img: 'https://res.cloudinary.com/eskalate/image/upload/v1700743904/Hackathon/Architect.jpg',
         // img : this.architect_img,
+        src: "https://res.cloudinary.com/eskalate/image/upload/v1728824209/Hackathon-2024/6.png",
+        meetVideo: "https://res.cloudinary.com/eskalate/video/upload/v1733120924/Hackathon-2024/meetVideos/Bit_By_Bit_1.mp4",
+        youtubeMeetVideo: "https://www.youtube.com/watch?v=MgTJC1BsGPw",
+        website: "https://studyspherehome.netlify.app/",
         teamImage: [
           // 'https://res.cloudinary.com/eskalate/image/upload/v1700843866/Hackathon/architect/aserr.png',
           // 'https://res.cloudinary.com/eskalate/image/upload/v1700843866/Hackathon/architect/birukk.png',
@@ -299,7 +323,10 @@ export class Winners2024Component implements OnInit {
         rank: 1,
         img: 'https://res.cloudinary.com/eskalate/image/upload/v1729895394/Hackathon-2024/winners/Beemo.jpg',
         // img: this.cognipath,
-      
+        src: "https://res.cloudinary.com/eskalate/image/upload/v1728824173/Hackathon-2024/3.png",
+        meetVideo: "https://res.cloudinary.com/eskalate/video/upload/v1733120871/Hackathon-2024/meetVideos/The_Champs_Video.mp4",
+        youtubeMeetVideo: "https://www.youtube.com/watch?v=Dg0kIilF-Nw",
+        website: "https://beemodeploy-2.onrender.com/",
         countries: ['Tunisia'],
         description:
           'A generative AI-powered interactive toy for autistic children that detects emotions and provides companionship, advice, and educational entertainment. Using emotion recognition, it engages children with activities like storytelling and music to teach numbers and the alphabet, while also offering text-to-speech interaction. A parent dashboard provides progress reports, helping parents monitor development and adjust support strategies.',
