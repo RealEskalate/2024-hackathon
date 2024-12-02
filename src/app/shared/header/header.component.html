@@ -102,6 +102,17 @@
 
       <!-- Other main links -->
       <button
+        routerLink="/highlights"
+        [ngClass]="{
+          'text-indigo-500': activeTab === 'highlights',
+          'text-gray-200': activeTab !== 'highlights'
+        }"
+        (click)="setActiveTab('highlights')"
+        class="text-sm cursor-pointer font-semibold leading-6 nav-item text-gray-200 hover:text-indigo-600 hidden lg:block"
+      >
+      In the Media
+      </button>
+      <button
         routerLink="/event-program"
         [ngClass]="{
           'text-indigo-500': activeTab === 'event-program',
@@ -492,7 +503,17 @@
                 </button>
               </div>
             </div>
-
+            <button
+            routerLink="/highlights"
+            [ngClass]="{
+              'text-indigo-500': activeTab === 'highlights',
+              'text-gray-200': activeTab !== 'highlights'
+            }"
+            (click)="setActiveTab('highlights'); toggleMenu()"
+            class="text-sm cursor-pointer font-semibold leading-6 nav-item text-gray-200 hover:text-indigo-600"
+          >
+          In the Media
+          </button>
             <button
               routerLink="/event-program"
               [ngClass]="{

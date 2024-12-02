@@ -11,6 +11,7 @@ import { BeASponsorComponent } from './pages/be-asponsor/be-asponsor.component';
 import { ExpoPresentersComponent } from './pages/expo-presenters/expo-presenters.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { DonateComponent } from './pages/donate/donate.component';
+import { HighlightsComponent } from './pages/highlights/highlights.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/hackathon-home', pathMatch: 'full' },
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'be-a-sponsor', component: BeASponsorComponent },
   { path: 'expo-presenters', component: ExpoPresentersComponent },
   { path: 'about-us', component: AboutUsComponent },
-  { path: 'donate', component: DonateComponent }
+  { path: 'donate', component: DonateComponent },
+  { path: 'highlights', component: HighlightsComponent}
 ];
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
